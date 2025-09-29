@@ -4,13 +4,13 @@ import { FaNetworkWired, FaShieldAlt, FaLaptopCode, FaFacebook, FaLinkedin, FaWh
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700">
       {/* Professional Header */}
       <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-blue-200 dark:border-slate-700 sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
+        <div className="px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            {/* Logo/Brand */}
-            <div className="flex items-center space-x-4">
+            {/* Logo Only */}
+            <div className="flex items-center">
               <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
                 <Image 
                   src="/delitweb-logo.jpg" 
@@ -20,52 +20,48 @@ export default function Home() {
                   className="bg-transparent"
                 />
               </a>
-              <div>
-                <div className="font-bold text-gray-900 dark:text-white text-xl">Fidel Niyidukunda</div>
-                <div className="text-sm text-blue-600 font-medium">Full-Stack Developer & Network Engineer</div>
-              </div>
             </div>
 
-            {/* Navigation & Social Icons */}
-            <div className="flex items-center space-x-8">
-              <nav className="hidden md:flex items-center space-x-6">
+            {/* Centered Navigation */}
+            <div className="flex-1 flex justify-center">
+              <nav className="hidden md:flex items-center space-x-8">
                 <a href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Projects</a>
                 <a href="#about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">About</a>
                 <a href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Contact</a>
               </nav>
-              
-              {/* Social Media Icons */}
-              <div className="flex items-center space-x-3">
-                <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  <FaFacebook className="w-5 h-5" />
-                </a>
-                <a href="https://www.instagram.com/fidelfayid/" target="_blank" className="text-gray-600 hover:text-pink-600 transition-colors">
-                  <SiInstagram className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-blue-700 transition-colors">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-                <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-green-600 transition-colors">
-                  <FaWhatsapp className="w-5 h-5" />
-                </a>
-                <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-              </div>
+            </div>
+
+            {/* Right Side - Social Icons */}
+            <div className="flex items-center space-x-3">
+              <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <FaFacebook className="w-5 h-5" />
+              </a>
+              <a href="https://www.instagram.com/fidelfayid/" target="_blank" className="text-gray-600 hover:text-pink-600 transition-colors">
+                <SiInstagram className="w-5 h-5" />
+              </a>
+              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-blue-700 transition-colors">
+                <FaLinkedin className="w-5 h-5" />
+              </a>
+              <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <FaWhatsapp className="w-5 h-5" />
+              </a>
+              <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <FaGithub className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <main className="container mx-auto px-6 py-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column - Content */}
-            <div className="space-y-8">
+      <main className="px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-full mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-center">
+            {/* Left Column - Condensed Content */}
+            <div className="lg:col-span-2 space-y-6 lg:pl-16 lg:pr-8 flex flex-col justify-center">
               <div>
-                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                  <span className="bg-gradient-to-r from-blue-600 via-emerald-600 to-blue-700 bg-clip-text text-transparent">
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                  <span className="text-blue-600">
                     Fidel Niyidukunda
                   </span>
                 </h1>
@@ -75,27 +71,27 @@ export default function Home() {
                 </h2>
 
                 <div className="flex items-center space-x-2 mb-8">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
                   <span className="text-gray-600 dark:text-gray-400 font-medium">Available for Projects</span>
                 </div>
               </div>
 
               {/* Value Proposition */}
               <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
-                I build <span className="text-blue-600 font-semibold">reliable web applications</span> with enterprise-level thinking while teaching coding to real students gives me <span className="text-emerald-600 font-semibold">unique user experience insights</span> most developers never get.
+                I build <span className="text-blue-600 font-semibold">reliable web applications</span> with enterprise-level thinking while teaching coding to real students gives me <span className="text-blue-700 font-semibold">unique user experience insights</span> most developers never get.
               </p>
 
               {/* Call-to-Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#projects"
-                  className="bg-gradient-to-r from-blue-500 to-emerald-600 hover:from-blue-600 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
                 >
                   View My Projects
                 </a>
                 <a
                   href="#contact"
-                  className="border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 text-center"
+                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 text-center"
                 >
                   Get In Touch
                 </a>
@@ -116,52 +112,100 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column - Enhanced Professional Image */}
-            <div className="relative">
-              <div className="relative z-10">
-                <div className="w-80 h-80 mx-auto relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-600 rounded-full animate-spin-slow opacity-20"></div>
-                  <div className="absolute inset-4 bg-gradient-to-r from-red-600 to-orange-500 rounded-full animate-pulse opacity-30"></div>
-                  <div className="absolute inset-8 bg-gradient-to-br from-orange-500 via-red-600 to-orange-700 rounded-full flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
-                    <div className="text-center">
-                      <div className="text-6xl mb-2">👨‍💻</div>
-                      <div className="text-2xl font-bold">FN</div>
-                    </div>
-                  </div>
-                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center text-2xl animate-bounce">
-                    ⚛️
-                  </div>
-                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center text-2xl animate-bounce delay-300">
-                    🔧
-                  </div>
-                  <div className="absolute top-1/2 -left-8 w-12 h-12 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center text-xl animate-pulse">
-                    🎓
+            {/* Right Column - Expanded Tech Visualization */}
+            <div className="lg:col-span-3 relative flex justify-start items-end" style={{marginLeft: '120px'}}>
+              {/* Main container with geometric design */}
+              <div className="relative w-full max-w-3xl">
+                
+                {/* Background geometric patterns */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-0 left-0 w-40 h-40 border-2 border-blue-400 rounded-lg transform rotate-12 animate-pulse"></div>
+                  <div className="absolute bottom-0 right-0 w-32 h-32 border-2 border-blue-500 rounded-full transform -rotate-12 animate-pulse delay-700"></div>
+                  <div className="absolute top-1/2 left-1/4 w-24 h-24 border border-blue-600 transform rotate-45 animate-pulse delay-1000"></div>
+                </div>
+
+                {/* Clean laptop image - transparent background */}
+                <div className="relative z-10 w-[40rem] h-[40rem] flex items-center justify-center">
+                  {/* Laptop image with transparent background */}
+                  <div className="relative group">
+                    <Image 
+                      src="/images/IT-support-laptop.jpg" 
+                      alt="Professional Developer Workspace" 
+                      width={640}
+                      height={640}
+                      className="object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-2xl"
+                      style={{
+                        filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25))',
+                        mixBlendMode: 'multiply'
+                      }}
+                      priority
+                    />
                   </div>
                 </div>
+
+                {/* Tech stack icons positioned to the right */}
+                <div className="absolute top-12 right-[-5rem] flex flex-col space-y-4">
+                  <div className="group">
+                    <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 hover:rotate-6">
+                      <div className="text-center">
+                        <div className="text-blue-600 text-2xl mb-1">⚛️</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">React</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-lg border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 delay-300">
+                      <div className="text-center">
+                        <div className="text-blue-600 text-2xl mb-1">🔗</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">API</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-lg border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 delay-500">
+                      <div className="text-center">
+                        <div className="text-blue-600 text-2xl mb-1">💻</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">Code</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-lg border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 delay-700">
+                      <div className="text-center">
+                        <div className="text-blue-600 text-2xl mb-1">🚀</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">Deploy</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Subtle background glow */}
+                <div className="absolute inset-0 bg-gradient-radial from-blue-500/5 via-transparent to-transparent blur-3xl transform scale-150"></div>
               </div>
-              <div className="absolute top-10 left-10 w-20 h-20 bg-orange-200 dark:bg-orange-800 rounded-full opacity-20 animate-float"></div>
-              <div className="absolute bottom-10 right-10 w-16 h-16 bg-red-200 dark:bg-red-800 rounded-full opacity-20 animate-float delay-1000"></div>
             </div>
           </div>
 
           {/* Key Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-orange-200 dark:border-slate-600">
-              <div className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-3">5+</div>
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
+              <div className="text-4xl font-bold text-blue-600 mb-3">5+</div>
               <div className="text-gray-600 dark:text-gray-400 font-medium">Production Applications</div>
             </div>
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-orange-200 dark:border-slate-600">
-              <div className="text-4xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mb-3">CCNA</div>
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
+              <div className="text-4xl font-bold text-blue-600 mb-3">CCNA</div>
               <div className="text-gray-600 dark:text-gray-400 font-medium">Network Engineering</div>
             </div>
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-orange-200 dark:border-slate-600">
-              <div className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-3">100+</div>
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
+              <div className="text-4xl font-bold text-blue-600 mb-3">100+</div>
               <div className="text-gray-600 dark:text-gray-400 font-medium">Students Taught</div>
             </div>
           </div>
 
           {/* What Makes Me Different */}
-          <section id="advantage" className="max-w-6xl mx-auto mt-32 mb-20">
+          <section id="advantage" className="max-w-7xl mx-auto mt-32 mb-20 px-4 sm:px-6 lg:px-8">
             <h3 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
               What Makes Me Different as a Developer
             </h3>
@@ -176,7 +220,7 @@ export default function Home() {
                     Build applications without seeing how real users interact with them daily.
                   </p>
                   <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                    Most network engineers understand reliability but don't build user-facing applications.
+                    Most network engineers understand reliability but don&apos;t build user-facing applications.
                   </p>
                 </div>
                 <div className="space-y-6">
@@ -198,7 +242,7 @@ export default function Home() {
           </section>
 
           {/* Tech Stack */}
-          <section className="max-w-6xl mx-auto text-center mb-20">
+          <section className="max-w-7xl mx-auto text-center mb-20 px-4 sm:px-6 lg:px-8">
             <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">
               Tech Stack & Tools
             </h3>
@@ -222,7 +266,7 @@ export default function Home() {
           </section>
 
           {/* Professional Certifications */}
-          <section className="max-w-6xl mx-auto text-center mb-20">
+          <section className="max-w-7xl mx-auto text-center mb-20 px-4 sm:px-6 lg:px-8">
             <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">
               Professional Certifications
             </h3>
@@ -245,8 +289,8 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-blue-900 via-emerald-900 to-blue-900 text-white py-16">
-        <div className="container mx-auto px-6">
+      <footer className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-16">
+        <div className="px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center space-x-8 mb-8">
               <a href="https://github.com/niyidukunda" target="_blank" className="hover:text-blue-300 transition-colors flex items-center space-x-2">

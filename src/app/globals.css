@@ -5,12 +5,25 @@
   --foreground: #171717;
 }
 
-@theme inline {
+/* Tailwind CSS custom theme variables */
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --primary-blue: #6EC1E4;
+  --primary-blue-hover: #5ab3d8;
+  --primary-blue-light: #84cce8;
 }
+
+/* Custom blue color classes */
+.text-custom-blue { color: var(--primary-blue) !important; }
+.bg-custom-blue { background-color: var(--primary-blue) !important; }
+.border-custom-blue { border-color: var(--primary-blue) !important; }
+.hover\:text-custom-blue:hover { color: var(--primary-blue) !important; }
+.hover\:bg-custom-blue:hover { background-color: var(--primary-blue) !important; }
+.hover\:bg-custom-blue-hover:hover { background-color: var(--primary-blue-hover) !important; }
+.bg-custom-blue-hover { background-color: var(--primary-blue-hover) !important; }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -75,4 +88,9 @@ html {
 /* Radial gradient utility for sophisticated backgrounds */
 .bg-gradient-radial {
   background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Custom focus ring classes */
+.focus\:ring-custom-blue:focus {
+  --tw-ring-color: var(--primary-blue);
 }

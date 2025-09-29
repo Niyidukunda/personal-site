@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
-import { SiInstagram, SiExpress, SiCisco, SiComptia, SiKubernetes } from "react-icons/si";
-import { FaNetworkWired, FaShieldAlt, FaLaptopCode, FaFacebook, FaLinkedin, FaWhatsapp, FaGithub, FaEnvelope } from "react-icons/fa";
+import Link from "next/link";
+import { SiInstagram } from "react-icons/si";
+import { FaFacebook, FaLinkedin, FaWhatsapp, FaGithub, FaBars, FaTimes } from "react-icons/fa";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-blue-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700" style={{background: 'linear-gradient(to bottom right, #f8fafc, #e2f3ff, #cef0ff)'}}>
       {/* Professional Header */}
-      <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-blue-200 dark:border-slate-700 sticky top-0 z-50">
+      <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b dark:border-slate-700 sticky top-0 z-50" style={{borderBottomColor: '#6EC1E4'}}>
         <div className="px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             {/* Logo Only */}
@@ -25,32 +30,104 @@ export default function Home() {
             {/* Centered Navigation */}
             <div className="flex-1 flex justify-center">
               <nav className="hidden md:flex items-center space-x-8">
-                <a href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Projects</a>
-                <a href="#about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">About</a>
-                <a href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors font-medium">Contact</a>
+                <Link href="/projects" className="text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium">Projects</Link>
+                <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium">About</Link>
+                <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium">Blog</Link>
+                <Link href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium">Contact</Link>
               </nav>
             </div>
 
-            {/* Right Side - Social Icons */}
+            {/* Right Side - Social Icons & Mobile Menu Button */}
             <div className="flex items-center space-x-3">
-              <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <FaFacebook className="w-5 h-5" />
-              </a>
-              <a href="https://www.instagram.com/fidelfayid/" target="_blank" className="text-gray-600 hover:text-pink-600 transition-colors">
-                <SiInstagram className="w-5 h-5" />
-              </a>
-              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-blue-700 transition-colors">
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-              <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <FaWhatsapp className="w-5 h-5" />
-              </a>
-              <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
-                <FaGithub className="w-5 h-5" />
-              </a>
+              {/* Social Icons - Hidden on mobile */}
+              <div className="hidden sm:flex items-center space-x-3">
+                <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                  <FaFacebook className="w-5 h-5" />
+                </a>
+                <a href="https://www.instagram.com/fidelfayid/" target="_blank" className="text-gray-600 hover:text-pink-600 transition-colors">
+                  <SiInstagram className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                  <FaLinkedin className="w-5 h-5" />
+                </a>
+                <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                  <FaWhatsapp className="w-5 h-5" />
+                </a>
+                <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  <FaGithub className="w-5 h-5" />
+                </a>
+              </div>
+              
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden text-gray-600 hover:text-custom-blue transition-colors p-2"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? (
+                  <FaTimes className="w-6 h-6" />
+                ) : (
+                  <FaBars className="w-6 h-6" />
+                )}
+              </button>
             </div>
           </div>
         </div>
+        
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-b border-custom-blue-light dark:border-slate-700 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md">
+            <nav className="px-4 py-4 space-y-4">
+              <Link 
+                href="/projects" 
+                className="block text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link 
+                href="/about" 
+                className="block text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                href="/blog" 
+                className="block text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link 
+                href="/contact" 
+                className="block text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              
+              {/* Social Icons in Mobile Menu */}
+              <div className="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-slate-600">
+                <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                  <FaFacebook className="w-5 h-5" />
+                </a>
+                <a href="https://www.instagram.com/fidelfayid/" target="_blank" className="text-gray-600 hover:text-pink-600 transition-colors">
+                  <SiInstagram className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                  <FaLinkedin className="w-5 h-5" />
+                </a>
+                <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                  <FaWhatsapp className="w-5 h-5" />
+                </a>
+                <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  <FaGithub className="w-5 h-5" />
+                </a>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -61,7 +138,7 @@ export default function Home() {
             <div className="lg:col-span-2 space-y-6 lg:pl-16 lg:pr-8 flex flex-col justify-center">
               <div>
                 <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                  <span className="text-blue-600">
+                  <span className="text-custom-blue">
                     Fidel Niyidukunda
                   </span>
                 </h1>
@@ -71,7 +148,7 @@ export default function Home() {
                 </h2>
 
                 <div className="flex items-center space-x-2 mb-8">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-custom-blue rounded-full animate-pulse"></div>
                   <span className="text-gray-600 dark:text-gray-400 font-medium">Available for Projects</span>
                 </div>
               </div>
@@ -85,13 +162,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#projects"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
+                  className="bg-custom-blue hover:bg-custom-blue-hover text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 text-center"
                 >
                   View My Projects
                 </a>
                 <a
                   href="#contact"
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 text-center"
+                  className="border-2 border-custom-blue text-custom-blue hover:bg-custom-blue-hover hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 text-center"
                 >
                   Get In Touch
                 </a>
@@ -102,7 +179,7 @@ export default function Home() {
                 <span className="text-gray-500 text-sm">Powered by</span>
                 <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
                   <Image 
-                    src="/delitweb-logo.jpg" 
+                    src="/images/FullLogo_Transparent_NoBuffer.png" 
                     alt="Del IT+Web Logo" 
                     width={64} 
                     height={64} 
@@ -204,6 +281,71 @@ export default function Home() {
             </div>
           </div>
 
+          {/* About & Projects Summary Section */}
+          <div className="max-w-7xl mx-auto mt-32 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              
+              {/* About Summary */}
+              <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">About Me</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
+                  I&apos;m a passionate Full-Stack Developer and Network Engineer with 5+ years of experience building reliable web applications. 
+                  My unique combination of enterprise-level network engineering background and hands-on teaching experience gives me 
+                  insights that most developers never get.
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center space-x-3">
+                    <span className="w-2 h-2 bg-custom-blue rounded-full"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Full-Stack Development (React, Node.js, TypeScript)</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="w-2 h-2 bg-custom-blue rounded-full"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Network Engineering & Infrastructure</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="w-2 h-2 bg-custom-blue rounded-full"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Teaching & Mentoring (100+ students)</span>
+                  </div>
+                </div>
+                <Link 
+                  href="/about"
+                  className="inline-flex items-center bg-custom-blue hover:bg-custom-blue-hover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                >
+                  Read More About Me →
+                </Link>
+              </div>
+
+              {/* Projects Summary */}
+              <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Featured Projects</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
+                  From government technology solutions to task management applications, I&apos;ve built diverse projects 
+                  that showcase modern web development practices and real-world problem solving.
+                </p>
+                <div className="space-y-4 mb-6">
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h4 className="font-semibold text-gray-900 dark:text-white">GovTech Hackathon Solution</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Digital transformation platform for citizen services</p>
+                  </div>
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h4 className="font-semibold text-gray-900 dark:text-white">Task Management App</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Real-time collaboration with drag-and-drop interface</p>
+                  </div>
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h4 className="font-semibold text-gray-900 dark:text-white">Learning Management System</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Comprehensive LMS for coding bootcamps</p>
+                  </div>
+                </div>
+                <Link 
+                  href="/projects"
+                  className="inline-flex items-center bg-custom-blue hover:bg-custom-blue-hover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                >
+                  View All Projects →
+                </Link>
+              </div>
+            </div>
+          </div>
+
           {/* What Makes Me Different */}
           <section id="advantage" className="max-w-7xl mx-auto mt-32 mb-20 px-4 sm:px-6 lg:px-8">
             <h3 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
@@ -220,7 +362,7 @@ export default function Home() {
                     Build applications without seeing how real users interact with them daily.
                   </p>
                   <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                    Most network engineers understand reliability but don't build user-facing applications.
+                    Most network engineers understand reliability but don&apos;t build user-facing applications.
                   </p>
                 </div>
                 <div className="space-y-6">
@@ -241,48 +383,30 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Tech Stack */}
-          <section className="max-w-7xl mx-auto text-center mb-20 px-4 sm:px-6 lg:px-8">
-            <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">
-              Tech Stack & Tools
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
-              {[
-                { name: 'JavaScript', icon: '🟨' },
-                { name: 'Node.js', icon: '🟢' },
-                { name: 'React', icon: '⚛️' },
-                { name: 'MongoDB', icon: '🍃' },
-                { name: 'Express', icon: '🚀' },
-                { name: 'Next.js', icon: '▲' },
-                { name: 'TypeScript', icon: '🔷' },
-                { name: 'Tailwind', icon: '💨' }
-              ].map((tech) => (
-                <div key={tech.name} className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-orange-200 dark:border-slate-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="text-3xl mb-3">{tech.icon}</div>
-                  <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">{tech.name}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Professional Certifications */}
-          <section className="max-w-7xl mx-auto text-center mb-20 px-4 sm:px-6 lg:px-8">
-            <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">
-              Professional Certifications
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {[
-                { name: 'CompTIA A+', icon: SiComptia, color: 'text-red-600' },
-                { name: 'CompTIA Network+', icon: SiComptia, color: 'text-red-600' },
-                { name: 'CompTIA Security+', icon: SiComptia, color: 'text-red-600' },
-                { name: 'Cisco CCNA', icon: SiCisco, color: 'text-blue-600' },
-                { name: 'Kubernetes KCNA', icon: SiKubernetes, color: 'text-blue-500' }
-              ].map((cert) => (
-                <div key={cert.name} className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-blue-200 dark:border-slate-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <cert.icon className={`text-4xl mb-3 mx-auto ${cert.color}`} />
-                  <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">{cert.name}</span>
-                </div>
-              ))}
+          {/* Contact CTA Section */}
+          <section className="max-w-4xl mx-auto text-center mb-20 px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-r from-blue-400 to-blue-500 p-12 rounded-3xl shadow-xl text-white">
+              <h3 className="text-4xl font-bold mb-6">
+                Ready to Start Your Project?
+              </h3>
+              <p className="text-xl mb-8 text-blue-50 leading-relaxed">
+                Let&apos;s discuss how I can help bring your ideas to life with reliable, user-focused solutions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contact"
+                  className="bg-white text-custom-blue hover:bg-custom-blue-light hover:text-custom-blue px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                >
+                  Get In Touch
+                </Link>
+                <a
+                  href="https://wa.me/27760831539?text=Hi%20Fidel,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+                  target="_blank"
+                  className="border-2 border-white text-white hover:bg-white hover:text-custom-blue px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+                >
+                  WhatsApp Me
+                </a>
+              </div>
             </div>
           </section>
         </div>
@@ -312,10 +436,10 @@ export default function Home() {
                 <span className="text-blue-300 text-lg">Powered by</span>
                 <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
                   <Image 
-                    src="/delitweb-logo.jpg" 
+                    src="/images/FullLogo_Transparent_NoBuffer.png" 
                     alt="Del IT+Web Logo" 
-                    width={96} 
-                    height={96} 
+                    width={120} 
+                    height={120} 
                     className="bg-transparent"
                   />
                 </a>
