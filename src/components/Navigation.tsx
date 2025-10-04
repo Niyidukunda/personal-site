@@ -21,7 +21,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
         <div className="flex justify-between items-center">
           {/* Logo Only */}
           <div className="flex items-center">
-            <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
+            <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <Image 
                 src="/delitweb-logo.jpg" 
                 alt="Del IT+Web Logo" 
@@ -83,21 +83,21 @@ export default function Navigation({ currentPage }: NavigationProps) {
           <div className="flex items-center space-x-3">
             {/* Social Icons - Hidden on mobile */}
             <div className="hidden sm:flex items-center space-x-3">
-              <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+              <a href="https://web.facebook.com/finiyid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                 <FaFacebook className="w-5 h-5" />
               </a>
               {currentPage === 'home' && (
-                <a href="https://www.instagram.com/fidelfayid/" target="_blank" className="text-gray-600 hover:text-pink-600 transition-colors">
+                <a href="https://www.instagram.com/fidelfayid/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors">
                   <SiInstagram className="w-5 h-5" />
                 </a>
               )}
-              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                 <FaLinkedin className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+              <a href="https://wa.me/27760831539" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                 <FaWhatsapp className="w-5 h-5" />
               </a>
-              <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
                 <FaGithub className="w-5 h-5" />
               </a>
             </div>
@@ -174,21 +174,21 @@ export default function Navigation({ currentPage }: NavigationProps) {
             
             {/* Social Icons in Mobile Menu */}
             <div className="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-slate-600">
-              <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+              <a href="https://web.facebook.com/finiyid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                 <FaFacebook className="w-5 h-5" />
               </a>
               {currentPage === 'home' && (
-                <a href="https://www.instagram.com/fidelfayid/" target="_blank" className="text-gray-600 hover:text-pink-600 transition-colors">
+                <a href="https://www.instagram.com/fidelfayid/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors">
                   <SiInstagram className="w-5 h-5" />
                 </a>
               )}
-              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                 <FaLinkedin className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+              <a href="https://wa.me/27760831539" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                 <FaWhatsapp className="w-5 h-5" />
               </a>
-              <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
                 <FaGithub className="w-5 h-5" />
               </a>
             </div>

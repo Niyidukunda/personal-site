@@ -16,7 +16,7 @@ export default function About() {
           <div className="flex justify-between items-center">
             {/* Logo Only */}
             <div className="flex items-center">
-              <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
+              <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <Image 
                   src="/delitweb-logo.jpg" 
                   alt="Del IT+Web Logo" 
@@ -42,16 +42,16 @@ export default function About() {
             <div className="flex items-center space-x-3">
               {/* Social Icons - Hidden on mobile */}
               <div className="hidden sm:flex items-center space-x-3">
-                <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://web.facebook.com/finiyid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaFacebook className="w-5 h-5" />
                 </a>
-                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaLinkedin className="w-5 h-5" />
                 </a>
-                <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://wa.me/27760831539" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaWhatsapp className="w-5 h-5" />
                 </a>
-                <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
                   <FaGithub className="w-5 h-5" />
                 </a>
               </div>
@@ -114,16 +114,16 @@ export default function About() {
               
               {/* Social Icons in Mobile Menu */}
               <div className="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-slate-600">
-                <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://web.facebook.com/finiyid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaFacebook className="w-5 h-5" />
                 </a>
-                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaLinkedin className="w-5 h-5" />
                 </a>
-                <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://wa.me/27760831539" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaWhatsapp className="w-5 h-5" />
                 </a>
-                <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
                   <FaGithub className="w-5 h-5" />
                 </a>
               </div>
@@ -308,10 +308,10 @@ export default function About() {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center space-x-8 mb-8">
-              <a href="https://github.com/niyidukunda" target="_blank" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
+              <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
                 <span>GitHub</span>
               </a>
-              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
+              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
                 <span>LinkedIn</span>
               </a>
               <a href="mailto:fidel@delitweb.co.za" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
@@ -325,7 +325,7 @@ export default function About() {
               </p>
               <div className="flex items-center justify-center space-x-4">
                 <span className="text-blue-300 text-lg">Powered by</span>
-                <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
+                <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <Image 
                     src="/images/FullLogo_Transparent_NoBuffer.png" 
                     alt="Del IT+Web Logo" 

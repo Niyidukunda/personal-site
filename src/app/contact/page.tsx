@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebook, FaLinkedin, FaWhatsapp, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaWhatsapp, FaGithub, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { SiReact, SiNodedotjs } from "react-icons/si";
 
 export default function Contact() {
@@ -12,7 +12,7 @@ export default function Contact() {
           <div className="flex justify-between items-center">
             {/* Logo Only */}
             <div className="flex items-center">
-              <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
+              <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <Image 
                   src="/delitweb-logo.jpg" 
                   alt="Del IT+Web Logo" 
@@ -36,16 +36,16 @@ export default function Contact() {
 
             {/* Right Side - Social Icons */}
             <div className="flex items-center space-x-3">
-              <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+              <a href="https://web.facebook.com/finiyid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                 <FaFacebook className="w-5 h-5" />
               </a>
-              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                 <FaLinkedin className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+              <a href="https://wa.me/27667188232" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                 <FaWhatsapp className="w-5 h-5" />
               </a>
-              <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
                 <FaGithub className="w-5 h-5" />
               </a>
             </div>
@@ -193,12 +193,12 @@ export default function Contact() {
 
                   <div className="flex items-center space-x-4">
                     <div className="bg-custom-blue p-3 rounded-lg">
-                      <FaPhone className="text-white text-xl" />
+                      <FaWhatsapp className="text-white text-xl" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 dark:text-white">Phone</h3>
-                      <a href="tel:+27760831539" className="text-custom-blue hover:text-custom-blue-hover transition-colors">
-                        +27 76 083 1539
+                      <h3 className="font-semibold text-gray-900 dark:text-white">WhatsApp</h3>
+                      <a href="https://wa.me/27667188232" target="_blank" rel="noopener noreferrer" className="text-custom-blue hover:text-custom-blue-hover transition-colors">
+                        067188232
                       </a>
                     </div>
                   </div>
@@ -221,8 +221,8 @@ export default function Contact() {
                 
                 <div className="space-y-4">
                   <a
-                    href="https://wa.me/27760831539?text=Hi%20Fidel,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
-                    target="_blank"
+                    href="https://wa.me/27667188232?text=Hi%20Fidel,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+                    target="_blank" rel="noopener noreferrer"
                     className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-3"
                   >
                     <FaWhatsapp className="text-xl" />
@@ -231,7 +231,7 @@ export default function Contact() {
 
                   <a
                     href="https://linkedin.com/in/fidel-niyidukunda"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className="w-full bg-blue-700 hover:bg-blue-800 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-3"
                   >
                     <FaLinkedin className="text-xl" />
@@ -240,7 +240,7 @@ export default function Contact() {
 
                   <a
                     href="https://github.com/niyidukunda"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3"
                   >
                     <FaGithub className="text-xl" />
@@ -316,10 +316,10 @@ export default function Contact() {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center space-x-8 mb-8">
-              <a href="https://github.com/niyidukunda" target="_blank" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
+              <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
                 <span>GitHub</span>
               </a>
-              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
+              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
                 <span>LinkedIn</span>
               </a>
               <a href="mailto:fidel@delitweb.co.za" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
@@ -333,7 +333,7 @@ export default function Contact() {
               </p>
               <div className="flex items-center justify-center space-x-4">
                 <span className="text-blue-300 text-lg">Powered by</span>
-                <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
+                <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <Image 
                     src="/images/FullLogo_Transparent_NoBuffer.png" 
                     alt="Del IT+Web Logo" 

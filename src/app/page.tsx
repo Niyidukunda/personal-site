@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SiInstagram } from "react-icons/si";
-import { FaFacebook, FaLinkedin, FaWhatsapp, FaGithub, FaBars, FaTimes } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaWhatsapp, FaGithub, FaBars, FaTimes, FaCode, FaRocket, FaLink } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
           <div className="flex justify-between items-center">
             {/* Logo Only */}
             <div className="flex items-center">
-              <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
+              <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <Image 
                   src="/delitweb-logo.jpg" 
                   alt="Del IT+Web Logo" 
@@ -41,19 +41,19 @@ export default function Home() {
             <div className="flex items-center space-x-3">
               {/* Social Icons - Hidden on mobile */}
               <div className="hidden sm:flex items-center space-x-3">
-                <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://web.facebook.com/finiyid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaFacebook className="w-5 h-5" />
                 </a>
-                <a href="https://www.instagram.com/fidelfayid/" target="_blank" className="text-gray-600 hover:text-pink-600 transition-colors">
+                <a href="https://www.instagram.com/fidelfayid/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors">
                   <SiInstagram className="w-5 h-5" />
                 </a>
-                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaLinkedin className="w-5 h-5" />
                 </a>
-                <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://wa.me/27760831539" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaWhatsapp className="w-5 h-5" />
                 </a>
-                <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
                   <FaGithub className="w-5 h-5" />
                 </a>
               </div>
@@ -109,19 +109,19 @@ export default function Home() {
               
               {/* Social Icons in Mobile Menu */}
               <div className="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-slate-600">
-                <a href="https://web.facebook.com/finiyid" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://web.facebook.com/finiyid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaFacebook className="w-5 h-5" />
                 </a>
-                <a href="https://www.instagram.com/fidelfayid/" target="_blank" className="text-gray-600 hover:text-pink-600 transition-colors">
+                <a href="https://www.instagram.com/fidelfayid/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors">
                   <SiInstagram className="w-5 h-5" />
                 </a>
-                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaLinkedin className="w-5 h-5" />
                 </a>
-                <a href="https://wa.me/27760831539" target="_blank" className="text-gray-600 hover:text-custom-blue transition-colors">
+                <a href="https://wa.me/27760831539" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
                   <FaWhatsapp className="w-5 h-5" />
                 </a>
-                <a href="https://github.com/niyidukunda" target="_blank" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
                   <FaGithub className="w-5 h-5" />
                 </a>
               </div>
@@ -177,7 +177,7 @@ export default function Home() {
               {/* Powered by Del IT+Web */}
               <div className="flex items-center space-x-3 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <span className="text-gray-500 text-sm">Powered by</span>
-                <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
+                <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <Image 
                     src="/images/FullLogo_Transparent_NoBuffer.png" 
                     alt="Del IT+Web Logo" 
@@ -234,7 +234,7 @@ export default function Home() {
                   <div className="group">
                     <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-lg border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 delay-300">
                       <div className="text-center">
-                        <div className="text-blue-600 text-2xl mb-1">🔗</div>
+                        <FaLink className="text-blue-600 text-2xl mb-1 mx-auto" />
                         <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">API</div>
                       </div>
                     </div>
@@ -243,7 +243,7 @@ export default function Home() {
                   <div className="group">
                     <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-lg border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 delay-500">
                       <div className="text-center">
-                        <div className="text-blue-600 text-2xl mb-1">💻</div>
+                        <FaCode className="text-blue-600 text-2xl mb-1 mx-auto" />
                         <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">Code</div>
                       </div>
                     </div>
@@ -252,7 +252,7 @@ export default function Home() {
                   <div className="group">
                     <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-lg border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 delay-700">
                       <div className="text-center">
-                        <div className="text-blue-600 text-2xl mb-1">🚀</div>
+                        <FaRocket className="text-blue-600 text-2xl mb-1 mx-auto" />
                         <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">Deploy</div>
                       </div>
                     </div>
@@ -319,21 +319,25 @@ export default function Home() {
               <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Featured Projects</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
-                  From government technology solutions to task management applications, I&apos;ve built diverse projects 
+                  From production-ready blog applications to government technology solutions, I&apos;ve built diverse projects 
                   that showcase modern web development practices and real-world problem solving.
                 </p>
                 <div className="space-y-4 mb-6">
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white">GovTech Hackathon Solution</h4>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">Digital transformation platform for citizen services</p>
-                  </div>
-                  <div className="border-l-4 border-blue-500 pl-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white">Task Management App</h4>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">Real-time collaboration with drag-and-drop interface</p>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">Purpose & Perspective Blog</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Production-ready blog with intelligent fallback systems and comprehensive security</p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
                     <h4 className="font-semibold text-gray-900 dark:text-white">Learning Management System</h4>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">Comprehensive LMS for coding bootcamps</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Educational platform with course management and student progress tracking</p>
+                  </div>
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h4 className="font-semibold text-gray-900 dark:text-white">GovTech Hackathon Solution</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Digital transformation platform for citizen services with real-world impact</p>
+                  </div>
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h4 className="font-semibold text-gray-900 dark:text-white">Authentication System</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Secure login portal with enterprise-level security practices and CSRF prevention</p>
                   </div>
                 </div>
                 <Link 
@@ -417,10 +421,10 @@ export default function Home() {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center space-x-8 mb-8">
-              <a href="https://github.com/niyidukunda" target="_blank" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
+              <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
                 <span>GitHub</span>
               </a>
-              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
+              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
                 <span>LinkedIn</span>
               </a>
               <a href="mailto:fidel@delitweb.co.za" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
@@ -434,7 +438,7 @@ export default function Home() {
               </p>
               <div className="flex items-center justify-center space-x-4">
                 <span className="text-blue-300 text-lg">Powered by</span>
-                <a href="https://delitweb.co.za" target="_blank" className="hover:opacity-80 transition-opacity">
+                <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <Image 
                     src="/images/FullLogo_Transparent_NoBuffer.png" 
                     alt="Del IT+Web Logo" 
