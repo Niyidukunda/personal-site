@@ -1,348 +1,276 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { SiInstagram } from "react-icons/si";
-import { FaFacebook, FaLinkedin, FaWhatsapp, FaGithub, FaBars, FaTimes, FaCode, FaRocket, FaLink } from "react-icons/fa";
-import { useState } from "react";
+import Layout from "@/components/Layout";
 
 export default function Home() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700" style={{background: 'linear-gradient(to bottom right, #f8fafc, #e2f3ff, #cef0ff)'}}>
-      {/* Professional Header */}
-      <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b dark:border-slate-700 sticky top-0 z-50" style={{borderBottomColor: '#6EC1E4'}}>
-        <div className="px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            {/* Logo Only */}
-            <div className="flex items-center">
-              <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <Image 
-                  src="/delitweb-logo.jpg" 
-                  alt="Del IT+Web Logo" 
-                  width={80} 
-                  height={80} 
-                  className="bg-transparent"
-                />
-              </a>
-            </div>
+    <Layout>
 
-            {/* Centered Navigation */}
-            <div className="flex-1 flex justify-center">
-              <nav className="hidden md:flex items-center space-x-8">
-                <Link href="/projects" className="text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium">Projects</Link>
-                <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium">About</Link>
-                <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium">Blog</Link>
-                <Link href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium">Contact</Link>
-              </nav>
-            </div>
-
-            {/* Right Side - Social Icons & Mobile Menu Button */}
-            <div className="flex items-center space-x-3">
-              {/* Social Icons - Hidden on mobile */}
-              <div className="hidden sm:flex items-center space-x-3">
-                <a href="https://web.facebook.com/finiyid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
-                  <FaFacebook className="w-5 h-5" />
-                </a>
-                <a href="https://www.instagram.com/fidelfayid/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors">
-                  <SiInstagram className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-                <a href="https://wa.me/27760831539" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
-                  <FaWhatsapp className="w-5 h-5" />
-                </a>
-                <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-              </div>
-              
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden text-gray-600 hover:text-custom-blue transition-colors p-2"
-                aria-label="Toggle mobile menu"
-              >
-                {isMobileMenuOpen ? (
-                  <FaTimes className="w-6 h-6" />
-                ) : (
-                  <FaBars className="w-6 h-6" />
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        {/* Mobile Menu Dropdown */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-b border-custom-blue-light dark:border-slate-700 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md">
-            <nav className="px-4 py-4 space-y-4">
-              <Link 
-                href="/projects" 
-                className="block text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Projects
-              </Link>
-              <Link 
-                href="/about" 
-                className="block text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link 
-                href="/blog" 
-                className="block text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link 
-                href="/contact" 
-                className="block text-gray-700 dark:text-gray-300 hover:text-custom-blue transition-colors font-medium py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-              
-              {/* Social Icons in Mobile Menu */}
-              <div className="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-slate-600">
-                <a href="https://web.facebook.com/finiyid" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
-                  <FaFacebook className="w-5 h-5" />
-                </a>
-                <a href="https://www.instagram.com/fidelfayid/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors">
-                  <SiInstagram className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-                <a href="https://wa.me/27760831539" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-custom-blue transition-colors">
-                  <FaWhatsapp className="w-5 h-5" />
-                </a>
-                <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-              </div>
-            </nav>
-          </div>
-        )}
-      </header>
 
       {/* Hero Section */}
-      <main className="px-4 sm:px-6 lg:px-8 py-16">
-        <div className="max-w-full mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-center">
-            {/* Left Column - Condensed Content */}
-            <div className="lg:col-span-2 space-y-6 lg:pl-16 lg:pr-8 flex flex-col justify-center">
-              <div>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                  <span className="text-custom-blue">
-                    Fidel Niyidukunda
-                  </span>
+      <main className="px-4 sm:px-6 lg:px-8 py-8 relative overflow-hidden">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0 pointer-events-none opacity-20">
+          {/* Background Grid */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(156, 163, 175, 0.3) 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
+            {/* Left Column - Bold Content */}
+            <div className="space-y-8">
+              {/* Name & Title First */}
+              <div className="space-y-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+                  <span className="inline-block transform hover:scale-105 transition-transform duration-300">Fidel</span>
+                  <span className="text-orange-500 inline-block transform hover:scale-105 transition-transform duration-300 ml-3">Niyidukunda</span>
+                </h2>
+                
+                <div className="inline-flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 rounded-full px-5 py-2 border border-gray-200 dark:border-gray-600">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-base text-gray-700 dark:text-gray-300 font-semibold">Full-Stack Developer & Network Technician</span>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-none">
+                  <span className="text-orange-500 block">Building</span>
+                  <span className="text-gray-900 dark:text-white block">Digital</span>
+                  <span className="text-gray-700 dark:text-gray-300 block">Solutions.</span>
                 </h1>
                 
-                <h2 className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-6 font-medium">
-                  Full-Stack Developer & Network Engineer
-                </h2>
-
-                <div className="flex items-center space-x-2 mb-8">
-                  <div className="w-3 h-3 bg-custom-blue rounded-full animate-pulse"></div>
-                  <span className="text-gray-600 dark:text-gray-400 font-medium">Available for Projects</span>
+                <div className="flex items-center space-x-3 my-8">
+                  <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-gray-600 dark:text-gray-400 font-medium text-lg">Available for Projects</span>
                 </div>
               </div>
 
               {/* Value Proposition */}
-              <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
-                I build <span className="text-blue-600 font-semibold">reliable web applications</span> with enterprise-level thinking while teaching coding to real students gives me <span className="text-blue-700 font-semibold">unique user experience insights</span> most developers never get.
+              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">
+                I create <span className="text-gray-900 dark:text-white font-bold">enterprise-grade applications</span> with real-world user insights from teaching 100+ students and 5+ years of network technical experience.
               </p>
 
-              {/* Call-to-Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#projects"
-                  className="bg-custom-blue hover:bg-custom-blue-hover text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 text-center"
-                >
-                  View My Projects
-                </a>
-                <a
-                  href="#contact"
-                  className="border-2 border-custom-blue text-custom-blue hover:bg-custom-blue-hover hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 text-center"
-                >
-                  Get In Touch
-                </a>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-8">
+                <button className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-2">
+                  Contact Me
+                </button>
+                <button className="border-2 border-black dark:border-white text-gray-900 dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2">
+                  <span>📄</span> Resume
+                </button>
               </div>
 
-              {/* Powered by Del IT+Web */}
-              <div className="flex items-center space-x-3 pt-8 border-t border-gray-200 dark:border-gray-700">
-                <span className="text-gray-500 text-sm">Powered by</span>
-                <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                  <Image 
-                    src="/images/FullLogo_Transparent_NoBuffer.png" 
-                    alt="Del IT+Web Logo" 
-                    width={64} 
-                    height={64} 
-                    className="bg-transparent"
-                  />
-                </a>
-              </div>
+
             </div>
 
-            {/* Right Column - Expanded Tech Visualization */}
-            <div className="lg:col-span-3 relative flex justify-start items-end" style={{marginLeft: '120px'}}>
-              {/* Main container with geometric design */}
-              <div className="relative w-full max-w-3xl">
-                
-                {/* Background geometric patterns */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 left-0 w-40 h-40 border-2 border-blue-400 rounded-lg transform rotate-12 animate-pulse"></div>
-                  <div className="absolute bottom-0 right-0 w-32 h-32 border-2 border-blue-500 rounded-full transform -rotate-12 animate-pulse delay-700"></div>
-                  <div className="absolute top-1/2 left-1/4 w-24 h-24 border border-blue-600 transform rotate-45 animate-pulse delay-1000"></div>
+            {/* Right Column - Creative Elements + Tech Tools */}
+            <div className="relative h-[600px] lg:h-[700px]">
+              {/* Large Centered Globe with Orange Background */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 lg:w-48 lg:h-48 animate-spin-slow">
+                <div className="w-full h-full bg-orange-500 rounded-full flex items-center justify-center text-white text-5xl lg:text-6xl shadow-2xl border-4 border-orange-400">
+                  🌍
+                </div>
+              </div>
+
+              {/* Dynamic Tech Tools */}
+              
+              {/* React */}
+              <div className="absolute top-24 left-8 w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold animate-float shadow-xl hover:scale-110 transition-transform">
+                ⚛️
+              </div>
+
+              {/* Node.js */}
+              <div className="absolute top-44 right-28 w-18 h-18 bg-green-600 rounded-full flex items-center justify-center text-white text-2xl animate-bounce shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '0.5s'}}>
+                �
+              </div>
+
+              {/* Python */}
+              <div className="absolute top-64 left-16 w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold animate-wiggle shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '1s'}}>
+                🐍
+              </div>
+
+              {/* JavaScript */}
+              <div className="absolute bottom-48 right-20 w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center text-black text-xl font-bold animate-pulse shadow-xl hover:scale-110 transition-transform">
+                JS
+              </div>
+
+              {/* TypeScript */}
+              <div className="absolute bottom-64 left-20 w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-xl font-bold animate-float shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '1.5s'}}>
+                TS
+              </div>
+
+              {/* Docker */}
+              <div className="absolute top-52 right-8 w-16 h-16 bg-blue-400 rounded-2xl flex items-center justify-center text-white text-2xl animate-wiggle shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '2s'}}>
+                🐳
+              </div>
+
+              {/* MongoDB */}
+              <div className="absolute bottom-32 left-12 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-xl font-bold animate-bounce shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '2.5s'}}>
+                🍃
+              </div>
+
+              {/* AWS */}
+              <div className="absolute top-36 left-32 w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center text-white text-xl font-bold animate-pulse shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '3s'}}>
+                ☁️
+              </div>
+
+              {/* Floating Code Symbol */}
+              <div className="absolute bottom-20 right-40 w-18 h-18 bg-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold animate-float shadow-xl transform rotate-12">
+                &lt;/&gt;
+              </div>
+
+              {/* Floating Network Icon */}
+              <div className="absolute bottom-40 left-40 w-20 h-20 bg-gray-800 dark:bg-gray-200 rounded-full flex items-center justify-center text-white dark:text-gray-800 text-3xl animate-float shadow-xl" style={{animationDelay: '1s'}}>
+                🔗
+              </div>
+
+              {/* Geometric Shapes - Smaller and repositioned */}
+              <div className="absolute top-72 left-4 w-12 h-12 border-4 border-gray-400 rotate-45 animate-pulse"></div>
+              <div className="absolute bottom-16 right-8 w-10 h-10 bg-orange-400 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
+              
+              {/* Plus Signs - Repositioned */}
+              <div className="absolute top-80 right-48 text-3xl text-gray-400 animate-pulse">+</div>
+              <div className="absolute bottom-72 left-48 text-2xl text-gray-400 animate-pulse" style={{animationDelay: '1s'}}>+</div>
+
+              {/* Abstract Lines */}
+              <div className="absolute top-48 left-28 w-24 h-1 bg-gradient-to-r from-orange-400 to-transparent transform rotate-12"></div>
+              <div className="absolute bottom-56 right-32 w-20 h-1 bg-gradient-to-r from-blue-400 to-transparent transform -rotate-12"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+
+
+      {/* Dark Section - Stats & Slogan Divider */}
+      <section className="relative py-16 overflow-hidden">
+        {/* Dynamic Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-700/80 via-gray-600/70 to-slate-700/80"></div>
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 left-20 w-32 h-32 bg-orange-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-16 right-20 w-40 h-40 bg-blue-400 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-green-400 rounded-full blur-2xl animate-float"></div>
+        </div>
+
+        {/* Floating Geometric Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 right-40 w-16 h-16 border-2 border-white/30 rotate-45 animate-spin-slow"></div>
+          <div className="absolute bottom-24 left-40 w-12 h-12 bg-orange-400/40 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute top-1/3 left-20 text-4xl text-white/20 animate-pulse">{ }</div>
+          <div className="absolute bottom-1/3 right-24 text-3xl text-white/20 animate-pulse" style={{animationDelay: '2s'}}>&lt;/&gt;</div>
+        </div>
+
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            {/* Two Column Layout: Text Left, Stats Right */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              
+              {/* Left Column - Text Content */}
+              <div className="text-left">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-orange-400"></div>
+                  <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
                 </div>
 
-                {/* Clean laptop image - transparent background */}
-                <div className="relative z-10 w-[40rem] h-[40rem] flex items-center justify-center">
-                  {/* Laptop image with transparent background */}
-                  <div className="relative group">
-                    <Image 
-                      src="/images/IT-support-laptop.jpg" 
-                      alt="Professional Developer Workspace" 
-                      width={640}
-                      height={640}
-                      className="object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-2xl"
-                      style={{
-                        filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25))',
-                        mixBlendMode: 'multiply'
-                      }}
-                      priority
-                    />
-                  </div>
+                <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+                  Crafting digital experiences that bridge the gap between 
+                  <span className="text-white font-semibold"> enterprise infrastructure</span> and 
+                  <span className="text-orange-400 font-semibold"> modern web development</span>
+                </p>
+              </div>
+
+              {/* Right Column - Compact Stats Cards */}
+              <div className="flex flex-col space-y-6">
+                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-orange-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="text-4xl font-black text-orange-500 mb-2">5+</div>
+                  <div className="text-gray-800 font-semibold text-base">Production Applications</div>
                 </div>
-
-                {/* Tech stack icons positioned to the right */}
-                <div className="absolute top-12 right-[-5rem] flex flex-col space-y-4">
-                  <div className="group">
-                    <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 hover:rotate-6">
-                      <div className="text-center">
-                        <div className="text-blue-600 text-2xl mb-1">⚛️</div>
-                        <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">React</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group">
-                    <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-lg border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 delay-300">
-                      <div className="text-center">
-                        <FaLink className="text-blue-600 text-2xl mb-1 mx-auto" />
-                        <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">API</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group">
-                    <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-lg border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 delay-500">
-                      <div className="text-center">
-                        <FaCode className="text-blue-600 text-2xl mb-1 mx-auto" />
-                        <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">Code</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group">
-                    <div className="w-20 h-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl shadow-lg border border-blue-200 dark:border-slate-600 flex items-center justify-center transform transition-all duration-500 hover:scale-110 delay-700">
-                      <div className="text-center">
-                        <FaRocket className="text-blue-600 text-2xl mb-1 mx-auto" />
-                        <div className="text-xs text-gray-600 dark:text-gray-400 font-medium">Deploy</div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-orange-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="text-4xl font-black text-orange-500 mb-2">100+</div>
+                  <div className="text-gray-800 font-semibold text-base">Students Taught</div>
                 </div>
-
-                {/* Subtle background glow */}
-                <div className="absolute inset-0 bg-gradient-radial from-blue-500/5 via-transparent to-transparent blur-3xl transform scale-150"></div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Key Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
-              <div className="text-4xl font-bold text-blue-600 mb-3">5+</div>
-              <div className="text-gray-600 dark:text-gray-400 font-medium">Production Applications</div>
-            </div>
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
-              <div className="text-4xl font-bold text-blue-600 mb-3">CCNA</div>
-              <div className="text-gray-600 dark:text-gray-400 font-medium">Network Engineering</div>
-            </div>
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
-              <div className="text-4xl font-bold text-blue-600 mb-3">100+</div>
-              <div className="text-gray-600 dark:text-gray-400 font-medium">Students Taught</div>
-            </div>
-          </div>
+        {/* Bottom Wave Divider */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1200 120" fill="none" className="w-full h-12">
+            <path d="M0,60 C300,120 600,0 900,60 C1050,90 1150,30 1200,60 L1200,120 L0,120 Z" fill="currentColor" className="text-[#faf9f7]"/>
+          </svg>
+        </div>
+      </section>
 
-          {/* About & Projects Summary Section */}
-          <div className="max-w-7xl mx-auto mt-32 mb-16">
+      {/* About & Projects Summary Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               
               {/* About Summary */}
-              <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
+              <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-600">
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">About Me</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
-                  I&apos;m a passionate Full-Stack Developer and Network Engineer with 5+ years of experience building reliable web applications. 
-                  My unique combination of enterprise-level network engineering background and hands-on teaching experience gives me 
+                  I&apos;m a passionate Full-Stack Developer and Network Technician with 5+ years of experience building reliable web applications. 
+                  My unique combination of enterprise-level network technical background and hands-on teaching experience gives me 
                   insights that most developers never get.
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-3">
-                    <span className="w-2 h-2 bg-custom-blue rounded-full"></span>
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
                     <span className="text-gray-700 dark:text-gray-300">Full-Stack Development (React, Node.js, TypeScript)</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <span className="w-2 h-2 bg-custom-blue rounded-full"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Network Engineering & Infrastructure</span>
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Network Technician & Infrastructure</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <span className="w-2 h-2 bg-custom-blue rounded-full"></span>
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
                     <span className="text-gray-700 dark:text-gray-300">Teaching & Mentoring (100+ students)</span>
                   </div>
                 </div>
                 <Link 
                   href="/about"
-                  className="inline-flex items-center bg-custom-blue hover:bg-custom-blue-hover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                  className="inline-flex items-center bg-gray-700 hover:bg-gray-800 dark:bg-gray-200 dark:hover:bg-gray-300 text-white dark:text-gray-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                 >
                   Read More About Me →
                 </Link>
               </div>
 
               {/* Projects Summary */}
-              <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-blue-200 dark:border-slate-600">
+              <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-600">
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Featured Projects</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
                   From production-ready blog applications to government technology solutions, I&apos;ve built diverse projects 
                   that showcase modern web development practices and real-world problem solving.
                 </p>
                 <div className="space-y-4 mb-6">
-                  <div className="border-l-4 border-blue-500 pl-4">
+                  <div className="border-l-4 border-gray-400 pl-4">
                     <h4 className="font-semibold text-gray-900 dark:text-white">Purpose & Perspective Blog</h4>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">Production-ready blog with intelligent fallback systems and comprehensive security</p>
                   </div>
-                  <div className="border-l-4 border-blue-500 pl-4">
+                  <div className="border-l-4 border-gray-400 pl-4">
                     <h4 className="font-semibold text-gray-900 dark:text-white">Learning Management System</h4>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">Educational platform with course management and student progress tracking</p>
                   </div>
-                  <div className="border-l-4 border-blue-500 pl-4">
+                  <div className="border-l-4 border-gray-400 pl-4">
                     <h4 className="font-semibold text-gray-900 dark:text-white">GovTech Hackathon Solution</h4>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">Digital transformation platform for citizen services with real-world impact</p>
                   </div>
-                  <div className="border-l-4 border-blue-500 pl-4">
+                  <div className="border-l-4 border-gray-400 pl-4">
                     <h4 className="font-semibold text-gray-900 dark:text-white">Authentication System</h4>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">Secure login portal with enterprise-level security practices and CSRF prevention</p>
                   </div>
                 </div>
                 <Link 
                   href="/projects"
-                  className="inline-flex items-center bg-custom-blue hover:bg-custom-blue-hover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                  className="inline-flex items-center bg-gray-700 hover:bg-gray-800 dark:bg-gray-200 dark:hover:bg-gray-300 text-white dark:text-gray-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                 >
                   View All Projects →
                 </Link>
@@ -355,7 +283,7 @@ export default function Home() {
             <h3 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
               What Makes Me Different as a Developer
             </h3>
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-10 rounded-3xl shadow-2xl border border-orange-200 dark:border-slate-600">
+            <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm p-10 rounded-3xl shadow-lg border border-gray-200 dark:border-slate-600">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-6">
                   <h4 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
@@ -366,20 +294,20 @@ export default function Home() {
                     Build applications without seeing how real users interact with them daily.
                   </p>
                   <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                    Most network engineers understand reliability but don&apos;t build user-facing applications.
+                    Most network technicians understand reliability but don&apos;t build user-facing applications.
                   </p>
                 </div>
                 <div className="space-y-6">
-                  <h4 className="text-2xl font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-6 flex items-center">
-                    <span className="w-3 h-3 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mr-3"></span>
+                  <h4 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6 flex items-center">
+                    <span className="w-3 h-3 bg-gray-600 rounded-full mr-3"></span>
                     I Combine Both
                   </h4>
                   <div className="space-y-4">
                     <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                      <span className="text-orange-600 font-semibold">Real User Feedback:</span> I see daily how users actually interact with applications, not just what analytics show.
+                      <span className="text-gray-800 dark:text-gray-200 font-semibold">Real User Feedback:</span> I see daily how users actually interact with applications, not just what analytics show.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                      <span className="text-red-600 font-semibold">Network Engineering Mindset:</span> I build applications with enterprise-level reliability thinking.
+                      <span className="text-gray-800 dark:text-gray-200 font-semibold">Network Technical Mindset:</span> I build applications with enterprise-level reliability thinking.
                     </p>
                   </div>
                 </div>
@@ -389,69 +317,32 @@ export default function Home() {
 
           {/* Contact CTA Section */}
           <section className="max-w-4xl mx-auto text-center mb-20 px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-blue-400 to-blue-500 p-12 rounded-3xl shadow-xl text-white">
+            <div className="bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-800 p-12 rounded-3xl shadow-xl text-white">
               <h3 className="text-4xl font-bold mb-6">
                 Ready to Start Your Project?
               </h3>
-              <p className="text-xl mb-8 text-blue-50 leading-relaxed">
+              <p className="text-xl mb-8 text-gray-100 leading-relaxed">
                 Let&apos;s discuss how I can help bring your ideas to life with reliable, user-focused solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="bg-white text-custom-blue hover:bg-custom-blue-light hover:text-custom-blue px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                  className="bg-white text-gray-800 hover:bg-gray-100 hover:text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                 >
                   Get In Touch
                 </Link>
                 <a
-                  href="https://wa.me/27760831539?text=Hi%20Fidel,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+                  href="https://wa.me/27677188232?text=Hi%20Fidel,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
                   target="_blank"
-                  className="border-2 border-white text-white hover:bg-white hover:text-custom-blue px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+                  className="border-2 border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
                 >
                   WhatsApp Me
                 </a>
               </div>
             </div>
           </section>
-        </div>
-      </main>
+      </section>
 
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-16">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center space-x-8 mb-8">
-              <a href="https://github.com/niyidukunda" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
-                <span>GitHub</span>
-              </a>
-              <a href="https://linkedin.com/in/fidel-niyidukunda" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
-                <span>LinkedIn</span>
-              </a>
-              <a href="mailto:fidel@delitweb.co.za" className="hover:text-blue-300 transition-colors flex items-center space-x-2">
-                <span>Email</span>
-              </a>
-            </div>
-            
-            <div className="border-t border-blue-800 pt-8 mt-8">
-              <p className="text-blue-200 mb-6">
-                © 2025 Fidel Niyidukunda • Building reliable applications with real user insights
-              </p>
-              <div className="flex items-center justify-center space-x-4">
-                <span className="text-blue-300 text-lg">Powered by</span>
-                <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                  <Image 
-                    src="/images/FullLogo_Transparent_NoBuffer.png" 
-                    alt="Del IT+Web Logo" 
-                    width={120} 
-                    height={120} 
-                    className="bg-transparent"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </Layout>
   );
 }
