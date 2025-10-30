@@ -8,198 +8,175 @@ export default function About() {
   return (
     <Layout>
       {/* About Content */}
-      <main className="px-4 sm:px-6 lg:px-8 py-16">
-        <div className="max-w-6xl mx-auto">
-          
-          {/* Page Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">About Me</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Full-Stack Developer & Network Technician with a passion for building reliable applications and teaching others to code.
-            </p>
+      <main className="relative px-2 sm:px-4 lg:px-8 py-16 min-h-[600px]">
+        {/* Global Background Image for About Section */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          {/* Central focus blur effect using radial gradient mask */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none">
+            <Image 
+              src="/images/presentation-at-a-govtech-hackathon-2025.jpg" 
+              alt="Fidel Niyidukunda" 
+              fill
+              style={{ objectFit: 'cover', opacity: 0.15 }}
+              className="blur-[0.5px]"
+            />
+            <Image 
+              src="/images/presentation-at-a-govtech-hackathon-2025.jpg" 
+              alt="Fidel Niyidukunda" 
+              fill
+              style={{ objectFit: 'cover', opacity: 0.35 }}
+              className="[mask-image:radial-gradient(circle_at_center,black_0%,transparent_30%,transparent_100%)]"
+            />
+            {/* Strategic overlays to obscure faces on left and right */}
+            <div className="absolute left-[0%] top-[8%] w-24 h-24 bg-white/70 rounded-full shadow-lg border-2 border-blue-200 z-20 flex items-center justify-center">
+              <span className="text-blue-600 font-bold text-lg">IT</span>
+            </div>
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/80 rounded-full shadow-lg border-2 border-purple-200 z-30 flex items-center justify-center">
+              <span className="text-purple-600 font-bold text-lg">Edu-Tech</span>
+            </div>
           </div>
-
-          {/* Professional Overview */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-            
-            {/* Left Column - Personal Info */}
-            <div className="space-y-8">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl transform rotate-3"></div>
-                <div className="relative bg-white rounded-2xl p-8 shadow-xl">
-                  <Image 
-                    src="/images/presentation-at-a-govtech-hackathon-2025.jpg" 
-                    alt="Fidel Niyidukunda" 
-                    width={200} 
-                    height={200} 
-                    className="rounded-full mx-auto mb-6 shadow-lg object-cover"
-                  />
-                  <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">Fidel Niyidukunda</h2>
-                  <p className="text-slate-600 text-center mb-4">Full-Stack Developer & Network Technician</p>
-                  <div className="text-center space-y-2 text-sm">
-                    <p className="text-gray-600">📍 Based in South Africa</p>
-                    <p className="text-gray-600">🎯 Available for Projects</p>
-                    <p className="text-gray-600">💼 3+ Years Experience</p>
+        </div>
+        <div className="relative z-10">
+          <div className="max-w-6xl mx-auto">
+            {/* Page Header */}
+            <div className="text-center mb-16">
+              <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">About Me</h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Full-Stack Developer & Network Technician with a passion for building reliable applications and teaching others to code.
+              </p>
+            </div>
+            {/* Professional Overview - Responsive Layout */}
+            <div className="relative flex flex-col lg:flex-row items-stretch justify-between gap-6 sm:gap-12 lg:gap-32 mb-12 mx-auto max-w-full sm:max-w-2xl lg:max-w-6xl min-h-[320px] px-2">
+              {/* Row-specific Background Overlay for extra contrast */}
+              <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+                <div className="w-full h-full bg-white/10" />
+              </div>
+              {/* Foreground Content */}
+              <div className="relative z-10 flex flex-col lg:flex-row w-full gap-6 sm:gap-12 lg:gap-32 justify-between">
+                {/* Professional Summary Section */}
+                <div className="flex-1 min-w-[180px] max-w-full sm:max-w-md lg:max-w-[400px] bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50 rounded-2xl p-4 sm:p-8 shadow-lg border border-blue-100 flex flex-col justify-center backdrop-blur-sm bg-opacity-80 mx-auto relative">
+                  <h3 className="text-lg sm:text-xl font-bold text-blue-700 mb-2 text-center">Professional Summary</h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-2 text-center">
+                    I am a versatile technologist with hands-on experience in web development, IT support, and automation. My toolkit spans modern frameworks, databases, and integration methods, alongside infrastructure design, network administration, and server operations. Certified in CompTIA and Cisco, I build scalable, user-focused solutions—from custom applications to cloud optimization and complex network troubleshooting. I thrive in environments that value adaptability, clear communication, and ownership.
+                  </p>
+                  <div className="flex flex-col items-center mt-6 gap-2">
+                    <a href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow transition-all duration-200">Contact Me</a>
+                  </div>
+                </div>
+                {/* Services Section */}
+                <div className="flex-[1.3] min-w-[180px] max-w-full sm:max-w-md lg:max-w-[480px] bg-white rounded-2xl p-4 sm:p-12 shadow-xl border border-orange-100 flex flex-col justify-center backdrop-blur-sm bg-opacity-80 mx-auto relative">
+                  <h3 className="text-lg sm:text-2xl font-bold text-orange-600 mb-4 text-center">Services</h3>
+                  <div className="space-y-4 sm:space-y-6">
+                    <div>
+                      <h4 className="font-semibold text-sm sm:text-base mb-1">IT Support</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm">Networking, installation, troubleshooting, and repairs for networks and devices.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm sm:text-base mb-1">Web Development</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm">Custom websites, web apps, and related digital solutions for businesses and individuals.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm sm:text-base mb-1">Educational Technology</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm">CMS design, online learning platforms, and technology for education and training.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center mt-6 gap-2">
+                    <a href="https://wa.me/yourwhatsappphonenumber" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow transition-all duration-200">WhatsApp Me</a>
+                  </div>
+                  {/* Overlay moved to top right of services section */}
+                  <div className="absolute right-[-16px] sm:right-[-32px] top-[-16px] sm:top-[-32px] w-16 h-16 sm:w-24 sm:h-24 bg-white/80 rounded-full shadow-lg border-2 border-purple-200 z-30 flex items-center justify-center">
+                    <span className="text-purple-600 font-bold text-xs sm:text-lg">Edu-Tech</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Skills & Expertise */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-3xl font-bold text-gray-800 mb-6">Technical Expertise</h3>
+            {/* Certifications */}
+            <div className="mb-20">
+              <h3 className="text-3xl font-bold text-gray-800 text-center mb-12">Professional Certifications</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 
-                {/* Programming Languages */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-700 mb-4">Programming Languages</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-3 p-3 bg-yellow-50 rounded-lg">
-                      <SiJavascript className="w-6 h-6 text-yellow-500" />
-                      <span className="font-medium">JavaScript</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
-                      <SiTypescript className="w-6 h-6 text-blue-600" />
-                      <span className="font-medium">TypeScript</span>
-                    </div>
+                {/* CCNA */}
+                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="bg-blue-600 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <SiCisco className="w-8 h-8 text-white" />
                   </div>
+                  <h4 className="text-lg font-bold text-gray-800 mb-2">CCNA</h4>
+                  <p className="text-gray-600 text-sm">Cisco Certified Network Associate</p>
                 </div>
 
-                {/* Frameworks & Libraries */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-700 mb-4">Frameworks & Libraries</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-3 p-3 bg-cyan-50 rounded-lg">
-                      <SiReact className="w-6 h-6 text-cyan-500" />
-                      <span className="font-medium">React</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-black rounded-lg">
-                      <SiNextdotjs className="w-6 h-6 text-white" />
-                      <span className="font-medium text-white">Next.js</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
-                      <SiNodedotjs className="w-6 h-6 text-green-600" />
-                      <span className="font-medium">Node.js</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                      <SiExpress className="w-6 h-6 text-gray-700" />
-                      <span className="font-medium">Express.js</span>
-                    </div>
+                {/* KCNA */}
+                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="bg-blue-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <SiKubernetes className="w-8 h-8 text-white" />
                   </div>
+                  <h4 className="text-lg font-bold text-gray-800 mb-2">KCNA</h4>
+                  <p className="text-gray-600 text-sm">Kubernetes & Cloud Native Associate</p>
                 </div>
 
-                {/* Databases */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-700 mb-4">Databases</h4>
-                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
-                    <SiMongodb className="w-6 h-6 text-green-500" />
-                    <span className="font-medium">MongoDB</span>
+                {/* Network+ */}
+                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="bg-red-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <SiComptia className="w-8 h-8 text-white" />
                   </div>
+                  <h4 className="text-lg font-bold text-gray-800 mb-2">Network+</h4>
+                  <p className="text-gray-600 text-sm">CompTIA Network+</p>
                 </div>
 
-                {/* Tools & Technologies */}
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-700 mb-4">Tools & Technologies</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-3 p-3 bg-cyan-50 rounded-lg">
-                      <SiTailwindcss className="w-6 h-6 text-cyan-500" />
-                      <span className="font-medium">Tailwind CSS</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
-                      <SiKubernetes className="w-6 h-6 text-blue-600" />
-                      <span className="font-medium">Kubernetes</span>
-                    </div>
+                {/* Security+ */}
+                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="bg-red-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <SiComptia className="w-8 h-8 text-white" />
                   </div>
+                  <h4 className="text-lg font-bold text-gray-800 mb-2">Security+</h4>
+                  <p className="text-gray-600 text-sm">CompTIA Security+</p>
+                </div>
+
+                {/* A+ */}
+                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="bg-red-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <SiComptia className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-lg font-bold text-gray-800 mb-2">A+</h4>
+                  <p className="text-gray-600 text-sm">CompTIA A+</p>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Certifications */}
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-gray-800 text-center mb-12">Professional Certifications</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {/* Experience & Background */}
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">Professional Journey</h3>
               
-              {/* CCNA */}
-              <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="bg-blue-600 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <SiCisco className="w-8 h-8 text-white" />
+              <div className="space-y-8">
+                <div className="border-l-4 border-blue-600 pl-8">
+                  <h4 className="text-xl font-bold text-gray-800 mb-2">Full-Stack Developer</h4>
+                  <p className="text-blue-600 font-semibold mb-3">Present</p>
+                  <p className="text-gray-600 leading-relaxed">
+                    Developing robust web applications with modern JavaScript frameworks, 
+                    focusing on user experience and performance optimization. Specializing in 
+                    React, Next.js, and Node.js applications with MongoDB integration.
+                  </p>
                 </div>
-                <h4 className="text-lg font-bold text-gray-800 mb-2">CCNA</h4>
-                <p className="text-gray-600 text-sm">Cisco Certified Network Associate</p>
-              </div>
 
-              {/* KCNA */}
-              <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="bg-blue-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <SiKubernetes className="w-8 h-8 text-white" />
+                <div className="border-l-4 border-green-600 pl-8">
+                  <h4 className="text-xl font-bold text-gray-800 mb-2">Network Technician</h4>
+                  <p className="text-green-600 font-semibold mb-3">2021 - Present</p>
+                  <p className="text-gray-600 leading-relaxed">
+                    Managing and maintaining enterprise network infrastructure, 
+                    implementing security protocols, and ensuring optimal network performance. 
+                    Certified in Cisco and CompTIA technologies.
+                  </p>
                 </div>
-                <h4 className="text-lg font-bold text-gray-800 mb-2">KCNA</h4>
-                <p className="text-gray-600 text-sm">Kubernetes & Cloud Native Associate</p>
-              </div>
 
-              {/* Network+ */}
-              <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="bg-red-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <SiComptia className="w-8 h-8 text-white" />
+                <div className="border-l-4 border-purple-600 pl-8">
+                  <h4 className="text-xl font-bold text-gray-800 mb-2">Tech Educator</h4>
+                  <p className="text-purple-600 font-semibold mb-3">2020 - Present</p>
+                  <p className="text-gray-600 leading-relaxed">
+                    Creating educational content and tutorials to help others learn 
+                    programming and technology. Passionate about sharing knowledge 
+                    and building the next generation of developers.
+                  </p>
                 </div>
-                <h4 className="text-lg font-bold text-gray-800 mb-2">Network+</h4>
-                <p className="text-gray-600 text-sm">CompTIA Network+</p>
-              </div>
-
-              {/* Security+ */}
-              <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="bg-red-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <SiComptia className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-lg font-bold text-gray-800 mb-2">Security+</h4>
-                <p className="text-gray-600 text-sm">CompTIA Security+</p>
-              </div>
-
-              {/* A+ */}
-              <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="bg-red-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <SiComptia className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-lg font-bold text-gray-800 mb-2">A+</h4>
-                <p className="text-gray-600 text-sm">CompTIA A+</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Experience & Background */}
-          <div className="bg-white rounded-2xl p-8 shadow-xl">
-            <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">Professional Journey</h3>
-            
-            <div className="space-y-8">
-              <div className="border-l-4 border-blue-600 pl-8">
-                <h4 className="text-xl font-bold text-gray-800 mb-2">Full-Stack Developer</h4>
-                <p className="text-blue-600 font-semibold mb-3">Present</p>
-                <p className="text-gray-600 leading-relaxed">
-                  Developing robust web applications with modern JavaScript frameworks, 
-                  focusing on user experience and performance optimization. Specializing in 
-                  React, Next.js, and Node.js applications with MongoDB integration.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-green-600 pl-8">
-                <h4 className="text-xl font-bold text-gray-800 mb-2">Network Technician</h4>
-                <p className="text-green-600 font-semibold mb-3">2021 - Present</p>
-                <p className="text-gray-600 leading-relaxed">
-                  Managing and maintaining enterprise network infrastructure, 
-                  implementing security protocols, and ensuring optimal network performance. 
-                  Certified in Cisco and CompTIA technologies.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-purple-600 pl-8">
-                <h4 className="text-xl font-bold text-gray-800 mb-2">Tech Educator</h4>
-                <p className="text-purple-600 font-semibold mb-3">2020 - Present</p>
-                <p className="text-gray-600 leading-relaxed">
-                  Creating educational content and tutorials to help others learn 
-                  programming and technology. Passionate about sharing knowledge 
-                  and building the next generation of developers.
-                </p>
               </div>
             </div>
           </div>

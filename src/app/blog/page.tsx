@@ -19,13 +19,13 @@ export default function Blog() {
     } else if (!redirected) {
       setRedirected(true);
       // Redirect when countdown reaches 0
-      window.open("https://express-expressions.vercel.app/", "_blank");
+      window.open("https://express-blog-app-dlul.onrender.com/", "_blank");
     }
   }, [countdown, redirected]);
 
   const handleManualRedirect = () => {
     setRedirected(true);
-    window.open("https://express-expressions.vercel.app/", "_blank");
+    window.open("https://express-blog-app-dlul.onrender.com/", "_blank");
   };
 
   return (

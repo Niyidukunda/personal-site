@@ -9,75 +9,75 @@ export default function Home() {
 
 
       {/* Hero Section */}
-      <main className="px-4 sm:px-6 lg:px-8 py-8 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
-              {/* Left Column - Bold Content */}
-              <div className="space-y-8">
-                {/* Name & Title First */}
-                <div className="space-y-4">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
-                    <span className="inline-block transform hover:scale-105 transition-transform duration-300">Fidel</span>
-                    <span className="text-orange-500 inline-block transform hover:scale-105 transition-transform duration-300 ml-3">Niyidukunda</span>
-                  </h2>
-                  <div className="inline-flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 rounded-full px-5 py-2 border border-gray-200 dark:border-gray-600">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-base text-gray-700 dark:text-gray-300 font-semibold">Full-Stack Developer & Network Technician</span>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-none">
-                    <span className="text-orange-500 block">Building</span>
-                    <span className="text-gray-900 dark:text-white block">Digital</span>
-                    <span className="text-gray-700 dark:text-gray-300 block">Solutions.</span>
-                  </h1>
-                  <div className="flex items-center space-x-3 my-8">
-                    <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-gray-600 dark:text-gray-400 font-medium text-lg">Available for Projects</span>
-                  </div>
-                </div>
-                {/* Value Proposition */}
-                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">
-                  I create <span className="text-gray-900 dark:text-white font-bold">enterprise-grade applications</span> with real-world user insights from teaching 100+ students and 5+ years of network technical experience.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 pt-8">
-                  <Link href="/contact" className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-2">
-                    Contact Me
-                  </Link>
-                  <a
-                    href="https://niyidukunda.github.io/Professional-PROFILE-AUTOMATION/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border-2 border-black dark:border-white text-gray-900 dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    <span>📄</span> Resume
-                  </a>
+      <main className="px-2 sm:px-4 lg:px-8 py-8 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[60vh]">
+            {/* Left Column - Bold Content */}
+            <div className="space-y-6 sm:space-y-8">
+              {/* Name & Title First */}
+              <div className="space-y-3 sm:space-y-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+                  <span className="inline-block transform hover:scale-105 transition-transform duration-300">Fidel</span>
+                  <span className="text-orange-500 inline-block transform hover:scale-105 transition-transform duration-300 ml-2 sm:ml-3">Niyidukunda</span>
+                </h2>
+                <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gray-100 dark:bg-gray-800 rounded-full px-4 sm:px-5 py-2 border border-gray-200 dark:border-gray-600">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-base text-gray-700 dark:text-gray-300 font-semibold">Full-Stack Developer & Network Technician</span>
                 </div>
               </div>
-              {/* Right Column - Creative Elements + Tech Tools */}
-              <div className="relative h-[600px] lg:h-[700px]">
-                {/* Large Centered Globe with Orange Background */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 lg:w-48 lg:h-48 animate-spin-slow">
-                  <div className="w-full h-full bg-orange-500 rounded-full flex items-center justify-center text-white text-5xl lg:text-6xl shadow-2xl border-4 border-orange-400">
-                    🌍
-                  </div>
+              <div className="space-y-4 sm:space-y-6">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-none">
+                  <span className="text-orange-500 block">Building</span>
+                  <span className="text-gray-900 dark:text-white block">Digital</span>
+                  <span className="text-gray-700 dark:text-gray-300 block">Solutions.</span>
+                </h1>
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 my-6 sm:my-8">
+                  <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-gray-600 dark:text-gray-400 font-medium text-base sm:text-lg">Available for Projects</span>
                 </div>
-                {/* Dynamic Tech Tools */}
-                {/* React */}
-                <div className="absolute top-24 left-8 w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold animate-float shadow-xl hover:scale-110 transition-transform">
-                  ⚛️
+              </div>
+              {/* Value Proposition */}
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-xs sm:max-w-lg">
+                I create <span className="text-gray-900 dark:text-white font-bold">enterprise-grade applications</span> with real-world user insights from teaching 100+ students and 5+ years of network technical experience.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 sm:pt-8">
+                <Link href="/contact" className="bg-black hover:bg-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-2">
+                  Contact Me
+                </Link>
+                <a
+                  href="https://niyidukunda.github.io/Professional-PROFILE-AUTOMATION/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-2 border-black dark:border-white text-gray-900 dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  <span>📄</span> Resume
+                </a>
+              </div>
+            </div>
+            {/* Right Column - Creative Elements + Tech Tools */}
+            <div className="relative h-[320px] sm:h-[500px] lg:h-[700px]">
+              {/* Large Centered Globe with Orange Background */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-40 sm:h-40 lg:w-48 lg:h-48 animate-spin-slow">
+                <div className="w-full h-full bg-orange-500 rounded-full flex items-center justify-center text-white text-3xl sm:text-5xl lg:text-6xl shadow-2xl border-4 border-orange-400">
+                  🌍
                 </div>
-                {/* Node.js */}
-                <div className="absolute top-44 right-28 w-18 h-18 bg-green-600 rounded-full flex items-center justify-center text-white text-2xl animate-bounce shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '0.5s'}}>
-                  �
-                </div>
-                {/* Python */}
-                <div className="absolute top-64 left-16 w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold animate-wiggle shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '1s'}}>
-                  🐍
-                </div>
-                {/* JavaScript */}
-                <div className="absolute bottom-48 right-20 w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center text-black text-xl font-bold animate-pulse shadow-xl hover:scale-110 transition-transform">
-                  JS
+              </div>
+              {/* Dynamic Tech Tools */}
+              {/* React */}
+              <div className="absolute top-10 left-4 sm:top-24 sm:left-8 w-10 h-10 sm:w-16 sm:h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-bold animate-float shadow-xl hover:scale-110 transition-transform">
+                ⚛️
+              </div>
+              {/* Node.js */}
+              <div className="absolute top-32 right-8 sm:top-44 sm:right-28 w-12 h-12 sm:w-18 sm:h-18 bg-green-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl animate-bounce shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '0.5s'}}>
+                🟩
+              </div>
+              {/* Python */}
+              <div className="absolute top-44 left-6 sm:top-64 sm:left-16 w-10 h-10 sm:w-16 sm:h-16 bg-yellow-500 rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-bold animate-wiggle shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '1s'}}>
+                🐍
+              </div>
+              {/* JavaScript */}
+              <div className="absolute bottom-24 right-8 sm:bottom-48 sm:right-20 w-10 h-10 sm:w-16 sm:h-16 bg-yellow-400 rounded-2xl flex items-center justify-center text-black text-base sm:text-xl font-bold animate-pulse shadow-xl hover:scale-110 transition-transform">
+                JS
                 </div>
                 {/* TypeScript */}
                 <div className="absolute bottom-64 left-20 w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-xl font-bold animate-float shadow-xl hover:scale-110 transition-transform" style={{animationDelay: '1.5s'}}>
