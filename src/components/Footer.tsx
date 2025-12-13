@@ -1,14 +1,36 @@
-import Image from "next/image";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+/**
+ * FOOTER COMPONENT
+ * 
+ * Purpose: Bottom section with contact info, certifications, and social links
+ * 
+ * Layout: 3-column grid (responsive - stacks on mobile)
+ * 
+ * Columns:
+ * 1. Contact Info - Email addresses, availability status, specializations
+ * 2. Certifications - Cisco, CompTIA, Linux Foundation badges
+ * 3. Social Links - GitHub, LinkedIn, WhatsApp
+ * 
+ * Additional:
+ * - Copyright notice
+ * - Del IT+Web logo and branding
+ * - "Available for Projects" animated badge
+ */
+
+import Image from "next/image"; // Optimized image component
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"; // Social media icons
 
 export default function Footer() {
   return (
+    // Gradient background footer with padding
     <footer className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-white py-12">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
+          
+          {/* ===== 3-COLUMN GRID ===== */}
+          {/* Responsive: 1 column on mobile, 3 columns on tablet+ */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             
-            {/* Contact Info */}
+            {/* ===== COLUMN 1: CONTACT INFO ===== */}
             <div className="text-center md:text-left">
               <div className="space-y-4">
                 <div className="flex items-center justify-center md:justify-start space-x-2">

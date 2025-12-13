@@ -1,19 +1,40 @@
-"use client";
+/**
+ * HEADER COMPONENT
+ * 
+ * Purpose: Top navigation bar with logo, nav links, social icons, and mobile menu
+ * 
+ * Features:
+ * - Logo linked to Del IT+Web company site
+ * - Desktop horizontal navigation (Home, Projects, About, Blog, Contact)
+ * - Social media icons (Facebook, Instagram, LinkedIn, WhatsApp, GitHub)
+ * - Mobile hamburger menu with dropdown
+ * - Sticky positioning (stays at top when scrolling)
+ * - Responsive design (desktop nav hidden on mobile, mobile menu hidden on desktop)
+ * 
+ * State Management:
+ * - isMobileMenuOpen: Controls mobile menu visibility (toggle with hamburger icon)
+ */
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { SiInstagram } from "react-icons/si";
-import { FaFacebook, FaLinkedin, FaWhatsapp, FaGithub, FaBars, FaTimes } from "react-icons/fa";
+"use client"; // Enable client-side interactivity for useState
+
+import Image from "next/image"; // Optimized image loading
+import Link from "next/link"; // Client-side navigation (no page reload)
+import { useState } from "react"; // React state hook
+import { SiInstagram } from "react-icons/si"; // Instagram icon
+import { FaFacebook, FaLinkedin, FaWhatsapp, FaGithub, FaBars, FaTimes } from "react-icons/fa"; // Social and menu icons
 
 export default function Header() {
+  // State: Track mobile menu open/closed status
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
+    // Sticky header with gradient background and backdrop blur
     <header className="bg-gradient-to-br from-slate-700/60 via-gray-600/50 to-slate-700/60 backdrop-blur-sm sticky top-0 z-50 border-b border-white/10">
       <div className="px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
-          {/* Logo Only */}
+          
+          {/* ===== LEFT: LOGO ===== */}
+          {/* Company logo linked to external Del IT+Web website */}
           <div className="flex items-center">
             <a href="https://delitweb.co.za" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <Image 
