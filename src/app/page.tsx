@@ -17,11 +17,49 @@
 
 "use client"; // Enable client-side interactivity for React hooks
 
+import { useState, useEffect } from "react"; // React state management and side effects
 import Link from "next/link"; // Next.js navigation component (client-side routing)
 import Image from "next/image"; // Next.js optimized image component
 import Layout from "@/components/Layout"; // Page wrapper with Header and Footer
 
 export default function Home() {
+  // Media carousel state
+  const [currentMedia, setCurrentMedia] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const mediaItems = [
+    { type: 'video', src: '/images/fix clip.mp4', title: 'Tech duties' },
+    { type: 'video', src: '/images/code clip.mp4', title: 'Coding Session' }
+  ];
+
+  // Auto-rotation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentMedia((prev) => (prev + 1) % mediaItems.length);
+        setIsTransitioning(false);
+      }, 500); // Fade out duration
+    }, 8000); // Switch every 8 seconds
+
+    return () => clearInterval(interval);
+  }, [mediaItems.length]);
+
+  const nextMedia = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentMedia((prev) => (prev + 1) % mediaItems.length);
+      setIsTransitioning(false);
+    }, 500);
+  };
+
+  const prevMedia = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentMedia((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
+      setIsTransitioning(false);
+    }, 500);
+  };
+
   return (
     <Layout>
 
@@ -42,7 +80,7 @@ export default function Home() {
         <div className="max-w-[1800px] mx-auto relative z-10">
           
           {/* Profile Image - Positioned towards right tech arch */}
-          <div className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-y-1/2 lg:translate-x-[0%] xl:translate-x-[10%] z-30">
+          {/* <div className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-y-1/2 lg:translate-x-[0%] xl:translate-x-[10%] z-30">
             <div className="relative w-72 h-72 xl:w-[368px] xl:h-[368px]">
               <Image
                 src="/images/workbase.jpg"
@@ -52,7 +90,7 @@ export default function Home() {
                 className="rounded-full object-cover opacity-50 shadow-2xl hover:opacity-70 hover:scale-105 transition-all duration-300"
               />
             </div>
-          </div>
+          </div> */}
           
           {/* Two-column grid: Stacks on mobile (1 col), side-by-side on desktop (2 cols) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 xl:gap-32 items-center min-h-[60vh]">
@@ -133,7 +171,7 @@ export default function Home() {
             </div>
             
             {/* ===== RIGHT COLUMN: Tech Stack Cards in Semi-Arch ===== */}
-            <div className="relative h-[320px] sm:h-[500px] lg:h-[700px]">
+            <div className="relative lg:h-[700px]">
               
               {/* Profile Image - Mobile Only */}
               <div className="lg:hidden mb-8">
@@ -148,7 +186,120 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Frontend Card - Top Right (1 o'clock position) */}
+              {/* Mobile/Tablet: Stacked Cards - Hidden to save space */}
+              <div className="hidden">
+                
+                {/* Frontend Card */}
+                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-blue-400/50 transition-all duration-300 hover:shadow-xl">
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">⚛️</div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Frontend</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="px-2.5 py-0.5 bg-blue-500/20 text-blue-600 dark:text-blue-300 text-xs rounded-full">React</span>
+                        <span className="px-2.5 py-0.5 bg-gray-800/20 text-gray-700 dark:text-gray-300 text-xs rounded-full">Next.js</span>
+                        <span className="px-2.5 py-0.5 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">TypeScript</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Backend Card */}
+                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-green-400/50 transition-all duration-300 hover:shadow-xl">
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">🟩</div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Backend</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="px-2.5 py-0.5 bg-green-600/20 text-green-600 dark:text-green-300 text-xs rounded-full">Node.js</span>
+                        <span className="px-2.5 py-0.5 bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full">Python</span>
+                        <span className="px-2.5 py-0.5 bg-gray-600/20 text-gray-700 dark:text-gray-300 text-xs rounded-full">REST APIs</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Cloud & DevOps Card */}
+                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-orange-400/50 transition-all duration-300 hover:shadow-xl">
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">☁️</div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Cloud & DevOps</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="px-2.5 py-0.5 bg-orange-500/20 text-orange-600 dark:text-orange-300 text-xs rounded-full">AWS</span>
+                        <span className="px-2.5 py-0.5 bg-blue-400/20 text-blue-600 dark:text-blue-300 text-xs rounded-full">Docker</span>
+                        <span className="px-2.5 py-0.5 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">Kubernetes</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Database Card */}
+                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-green-400/50 transition-all duration-300 hover:shadow-xl">
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">🍃</div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Database</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="px-2.5 py-0.5 bg-green-500/20 text-green-600 dark:text-green-300 text-xs rounded-full">MongoDB</span>
+                        <span className="px-2.5 py-0.5 bg-blue-700/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">PostgreSQL</span>
+                        <span className="px-2.5 py-0.5 bg-red-600/20 text-red-600 dark:text-red-300 text-xs rounded-full">Redis</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Microsoft & Enterprise Card */}
+                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-blue-400/50 transition-all duration-300 hover:shadow-xl">
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">🪟</div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Microsoft & Enterprise</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="px-2.5 py-0.5 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">Azure</span>
+                        <span className="px-2.5 py-0.5 bg-green-600/20 text-green-700 dark:text-green-300 text-xs rounded-full">Office 365</span>
+                        <span className="px-2.5 py-0.5 bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 text-xs rounded-full">Active Directory</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Networking & IT Card */}
+                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl">
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">🌐</div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Networking & IT</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="px-2.5 py-0.5 bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 text-xs rounded-full">Cisco Meraki</span>
+                        <span className="px-2.5 py-0.5 bg-blue-500/20 text-blue-600 dark:text-blue-300 text-xs rounded-full">Fortinet</span>
+                        <span className="px-2.5 py-0.5 bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 text-xs rounded-full">Ubiquiti</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Dev Tools Card */}
+                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-purple-400/50 transition-all duration-300 hover:shadow-xl">
+                  <div className="flex items-start space-x-3">
+                    <div className="text-2xl">🛠️</div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Dev Tools</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="px-2.5 py-0.5 bg-orange-600/20 text-orange-600 dark:text-orange-300 text-xs rounded-full">Git</span>
+                        <span className="px-2.5 py-0.5 bg-purple-600/20 text-purple-600 dark:text-purple-300 text-xs rounded-full">CI/CD</span>
+                        <span className="px-2.5 py-0.5 bg-gray-700/20 text-gray-700 dark:text-gray-300 text-xs rounded-full">Linux</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              
+              {/* Desktop: Arc Layout - All cards in absolute positioning */}
+              <div className="hidden lg:block">
+              
+              {/* Frontend Card - Desktop Arc Version */}
               <div className="absolute top-8 right-0 lg:right-4 xl:right-8 w-64 sm:w-72 lg:w-80 group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-5 border border-white/20 hover:border-blue-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl z-10">
                 <div className="flex items-start space-x-3">
                   <div className="text-3xl">⚛️</div>
@@ -257,8 +408,11 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-purple-400">✨</div>
+                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400">✨</div>
               </div>
+              
+              </div>
+              {/* End Desktop Arc Layout */}
               
             </div>
           </div>
@@ -360,39 +514,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About & Projects Summary Section */}
+      {/* Media & Projects Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              
-              {/* About Summary */}
+
+              {/* Media Carousel */}
               <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-600">
-                <h3 className="text-3xl font-light text-gray-900 dark:text-white mb-6">About Me</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
-                  I&apos;m a passionate Full-Stack Developer and Network Technician with 5+ years of experience building reliable web applications. 
-                  My unique combination of enterprise-level network technical background and hands-on teaching experience gives me 
-                  insights that most developers never get.
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center space-x-3">
-                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Full-Stack Development (React, Node.js, TypeScript)</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Network Technician & Infrastructure</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Teaching & Mentoring (100+ students)</span>
-                  </div>
+                {/*<h4 className="text-3xl font-light text-gray-900 dark:text-white mb-6">In Action</h4> */}
+                
+                {/* Carousel Container */}
+                <div className="relative aspect-video bg-gray-900/30 dark:bg-gray-800/30 rounded-xl overflow-hidden mb-4">
+                  <video
+                    key={currentMedia}
+                    className={`w-full h-full transition-opacity duration-500 ${
+                      isTransitioning ? 'opacity-0' : 'opacity-30'
+                    } ${currentMedia === 0 ? 'object-contain' : 'object-cover'}`}
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src={mediaItems[currentMedia].src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={prevMedia}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200"
+                    aria-label="Previous media"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={nextMedia}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200"
+                    aria-label="Next media"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
-                <Link 
-                  href="/about"
-                  className="inline-flex items-center bg-gray-700 hover:bg-gray-800 dark:bg-gray-200 dark:hover:bg-gray-300 text-white dark:text-gray-900 px-6 py-3 rounded-lg font-normal transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
-                >
-                  Read More About Me →
-                </Link>
+
+                {/* Media Title */}
+                <p className="text-center text-gray-700 dark:text-gray-300 font-light text-lg mb-4">
+                  {mediaItems[currentMedia].title}
+                </p>
+
+                {/* Dots Indicator */}
+                <div className="flex justify-center gap-2">
+                  {mediaItems.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentMedia(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentMedia
+                          ? 'bg-gray-700 dark:bg-gray-300 w-8'
+                          : 'bg-gray-400 dark:bg-gray-600'
+                      }`}
+                      aria-label={`Go to media ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
 
               {/* Projects Summary */}
