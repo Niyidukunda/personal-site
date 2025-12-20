@@ -16,8 +16,7 @@
 
 "use client"; // Enable client-side features for Next.js
 
-import Image from "next/image"; // Optimized image component
-import { SiComptia, SiCisco, SiKubernetes, SiJavascript, SiNodedotjs, SiReact, SiMongodb, SiExpress, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si"; // Tech icons
+import { SiComptia, SiCisco, SiKubernetes, SiReact, SiMongodb, SiExpress, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si"; // Tech icons
 import Layout from "@/components/Layout"; // Page wrapper
 
 export default function About() {

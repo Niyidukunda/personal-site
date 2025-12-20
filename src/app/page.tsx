@@ -205,7 +205,7 @@ export default function Home() {
               {/* Main Image */}
               <div className="relative w-full h-full min-h-[60vh]">
                 <Image
-                  src="/images/2.png"
+                  src="/images/second-col-pic.png"
                   alt="Hero artwork"
                   fill
                   className="object-contain scale-150"
@@ -250,7 +250,7 @@ export default function Home() {
       </div>
 
       {/* Stats & Slogan Section */}
-      <section className="relative py-16 overflow-hidden bg-gray-50 dark:bg-gray-800">
+      <section className="relative py-16 overflow-hidden bg-gray-300 dark:bg-gray-800">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-20 w-32 h-32 bg-orange-400 rounded-full blur-3xl"></div>
