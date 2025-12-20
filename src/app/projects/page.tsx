@@ -185,7 +185,7 @@ export default function Projects() {
     <Layout>
       {/* ===== MAIN PROJECTS SECTION ===== */}
       {/* Full-width container with responsive padding */}
-      <main className="px-4 sm:px-8 lg:px-16 xl:px-24 py-16">
+      <div className="px-4 sm:px-8 lg:px-16 xl:px-24 py-16">
         <div className="max-w-[1600px] mx-auto">
           
           {/* ===== PAGE HEADER ===== */}
@@ -393,7 +393,7 @@ export default function Projects() {
           </div>
 
         </div>
-      </main>
+      </div>
 
 
     </Layout>

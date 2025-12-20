@@ -25,48 +25,9 @@ export default function About() {
     <Layout>
       {/* ===== ABOUT PAGE CONTENT ===== */}
       {/* Main container with responsive padding and minimum height */}
-      <main className="relative px-2 sm:px-4 lg:px-8 py-16 min-h-[600px]">
-        
-        {/* ===== BACKGROUND IMAGE LAYER ===== */}
-        {/* Full-screen background with dual-layer effect for depth */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          {/* Radial gradient mask creates central focus blur effect */}
-          <div className="absolute inset-0 w-full h-full pointer-events-none">
-            
-            {/* Base Layer: Subtle opacity with slight blur */}
-            <Image 
-              src="/images/presentation-at-a-govtech-hackathon-2025.jpg" 
-              alt="Fidel Niyidukunda" 
-              fill
-              style={{ objectFit: 'cover', opacity: 0.15 }}
-              className="blur-[0.5px]"
-            />
-            <Image 
-              src="/images/presentation-at-a-govtech-hackathon-2025.jpg" 
-              alt="Fidel Niyidukunda" 
-              fill
-              style={{ objectFit: 'cover', opacity: 0.35 }}
-              className="[mask-image:radial-gradient(circle_at_center,black_0%,transparent_30%,transparent_100%)]"
-            />
-            
-            {/* ===== PRIVACY OVERLAYS ===== */}
-            {/* Strategic circular overlays to obscure faces in background photo */}
-            
-            {/* Left Overlay: IT Services label */}
-            <div className="absolute left-[0%] top-[8%] w-24 h-24 bg-white/70 rounded-full shadow-lg border-2 border-blue-200 z-20 flex items-center justify-center">
-              <span className="text-blue-600 font-bold text-lg">IT</span>
-            </div>
-            
-            {/* Center Overlay: Edu-Tech Services label */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/80 rounded-full shadow-lg border-2 border-purple-200 z-30 flex items-center justify-center">
-              <span className="text-purple-600 font-bold text-lg">Edu-Tech</span>
-            </div>
-          </div>
-        </div>
-        
-        {/* ===== FOREGROUND CONTENT ===== */}
-        {/* Content layer above background (z-10) */}
-        <div className="relative z-10">
+      <div className="relative px-2 sm:px-4 lg:px-8 py-16 min-h-[600px] bg-white dark:bg-gray-900">
+        {/* ===== CONTENT ===== */}
+        <div className="relative">
           <div className="max-w-6xl mx-auto">
             
             {/* ===== PAGE HEADER ===== */}
@@ -87,7 +48,7 @@ export default function About() {
               {/* Foreground Content */}
               <div className="relative z-10 flex flex-col lg:flex-row w-full gap-6 sm:gap-12 lg:gap-32 justify-between">
                 {/* Professional Summary Section */}
-                <div className="flex-1 min-w-[180px] max-w-full sm:max-w-md lg:max-w-[400px] bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50 rounded-2xl p-4 sm:p-8 shadow-lg border border-blue-100 flex flex-col justify-center backdrop-blur-sm bg-opacity-80 mx-auto relative">
+                <div className="flex-1 min-w-[180px] max-w-full sm:max-w-md lg:max-w-[400px] bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col justify-center mx-auto relative">
                   <h3 className="text-lg sm:text-xl font-light text-blue-700 mb-2 text-center">Professional Summary</h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-2 text-center">
                     I am a versatile technologist with hands-on experience in web development, IT support, and automation. My toolkit spans modern frameworks, databases, and integration methods, alongside infrastructure design, network administration, and server operations. Certified in CompTIA and Cisco, I build scalable, user-focused solutions—from custom applications to cloud optimization and complex network troubleshooting. I thrive in environments that value adaptability, clear communication, and ownership.
@@ -214,7 +175,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

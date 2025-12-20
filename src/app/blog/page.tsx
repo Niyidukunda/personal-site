@@ -62,7 +62,7 @@ export default function Blog() {
   return (
     <Layout>
       {/* ===== BLOG REDIRECT PAGE ===== */}
-      <main className="px-4 sm:px-6 lg:px-8 py-16">
+      <div className="px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-4xl mx-auto text-center">
           
           {/* ===== PAGE HEADER ===== */}
@@ -88,7 +88,7 @@ export default function Blog() {
             <div className="mb-8">
               {/* Clock icon */}
               <div className="flex justify-center mb-4">
-                <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full">
+                <div className="bg-blue-600 text-white p-4 rounded-full">
                   <FaClock className="w-8 h-8" />
                 </div>
               </div>
@@ -106,7 +106,7 @@ export default function Blog() {
                   {/* Animated progress bar showing countdown progress */}
                   <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
                     <div 
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all duration-1000"
+                      className="bg-blue-600 h-2 rounded-full transition-all duration-1000"
                       style={{ width: `${((5 - countdown) / 5) * 100}%` }} // Calculate percentage (0% to 100%)
                     ></div>
                   </div>
@@ -130,7 +130,7 @@ export default function Blog() {
               {/* Primary CTA: Visit blog (manual redirect if auto-redirect failed) */}
               <button
                 onClick={handleManualRedirect}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-normal hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center space-x-2 transform hover:scale-105"
+                className="bg-blue-600 text-white px-8 py-4 rounded-lg font-normal hover:bg-blue-700 transition-all flex items-center justify-center space-x-2 transform hover:scale-105"
               >
                 <FaExternalLinkAlt className="w-5 h-5" />
                 <span>Visit Blog Now</span>
@@ -180,7 +180,7 @@ export default function Blog() {
             </p>
           </div>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

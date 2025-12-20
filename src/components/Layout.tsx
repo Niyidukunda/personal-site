@@ -27,15 +27,11 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    // Full viewport height with warm gradient background
-    <div className="min-h-screen" style={{background: 'linear-gradient(to bottom right, #faf9f7, #f5f4f1, #f0ede8)'}}>
-      {/* Top navigation */}
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <Header />
-      
-      {/* Dynamic page content (passed as children prop) */}
-      {children}
-      
-      {/* Bottom footer */}
+      <main>
+        {children}
+      </main>
       <Footer />
     </div>
   );

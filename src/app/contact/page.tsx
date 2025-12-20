@@ -86,7 +86,7 @@ export default function Contact() {
   return (
     <Layout>
       {/* ===== CONTACT PAGE ===== */}
-      <main className="px-4 sm:px-6 lg:px-8 py-16">
+      <div className="px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-6xl mx-auto">
           
           {/* ===== PAGE HEADER ===== */}
@@ -336,7 +336,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

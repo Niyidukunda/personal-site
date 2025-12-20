@@ -62,22 +62,52 @@ export default function Home() {
 
   return (
     <Layout>
-
       {/* ===== HERO SECTION ===== */}
       {/* Main landing section with name, title, value prop, and CTAs */}
-      <main className="px-4 sm:px-8 lg:px-16 xl:px-24 py-8 relative overflow-hidden">
-        {/* Workbase background image - very low opacity for subtle texture */}
-        <div 
-          className="absolute inset-0 pointer-events-none bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/workbase.jpg')",
-            opacity: 0.05,
-            filter: 'grayscale(30%) blur(0.5px)'
-          }}
-        ></div>
-        
+      <div className="px-4 sm:px-8 lg:px-16 xl:px-24 py-8 relative overflow-hidden bg-white dark:bg-gray-900">
         {/* Container: Max width with centered content */}
         <div className="max-w-[1800px] mx-auto relative z-10">
+          
+          {/* CTA Card - Positioned on far right edge of screen */}
+          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 transform translate-x-1/4 -mr-16 xl:-mr-14">
+            <div className="bg-gradient-to-br from-orange-400/70 to-orange-500/70 dark:from-orange-500/60 dark:to-orange-600/60 p-6 rounded-2xl shadow-2xl border border-orange-400/20 hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105 w-56">
+              {/* Decorative elements */}
+              <div className="absolute top-2 right-2 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+              <div className="absolute bottom-2 left-2 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
+              
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="bg-white/20 backdrop-blur-sm w-14 h-14 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                  <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.5 9.51a4.22 4.22 0 0 1-1.91-1.34A5.77 5.77 0 0 0 12 6a4.72 4.72 0 0 0-5 4 3.23 3.23 0 0 1 3.5-1.49 4.32 4.32 0 0 1 1.91 1.35A5.77 5.77 0 0 0 17 12a4.72 4.72 0 0 0 5-4 3.2 3.2 0 0 1-3.5 1.51zm-13 4.98a4.22 4.22 0 0 1 1.91 1.34A5.77 5.77 0 0 0 12 18a4.72 4.72 0 0 0 5-4 3.23 3.23 0 0 1-3.5 1.49 4.32 4.32 0 0 1-1.91-1.35A5.8 5.8 0 0 0 7 12a4.72 4.72 0 0 0-5 4 3.2 3.2 0 0 1 3.5-1.51z"/>
+                  </svg>
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-white font-semibold text-lg mb-2">Start Your Project</h3>
+                
+                {/* Description */}
+                <p className="text-white/90 text-sm mb-4 leading-relaxed">
+                  Let's turn your ideas into reality with cutting-edge solutions
+                </p>
+                
+                {/* CTA Button */}
+                <Link
+                  href="/contact"
+                  className="block w-full bg-white text-orange-600 text-center py-3 rounded-xl font-medium hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Get Started →
+                </Link>
+                
+                {/* Tech indicators */}
+                <div className="flex items-center justify-center gap-2 mt-4">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  <span className="text-white/80 text-xs">Available Now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           
           {/* Profile Image - Positioned towards right tech arch */}
           {/* <div className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-y-1/2 lg:translate-x-[0%] xl:translate-x-[10%] z-30">
@@ -96,12 +126,12 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 xl:gap-32 items-center min-h-[60vh]">
             
             {/* ===== LEFT COLUMN: Text Content ===== */}
-            <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-6 sm:space-y-8 lg:ml-auto lg:mr-8 xl:mr-12 lg:max-w-xl xl:max-w-2xl flex flex-col items-center lg:items-start text-center lg:text-left">
               
               {/* Name & Professional Title */}
               <div className="space-y-3 sm:space-y-4">
                 {/* Full name with hover animation on each word */}
-                <h2 className="text-2xl sm:text-3xl font-light text-gray-900 dark:text-white tracking-tight flex items-center gap-3">
+                <h2 className="text-2xl sm:text-3xl font-light text-gray-900 dark:text-white tracking-tight flex items-center gap-3 justify-center lg:justify-start">
                   <span className="inline-block transform hover:scale-105 transition-transform duration-300">Fidel</span>
                   <span className="text-orange-500 inline-block transform hover:scale-105 transition-transform duration-300">Niyidukunda</span>
                   {/* Rotating earth icon next to name */}
@@ -170,275 +200,61 @@ export default function Home() {
               </div>
             </div>
             
-            {/* ===== RIGHT COLUMN: Tech Stack Cards in Semi-Arch ===== */}
-            <div className="relative lg:h-[700px]">
-              
-              {/* Profile Image - Mobile Only */}
-              <div className="lg:hidden mb-8">
-                <div className="relative w-56 h-56 sm:w-72 sm:h-72 mx-auto">
-                  <Image
-                    src="/images/workbase.jpg"
-                    alt="Fidel Niyidukunda"
-                    width={288}
-                    height={288}
-                    className="rounded-full object-cover opacity-70 shadow-2xl hover:opacity-90 hover:scale-105 transition-all duration-300 border-4 border-white/20"
-                  />
-                </div>
+            {/* ===== RIGHT COLUMN: Artwork Image ===== */}
+            <div className="relative flex flex-col items-center justify-start h-full lg:mr-auto lg:ml-8 xl:ml-12">
+              {/* Main Image */}
+              <div className="relative w-full h-full min-h-[60vh]">
+                <Image
+                  src="/images/2.png"
+                  alt="Hero artwork"
+                  fill
+                  className="object-contain scale-150"
+                  priority
+                />
               </div>
               
-              {/* Mobile/Tablet: Stacked Cards - Hidden to save space */}
-              <div className="hidden">
-                
-                {/* Frontend Card */}
-                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-blue-400/50 transition-all duration-300 hover:shadow-xl">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">⚛️</div>
-                    <div className="flex-1">
-                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Frontend</h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        <span className="px-2.5 py-0.5 bg-blue-500/20 text-blue-600 dark:text-blue-300 text-xs rounded-full">React</span>
-                        <span className="px-2.5 py-0.5 bg-gray-800/20 text-gray-700 dark:text-gray-300 text-xs rounded-full">Next.js</span>
-                        <span className="px-2.5 py-0.5 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">TypeScript</span>
-                      </div>
-                    </div>
-                  </div>
+              {/* Developer Tools Cards */}
+              <div className="flex justify-center items-center gap-6 w-full max-w-2xl mt-4 pb-8">
+                {/* React Card */}
+                <div className="bg-white dark:bg-gray-800 w-24 h-24 rounded-full shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-110 transition-all duration-300 flex flex-col items-center justify-center">
+                  <div className="text-3xl mb-1">⚛️</div>
+                  <div className="text-xs font-medium text-gray-900 dark:text-white">React</div>
                 </div>
                 
-                {/* Backend Card */}
-                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-green-400/50 transition-all duration-300 hover:shadow-xl">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">🟩</div>
-                    <div className="flex-1">
-                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Backend</h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        <span className="px-2.5 py-0.5 bg-green-600/20 text-green-600 dark:text-green-300 text-xs rounded-full">Node.js</span>
-                        <span className="px-2.5 py-0.5 bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full">Python</span>
-                        <span className="px-2.5 py-0.5 bg-gray-600/20 text-gray-700 dark:text-gray-300 text-xs rounded-full">REST APIs</span>
-                      </div>
-                    </div>
-                  </div>
+                {/* TypeScript Card */}
+                <div className="bg-white dark:bg-gray-800 w-24 h-24 rounded-full shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-110 transition-all duration-300 flex flex-col items-center justify-center">
+                  <div className="text-3xl mb-1">📘</div>
+                  <div className="text-xs font-medium text-gray-900 dark:text-white">TypeScript</div>
                 </div>
                 
-                {/* Cloud & DevOps Card */}
-                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-orange-400/50 transition-all duration-300 hover:shadow-xl">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">☁️</div>
-                    <div className="flex-1">
-                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Cloud & DevOps</h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        <span className="px-2.5 py-0.5 bg-orange-500/20 text-orange-600 dark:text-orange-300 text-xs rounded-full">AWS</span>
-                        <span className="px-2.5 py-0.5 bg-blue-400/20 text-blue-600 dark:text-blue-300 text-xs rounded-full">Docker</span>
-                        <span className="px-2.5 py-0.5 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">Kubernetes</span>
-                      </div>
-                    </div>
-                  </div>
+                {/* Node.js Card */}
+                <div className="bg-white dark:bg-gray-800 w-24 h-24 rounded-full shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-110 transition-all duration-300 flex flex-col items-center justify-center">
+                  <div className="text-3xl mb-1">🟢</div>
+                  <div className="text-xs font-medium text-gray-900 dark:text-white">Node.js</div>
                 </div>
                 
-                {/* Database Card */}
-                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-green-400/50 transition-all duration-300 hover:shadow-xl">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">🍃</div>
-                    <div className="flex-1">
-                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Database</h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        <span className="px-2.5 py-0.5 bg-green-500/20 text-green-600 dark:text-green-300 text-xs rounded-full">MongoDB</span>
-                        <span className="px-2.5 py-0.5 bg-blue-700/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">PostgreSQL</span>
-                        <span className="px-2.5 py-0.5 bg-red-600/20 text-red-600 dark:text-red-300 text-xs rounded-full">Redis</span>
-                      </div>
-                    </div>
-                  </div>
+                {/* Tailwind Card */}
+                {/* Database Card (PostgreSQL) */}
+                <div className="bg-white dark:bg-gray-800 w-24 h-24 rounded-full shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-110 transition-all duration-300 flex flex-col items-center justify-center">
+                  <svg className="w-8 h-8 mb-1 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                    <ellipse cx="12" cy="6" rx="9" ry="3.5" />
+                    <ellipse cx="12" cy="12" rx="9" ry="3.5" />
+                    <ellipse cx="12" cy="18" rx="9" ry="3.5" />
+                  </svg>
+                  <div className="text-xs font-medium text-gray-900 dark:text-white">PostgreSQL</div>
                 </div>
-                
-                {/* Microsoft & Enterprise Card */}
-                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-blue-400/50 transition-all duration-300 hover:shadow-xl">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">🪟</div>
-                    <div className="flex-1">
-                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Microsoft & Enterprise</h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        <span className="px-2.5 py-0.5 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">Azure</span>
-                        <span className="px-2.5 py-0.5 bg-green-600/20 text-green-700 dark:text-green-300 text-xs rounded-full">Office 365</span>
-                        <span className="px-2.5 py-0.5 bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 text-xs rounded-full">Active Directory</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Networking & IT Card */}
-                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">🌐</div>
-                    <div className="flex-1">
-                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Networking & IT</h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        <span className="px-2.5 py-0.5 bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 text-xs rounded-full">Cisco Meraki</span>
-                        <span className="px-2.5 py-0.5 bg-blue-500/20 text-blue-600 dark:text-blue-300 text-xs rounded-full">Fortinet</span>
-                        <span className="px-2.5 py-0.5 bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 text-xs rounded-full">Ubiquiti</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Dev Tools Card */}
-                <div className="w-full group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-purple-400/50 transition-all duration-300 hover:shadow-xl">
-                  <div className="flex items-start space-x-3">
-                    <div className="text-2xl">🛠️</div>
-                    <div className="flex-1">
-                      <h3 className="text-base font-light text-gray-900 dark:text-white mb-2">Dev Tools</h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        <span className="px-2.5 py-0.5 bg-orange-600/20 text-orange-600 dark:text-orange-300 text-xs rounded-full">Git</span>
-                        <span className="px-2.5 py-0.5 bg-purple-600/20 text-purple-600 dark:text-purple-300 text-xs rounded-full">CI/CD</span>
-                        <span className="px-2.5 py-0.5 bg-gray-700/20 text-gray-700 dark:text-gray-300 text-xs rounded-full">Linux</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
               </div>
-              
-              {/* Desktop: Arc Layout - All cards in absolute positioning */}
-              <div className="hidden lg:block">
-              
-              {/* Frontend Card - Desktop Arc Version */}
-              <div className="absolute top-8 right-0 lg:right-4 xl:right-8 w-64 sm:w-72 lg:w-80 group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-5 border border-white/20 hover:border-blue-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl z-10">
-                <div className="flex items-start space-x-3">
-                  <div className="text-3xl">⚛️</div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-light text-gray-900 dark:text-white mb-2">Frontend</h3>
-                    <div className="flex flex-wrap gap-1.5">
-                      <span className="px-2.5 py-0.5 bg-blue-500/20 text-blue-600 dark:text-blue-300 text-xs rounded-full">React</span>
-                      <span className="px-2.5 py-0.5 bg-gray-800/20 text-gray-700 dark:text-gray-300 text-xs rounded-full">Next.js</span>
-                      <span className="px-2.5 py-0.5 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">TypeScript</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-blue-400">✨</div>
-              </div>
-
-              {/* Backend Card - Right Upper (2 o'clock position) */}
-              <div className="absolute top-32 right-0 lg:right-2 xl:right-4 sm:top-40 lg:top-48 w-64 sm:w-72 lg:w-80 group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-5 border border-white/20 hover:border-green-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl z-10">
-                <div className="flex items-start space-x-3">
-                  <div className="text-3xl">🟩</div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-light text-gray-900 dark:text-white mb-2">Backend</h3>
-                    <div className="flex flex-wrap gap-1.5">
-                      <span className="px-2.5 py-0.5 bg-green-600/20 text-green-600 dark:text-green-300 text-xs rounded-full">Node.js</span>
-                      <span className="px-2.5 py-0.5 bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full">Python</span>
-                      <span className="px-2.5 py-0.5 bg-gray-600/20 text-gray-700 dark:text-gray-300 text-xs rounded-full">REST APIs</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-green-400">✨</div>
-              </div>
-
-              {/* Cloud & DevOps Card - Middle Right (3 o'clock position) */}
-              <div className="absolute top-1/2 -translate-y-[60%] right-0 lg:right-0 xl:right-2 w-64 sm:w-72 lg:w-80 group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-5 border border-white/20 hover:border-orange-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl z-10">
-                <div className="flex items-start space-x-3">
-                  <div className="text-3xl">☁️</div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-light text-gray-900 dark:text-white mb-2">Cloud & DevOps</h3>
-                    <div className="flex flex-wrap gap-1.5">
-                      <span className="px-2.5 py-0.5 bg-orange-500/20 text-orange-600 dark:text-orange-300 text-xs rounded-full">AWS</span>
-                      <span className="px-2.5 py-0.5 bg-blue-400/20 text-blue-600 dark:text-blue-300 text-xs rounded-full">Docker</span>
-                      <span className="px-2.5 py-0.5 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">Kubernetes</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-orange-400">✨</div>
-              </div>
-
-              {/* Database Card - Right Lower (4 o'clock position) */}
-              <div className="absolute bottom-56 right-0 lg:right-2 xl:right-4 sm:bottom-64 lg:bottom-72 w-64 sm:w-72 lg:w-80 group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-5 border border-white/20 hover:border-green-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl z-10">
-                <div className="flex items-start space-x-3">
-                  <div className="text-3xl">🍃</div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-light text-gray-900 dark:text-white mb-2">Database</h3>
-                    <div className="flex flex-wrap gap-1.5">
-                      <span className="px-2.5 py-0.5 bg-green-500/20 text-green-600 dark:text-green-300 text-xs rounded-full">MongoDB</span>
-                      <span className="px-2.5 py-0.5 bg-blue-700/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">PostgreSQL</span>
-                      <span className="px-2.5 py-0.5 bg-red-600/20 text-red-600 dark:text-red-300 text-xs rounded-full">Redis</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-green-400">✨</div>
-              </div>
-
-              {/* Microsoft & Enterprise Card - Bottom Right (4:30 o'clock position) */}
-              <div className="absolute bottom-24 right-8 lg:right-12 xl:right-16 sm:bottom-32 lg:bottom-36 w-60 sm:w-64 lg:w-72 group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-blue-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl z-10">
-                <div className="flex items-start space-x-3">
-                  <div className="text-3xl">🪟</div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-light text-gray-900 dark:text-white mb-2">Microsoft & Enterprise</h3>
-                    <div className="flex flex-wrap gap-1.5">
-                      <span className="px-2.5 py-0.5 bg-blue-600/20 text-blue-700 dark:text-blue-300 text-xs rounded-full">Azure</span>
-                      <span className="px-2.5 py-0.5 bg-green-600/20 text-green-700 dark:text-green-300 text-xs rounded-full">Office 365</span>
-                      <span className="px-2.5 py-0.5 bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 text-xs rounded-full">Active Directory</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-blue-400">✨</div>
-              </div>
-
-              {/* Dev Tools Card - Bottom Center-Left (4:30 o'clock position) */}
-              <div className="absolute bottom-4 right-[62%] lg:right-[58%] xl:right-[54%] w-60 sm:w-64 lg:w-72 group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-purple-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl z-10">
-                <div className="flex items-start space-x-3">
-                  <div className="text-3xl">🛠️</div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-light text-gray-900 dark:text-white mb-2">Dev Tools</h3>
-                    <div className="flex flex-wrap gap-1.5">
-                      <span className="px-2.5 py-0.5 bg-orange-600/20 text-orange-600 dark:text-orange-300 text-xs rounded-full">Git</span>
-                      <span className="px-2.5 py-0.5 bg-purple-600/20 text-purple-600 dark:text-purple-300 text-xs rounded-full">CI/CD</span>
-                      <span className="px-2.5 py-0.5 bg-gray-700/20 text-gray-700 dark:text-gray-300 text-xs rounded-full">Linux</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-purple-400">✨</div>
-              </div>
-
-              {/* Networking & IT Card - Bottom Right (5:30 o'clock position) */}
-              <div className="absolute bottom-4 right-[20%] lg:right-[18%] xl:right-[15%] w-60 sm:w-64 lg:w-72 group bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-4 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl z-10">
-                <div className="flex items-start space-x-3">
-                  <div className="text-3xl">🌐</div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-light text-gray-900 dark:text-white mb-2">Networking & IT</h3>
-                    <div className="flex flex-wrap gap-1.5">
-                      <span className="px-2.5 py-0.5 bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 text-xs rounded-full">Cisco Meraki</span>
-                      <span className="px-2.5 py-0.5 bg-blue-500/20 text-blue-600 dark:text-blue-300 text-xs rounded-full">Fortinet</span>
-                      <span className="px-2.5 py-0.5 bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 text-xs rounded-full">Ubiquiti</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400">✨</div>
-              </div>
-              
-              </div>
-              {/* End Desktop Arc Layout */}
-              
             </div>
           </div>
         </div>
-        </main>
+      </div>
 
-
-
-      {/* Dark Section - Stats & Slogan Divider */}
-      <section className="relative py-16 overflow-hidden">
-        {/* Dynamic Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-700/80 via-gray-600/70 to-slate-700/80"></div>
-        
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-10 left-20 w-32 h-32 bg-orange-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-16 right-20 w-40 h-40 bg-blue-400 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-green-400 rounded-full blur-2xl animate-float"></div>
-        </div>
-
-        {/* Floating Geometric Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-40 w-16 h-16 border-2 border-white/30 rotate-45 animate-spin-slow"></div>
-          <div className="absolute bottom-24 left-40 w-12 h-12 bg-orange-400/40 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute top-1/3 left-20 text-4xl text-white/20 animate-pulse">{ }</div>
-          <div className="absolute bottom-1/3 right-24 text-3xl text-white/20 animate-pulse" style={{animationDelay: '2s'}}>&lt;/&gt;</div>
+      {/* Stats & Slogan Section */}
+      <section className="relative py-16 overflow-hidden bg-gray-50 dark:bg-gray-800">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-20 w-32 h-32 bg-orange-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-16 right-20 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 px-4 sm:px-6 lg:px-8">
@@ -449,19 +265,19 @@ export default function Home() {
               {/* Left Column - Text Content */}
               <div className="text-left">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-orange-400"></div>
+                  <div className="w-16 h-0.5 bg-orange-400"></div>
                   <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
                 </div>
 
-                <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
+                <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed font-light">
                   Crafting digital experiences that bridge the gap between 
-                  <span className="text-white font-light"> enterprise infrastructure</span> and 
-                  <span className="text-orange-400 font-light"> modern web development</span>
+                  <span className="text-gray-900 dark:text-white font-medium"> enterprise infrastructure</span> and 
+                  <span className="text-orange-500 font-medium"> modern web development</span>
                 </p>
               </div>
 
               {/* Right Column - Personal Mission Statement Card */}
-              <div className="bg-gradient-to-br from-white/95 to-orange-50/90 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-orange-200/50 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+              <div className="bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-600 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
                 {/* Decorative quote icon */}
                 <div className="absolute top-4 right-6 text-8xl text-orange-200/40 font-serif leading-none">&ldquo;</div>
                 
@@ -657,7 +473,7 @@ export default function Home() {
 
           {/* Contact CTA Section */}
           <section className="max-w-4xl mx-auto text-center mb-20 px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-gray-600 to-gray-700 dark:from-gray-700 dark:to-gray-800 p-12 rounded-3xl shadow-xl text-white">
+            <div className="bg-gray-900 dark:bg-gray-800 p-12 rounded-3xl shadow-xl text-white">
               <h3 className="text-4xl font-light mb-6">
                 Ready to Start Your Project?
               </h3>
@@ -682,7 +498,6 @@ export default function Home() {
             </div>
           </section>
       </section>
-
     </Layout>
   );
 }
