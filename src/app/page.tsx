@@ -88,7 +88,7 @@ export default function Home() {
                 
                 {/* Description */}
                 <p className="text-white/90 text-sm mb-4 leading-relaxed">
-                  Let's turn your ideas into reality with cutting-edge solutions
+                  Let&apos;s turn your ideas into reality with cutting-edge solutions
                 </p>
                 
                 {/* CTA Button */}

@@ -16,7 +16,7 @@
 
 "use client"; // Enable client-side features for Next.js
 
-import { SiComptia, SiCisco, SiKubernetes, SiReact, SiMongodb, SiExpress, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si"; // Tech icons
+import { SiComptia, SiCisco, SiKubernetes } from "react-icons/si"; // Tech icons
 import Layout from "@/components/Layout"; // Page wrapper
 
 export default function About() {
