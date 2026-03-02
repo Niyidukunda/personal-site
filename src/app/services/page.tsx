@@ -1,10 +1,15 @@
+import Section from "@/components/ui/Section";
+
 export default function ServicesPage() {
   return (
-    <div className="space-y-3">
-      <h1 className="text-3xl font-semibold tracking-tight">Services</h1>
-      <p className="text-slate-600">
-        We offer web development, maintenance, and technical support.
-      </p>
-    </div>
+    <Section className="pt-4 md:pt-8">
+      <div className="ds-gap max-w-3xl">
+        <h1 className="ds-h1">Services</h1>
+        <p className="ds-body">
+          We offer web development, maintenance, and technical support for teams
+          that need stable and scalable digital platforms.
+        </p>
+      </div>
+    </Section>
   );
 }

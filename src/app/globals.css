@@ -8,3 +8,37 @@ body {
 body {
   margin: 0;
 }
+
+@layer components {
+  .ds-container {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .ds-section {
+    @apply py-12 md:py-16;
+  }
+
+  .ds-gap {
+    @apply space-y-6;
+  }
+
+  .ds-h1 {
+    @apply text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl;
+  }
+
+  .ds-h2 {
+    @apply text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl;
+  }
+
+  .ds-h3 {
+    @apply text-xl font-semibold tracking-tight text-slate-900;
+  }
+
+  .ds-body {
+    @apply text-base leading-7 text-slate-700;
+  }
+
+  .ds-muted {
+    @apply text-sm leading-6 text-slate-500;
+  }
+}

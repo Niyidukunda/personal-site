@@ -1,8 +1,12 @@
+import Section from "@/components/ui/Section";
+
 export default function ProjectsPage() {
   return (
-    <div className="space-y-3">
-      <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
-      <p className="text-slate-600">Featured project work will be listed here.</p>
-    </div>
+    <Section className="pt-4 md:pt-8">
+      <div className="ds-gap max-w-3xl">
+        <h1 className="ds-h1">Projects</h1>
+        <p className="ds-body">Featured project work will be listed here.</p>
+      </div>
+    </Section>
   );
 }

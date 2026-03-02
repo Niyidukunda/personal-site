@@ -1,10 +1,15 @@
+import Section from "@/components/ui/Section";
+
 export default function AboutPage() {
   return (
-    <div className="space-y-3">
-      <h1 className="text-3xl font-semibold tracking-tight">About</h1>
-      <p className="text-slate-600">
-        Del IT+Web helps teams ship practical websites and internal web tools.
-      </p>
-    </div>
+    <Section className="pt-4 md:pt-8">
+      <div className="ds-gap max-w-3xl">
+        <h1 className="ds-h1">About</h1>
+        <p className="ds-body">
+          Del IT+Web helps teams ship practical websites and internal web tools
+          with an emphasis on clarity, reliability, and long-term maintainability.
+        </p>
+      </div>
+    </Section>
   );
 }
