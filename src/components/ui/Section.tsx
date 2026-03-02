@@ -1,10 +1,12 @@
 import { ReactNode } from "react";
+import Container from "./Container";
 
 type SectionProps = {
   title?: string;
   description?: string;
   children: ReactNode;
   className?: string;
+  contained?: boolean; // NEW
 };
 
 export default function Section({
@@ -12,9 +14,10 @@ export default function Section({
   description,
   children,
   className = "",
+  contained = true, // default behaviour unchanged
 }: SectionProps) {
-  return (
-    <section className={`ds-section ${className}`.trim()}>
+  const content = (
+    <>
       {(title || description) && (
         <div className="ds-gap mb-6">
           {title ? <h2 className="ds-h2">{title}</h2> : null}
@@ -22,6 +25,12 @@ export default function Section({
         </div>
       )}
       {children}
+    </>
+  );
+
+  return (
+    <section className={`ds-section ${className}`.trim()}>
+      {contained ? <Container>{content}</Container> : content}
     </section>
   );
 }
