@@ -8,6 +8,7 @@ type CollapsibleListProps = {
   visibleCount?: number;
   moreLabel?: string;
   lessLabel?: string;
+  ulClassName?: string;
 };
 
 /**
@@ -22,6 +23,7 @@ export default function CollapsibleList({
   visibleCount = 3,
   moreLabel = "Read more",
   lessLabel = "Read less",
+  ulClassName = "list-disc space-y-1.5 pl-5 text-sm text-slate-700",
 }: CollapsibleListProps) {
   const [expanded, setExpanded] = useState(false);
   const listId = useId();
@@ -32,7 +34,7 @@ export default function CollapsibleList({
     <div>
       <ul
         id={listId}
-        className="list-disc space-y-1.5 pl-5 text-sm text-slate-700"
+        className={ulClassName}
       >
         {items.map((item, i) => (
           <li
