@@ -2,9 +2,9 @@ type CapabilitySectionProps = {
   id: string;
   title: string;
   lede: string;
-  covers: string[];
-  outcomes: string[];
-  signals: string[];
+  covers: readonly string[];
+  outcomes: readonly string[];
+  signals: readonly string[];
 };
 
 export default function CapabilitySection({
