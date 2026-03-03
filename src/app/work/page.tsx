@@ -1,3 +1,4 @@
+import ExpandableText from "@/components/ui/ExpandableText";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
@@ -182,29 +183,41 @@ export default function WorkPage() {
                       <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-900">
                         Context
                       </h3>
-                      <p className="ds-body mt-2">{study.context}</p>
+                      <div className="mt-2">
+                        <ExpandableText collapsedLines={4}>
+                          <p className="ds-body">{study.context}</p>
+                        </ExpandableText>
+                      </div>
                     </div>
 
                     <div>
                       <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-900">
                         Technical Architecture
                       </h3>
-                      <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-slate-700">
-                        {study.architecture.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
+                      <div className="mt-2">
+                        <ExpandableText collapsedLines={4}>
+                          <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-700">
+                            {study.architecture.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </ExpandableText>
+                      </div>
                     </div>
 
                     <div>
                       <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-900">
                         What Made It Successful
                       </h3>
-                      <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-slate-700">
-                        {study.success.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
+                      <div className="mt-2">
+                        <ExpandableText collapsedLines={4}>
+                          <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-700">
+                            {study.success.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </ExpandableText>
+                      </div>
                     </div>
                   </div>
                 </div>
