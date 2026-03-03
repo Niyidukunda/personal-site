@@ -1,4 +1,5 @@
 import ExpandableText from "@/components/ui/ExpandableText";
+import CollapsibleList from "@/components/ui/CollapsibleList";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
@@ -214,13 +215,7 @@ export default function WorkPage() {
                       Technical Architecture
                     </h3>
                     <div className="mt-2">
-                      <ExpandableText collapsedLines={4}>
-                        <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-700">
-                          {study.architecture.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                      </ExpandableText>
+                      <CollapsibleList items={study.architecture} visibleCount={3} />
                     </div>
                   </div>
 
@@ -229,13 +224,7 @@ export default function WorkPage() {
                       What Made It Successful
                     </h3>
                     <div className="mt-2">
-                      <ExpandableText collapsedLines={4}>
-                        <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-700">
-                          {study.success.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                      </ExpandableText>
+                      <CollapsibleList items={study.success} visibleCount={3} />
                     </div>
                   </div>
                 </div>
