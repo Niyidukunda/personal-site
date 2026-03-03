@@ -168,74 +168,74 @@ export default function WorkPage() {
 
       <Section className="pt-0">
         <div className="border-y border-slate-200">
-          {caseStudies.map((study, index) => (
-            <article id={study.id} key={study.title} className="scroll-mt-24 py-12 md:py-16">
-              <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-                <div className={index % 2 === 1 ? "lg:order-2" : ""}>
+          {caseStudies.map((study) => (
+            <article id={study.id} key={study.title} className="relative scroll-mt-24 py-12 md:py-16">
+              <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
+                <div className="lg:sticky lg:top-24 lg:self-start">
                   <div className="space-y-4">
                     <h2 className="ds-h2">{study.title}</h2>
                     <p className="ds-body">{study.positioning}</p>
                     <p className="text-sm font-medium text-slate-800">Outcome: {study.outcome}</p>
                   </div>
 
-                  <div className="mt-8 space-y-6">
-                    <div>
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-900">
-                        Context
+                  <div className="mt-6">
+                    <div className="border border-slate-200/80 bg-slate-50/40 p-5">
+                      <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
+                        {study.snapshotTitle}
                       </h3>
-                      <div className="mt-2">
-                        <ExpandableText collapsedLines={4}>
-                          <p className="ds-body">{study.context}</p>
-                        </ExpandableText>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-900">
-                        Technical Architecture
-                      </h3>
-                      <div className="mt-2">
-                        <ExpandableText collapsedLines={4}>
-                          <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-700">
-                            {study.architecture.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        </ExpandableText>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-900">
-                        What Made It Successful
-                      </h3>
-                      <div className="mt-2">
-                        <ExpandableText collapsedLines={4}>
-                          <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-700">
-                            {study.success.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        </ExpandableText>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {study.snapshotPoints.map((point) => (
+                          <span
+                            key={point}
+                            className="border border-slate-200/80 bg-white px-2 py-0.5 text-[11px] font-medium text-slate-700"
+                          >
+                            {point}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="h-full border border-slate-200/80 bg-slate-50/40 p-5">
-                    <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
-                      {study.snapshotTitle}
+                <div className="space-y-6 lg:border-l lg:border-slate-200/60 lg:pl-8">
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-900">
+                      Context
                     </h3>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {study.snapshotPoints.map((point) => (
-                        <span
-                          key={point}
-                          className="border border-slate-200/80 bg-white px-2 py-0.5 text-[11px] font-medium text-slate-700"
-                        >
-                          {point}
-                        </span>
-                      ))}
+                    <div className="mt-2">
+                      <ExpandableText collapsedLines={4}>
+                        <p className="ds-body">{study.context}</p>
+                      </ExpandableText>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-900">
+                      Technical Architecture
+                    </h3>
+                    <div className="mt-2">
+                      <ExpandableText collapsedLines={4}>
+                        <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-700">
+                          {study.architecture.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </ExpandableText>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-900">
+                      What Made It Successful
+                    </h3>
+                    <div className="mt-2">
+                      <ExpandableText collapsedLines={4}>
+                        <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-700">
+                          {study.success.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </ExpandableText>
                     </div>
                   </div>
                 </div>

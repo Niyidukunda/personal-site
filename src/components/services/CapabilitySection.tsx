@@ -18,13 +18,14 @@ export default function CapabilitySection({
   signals,
 }: CapabilitySectionProps) {
   return (
-    <article id={id} className="scroll-mt-24 py-10 md:py-12">
-      <div className="grid gap-8 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:gap-10">
-        <div className="space-y-4 md:pr-8 md:border-r md:border-slate-200/80">
+    <article id={id} className="relative scroll-mt-24 py-10 md:py-12">
+      <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
+        <div className="space-y-4 lg:sticky lg:top-24 lg:self-start">
           <h2 className="ds-h2">{title}</h2>
           <p className="ds-body">{lede}</p>
         </div>
 
+        <div className="lg:border-l lg:border-slate-200/60 lg:pl-8">
         <ExpandableText collapsedLines={4} moreLabel="Expand detail" lessLabel="Collapse">
           <div className="space-y-6">
             <section className="space-y-2">
@@ -66,6 +67,7 @@ export default function CapabilitySection({
             </section>
           </div>
         </ExpandableText>
+        </div>
       </div>
     </article>
   );
