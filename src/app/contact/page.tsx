@@ -1,25 +1,8 @@
 import ContactForm from "@/components/contact/ContactForm";
+import FastLaneForm from "@/components/contact/FastLaneForm";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
-
-const nextSteps = [
-  {
-    step: "01",
-    title: "Submit your brief",
-    detail: "Complete the form and send the pre-filled email. Takes under two minutes.",
-  },
-  {
-    step: "02",
-    title: "Scoping call",
-    detail: "I'll review your context and reply within one business day to arrange a short call.",
-  },
-  {
-    step: "03",
-    title: "Structured proposal",
-    detail: "A clear scope, approach, and engagement outline — no generic decks.",
-  },
-] as const;
 
 export default function ContactPage() {
   return (
@@ -29,64 +12,63 @@ export default function ContactPage() {
         <div className="ds-gap max-w-3xl">
           <h1 className="ds-h1">Contact</h1>
           <p className="ds-muted md:text-base">
-            Discuss your architecture. Start with a brief description of what
-            you&rsquo;re building, where it stands, and what you need to move forward.
+            Start with a quick message. Add detail if you want a faster response.
           </p>
         </div>
       </Section>
 
-      {/* What happens next */}
+      {/* Fast lane */}
       <Section className="pt-0">
         <div className="border-t border-slate-200 pt-8">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
-            What happens next
-          </h2>
-          <ol className="mt-5 grid gap-5 sm:grid-cols-3" aria-label="Process steps">
-            {nextSteps.map((item) => (
-              <li key={item.step} className="space-y-1.5">
-                <span className="text-xs font-semibold tabular-nums text-slate-400">
-                  {item.step}
-                </span>
-                <p className="text-sm font-semibold text-slate-900">{item.title}</p>
-                <p className="text-sm leading-6 text-slate-600">{item.detail}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </Section>
-
-      {/* Form */}
-      <Section className="pt-0">
-        <div className="border-t border-slate-200 pt-8">
-          <div className="max-w-2xl">
-            <h2 className="ds-h3">Start the conversation</h2>
-            <p className="ds-muted mt-2">
-              All fields marked <span aria-hidden="true">*</span> are required. The
-              form opens a pre-filled email draft — review it and send.
+          <div className="max-w-2xl rounded-lg border border-slate-200 bg-slate-50/60 px-6 py-6 md:px-8 md:py-7">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
+              Fast lane
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-slate-700">
+              Send a quick note. I&rsquo;ll reply within one business day.{" "}
+              <a
+                href="mailto:hello@delitweb.com"
+                className="font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
+              >
+                hello@delitweb.com
+              </a>
             </p>
-            <div className="mt-6">
-              <ContactForm />
-            </div>
+            <FastLaneForm />
           </div>
         </div>
       </Section>
 
-      {/* Fallback */}
+      {/* Structured enquiry — optional detail */}
       <Section className="pt-0">
         <div className="border-t border-slate-200 pt-8 max-w-2xl">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
-            Prefer email?
-          </h2>
-          <p className="mt-3 text-sm leading-6 text-slate-700">
-            Write directly to{" "}
-            <a
-              href="mailto:hello@delitweb.com"
-              className="font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
-            >
-              hello@delitweb.com
-            </a>
-            . I respond to substantive architecture enquiries within one business day.
-          </p>
+          <details className="group">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm">
+              <div>
+                <h2 className="ds-h3">Add details{" "}
+                  <span className="text-base font-normal text-slate-500">(optional)</span>
+                </h2>
+                <p className="mt-1 text-sm leading-6 text-slate-500">
+                  Sharing context about your project helps me prepare a more relevant, faster response.
+                </p>
+              </div>
+              <span
+                aria-hidden="true"
+                className="flex-shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-180"
+              >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </summary>
+
+            <div className="mt-6">
+              <p className="text-sm leading-6 text-slate-500 mb-6">
+                Fields marked <span aria-hidden="true">*</span> are required. The form
+                opens a pre-filled email draft — review it and send.
+              </p>
+              <ContactForm />
+            </div>
+          </details>
         </div>
       </Section>
 

@@ -41,7 +41,7 @@ export default function ContactForm() {
     e.preventDefault();
 
     const subject = encodeURIComponent(
-      `Architecture enquiry – ${form.name}${form.company ? ` (${form.company})` : ""}`,
+      `Enquiry – ${form.name}${form.company ? ` (${form.company})` : ""}`,
     );
 
     const body = encodeURIComponent(
@@ -148,7 +148,7 @@ export default function ContactForm() {
           rows={4}
           value={form.goal}
           onChange={set("goal")}
-          placeholder="Describe the problem, platform, or outcome you're working toward."
+          placeholder="Describe the problem, goal, or outcome you're working toward."
           className={`${inputClass} resize-y`}
         />
       </div>
