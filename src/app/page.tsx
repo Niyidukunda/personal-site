@@ -29,7 +29,7 @@ export default function HomePage() {
               </div>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button href="/contact" variant="primary">
-                  Book a consult
+                  Discuss your architecture
                 </Button>
                 <Button href="/work" variant="secondary">
                   View work

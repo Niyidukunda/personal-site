@@ -29,7 +29,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 
 export default function Button(props: ButtonProps) {
   const { children, variant = "primary", className = "" } = props;
-  const classes = `inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${variantClasses[variant]} ${className}`.trim();
+  const classes = `inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-all duration-150 ease-out hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 active:shadow-none motion-reduce:transition-none motion-reduce:transform-none ${variantClasses[variant]} ${className}`.trim();
 
   if ("href" in props && props.href) {
     return (

@@ -61,7 +61,7 @@ export default function Header() {
               variant="secondary"
               className="border-slate-900 bg-slate-900 text-slate-50 transition-colors hover:border-slate-300 hover:bg-white hover:text-slate-900"
             >
-              Book a consult
+              Discuss your architecture
             </Button>
           </div>
 
@@ -106,7 +106,7 @@ export default function Header() {
                 variant="secondary"
                 className="w-full border-slate-900 bg-slate-900 text-slate-50 transition-colors hover:border-slate-300 hover:bg-white hover:text-slate-900"
               >
-                Book a consult
+                Discuss your architecture
               </Button>
             </div>
           </div>
