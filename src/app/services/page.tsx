@@ -1,4 +1,5 @@
 import CapabilitySection from "@/components/services/CapabilitySection";
+import ServicesNav from "@/components/services/ServicesNav";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
@@ -151,17 +152,7 @@ export default function ServicesPage() {
             Capability depth across strategy, architecture, platform delivery, and operational reliability.
           </p>
           <div className="border-t border-slate-200 pt-6">
-            <nav aria-label="Services capabilities" className="flex flex-wrap gap-x-6 gap-y-3">
-              {capabilities.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="group relative inline-flex rounded-sm text-sm font-medium tracking-[0.02em] text-slate-600 transition-colors hover:text-slate-900 focus-visible:text-slate-900 focus-visible:outline-none after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-slate-900 after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100 focus-visible:after:scale-x-100"
-                >
-                  {item.title}
-                </a>
-              ))}
-            </nav>
+            <ServicesNav items={capabilities} />
           </div>
         </div>
       </Section>
