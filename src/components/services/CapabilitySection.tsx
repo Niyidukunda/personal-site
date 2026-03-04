@@ -37,14 +37,14 @@ export default function CapabilitySection({
             <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
               What it covers
             </h3>
-            <CollapsibleList items={covers} visibleCount={3} />
+            <CollapsibleList items={covers} visibleCount={3} moreLabel="Show more coverage" lessLabel="Show less" />
           </section>
 
           <section className="space-y-2">
             <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
               Typical outcomes
             </h3>
-            <CollapsibleList items={outcomes} visibleCount={2} />
+            <CollapsibleList items={outcomes} visibleCount={2} moreLabel="Show more outcomes" lessLabel="Show less" />
           </section>
 
           <section className="space-y-2">
@@ -54,6 +54,8 @@ export default function CapabilitySection({
             <CollapsibleList
               items={signalItems}
               visibleCount={3}
+              moreLabel="Show more signals"
+              lessLabel="Show less"
               ulClassName="space-y-1.5 pl-1 text-sm text-slate-700"
             />
           </section>
