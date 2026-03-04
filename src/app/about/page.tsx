@@ -1,180 +1,158 @@
-/**
- * ABOUT PAGE
- * 
- * Purpose: Detailed professional profile with bio, services, certifications, and experience
- * 
- * Main Sections:
- * 1. Background Image - Hackathon presentation photo with blur overlay
- * 2. Circular Overlays - Strategic placement to obscure faces (privacy)
- * 3. Professional Summary - Experience and expertise overview
- * 4. Services - IT Support, Web Development, Educational Technology
- * 5. Certifications Grid - CCNA, KCNA, Network+, Security+, A+
- * 6. Professional Journey Timeline - Career progression
- * 
- * Responsive Design: Flex/grid layout optimized for mobile, tablet, desktop
- */
+import Button from "@/components/ui/Button";
+import Container from "@/components/ui/Container";
+import Section from "@/components/ui/Section";
 
-"use client"; // Enable client-side features for Next.js
+const proofSignals = [
+  {
+    heading: "What I optimize for",
+    items: [
+      "Architecture that supports change without structural rework",
+      "Release processes with low friction and clear rollback paths",
+      "Service boundaries that match operational and team realities",
+      "Security and compliance controls embedded in delivery, not added after",
+    ],
+  },
+  {
+    heading: "Tooling & stack",
+    items: [
+      "Next.js, React, TypeScript for application layer",
+      "NestJS, FastAPI for backend services and API boundaries",
+      "Docker, GitHub Actions, AWS EC2/S3 for platform and delivery",
+      "Keycloak for identity; Nginx for routing and proxy configuration",
+    ],
+  },
+  {
+    heading: "Delivery outputs",
+    items: [
+      "Architecture blueprints and decision records",
+      "Working software with documented deployment and runbook",
+      "CI/CD pipelines with staged environment separation",
+      "Handover-ready codebases with maintainability as a first-class concern",
+    ],
+  },
+] as const;
 
-import { SiComptia, SiCisco, SiKubernetes } from "react-icons/si"; // Tech icons
-import Layout from "@/components/Layout"; // Page wrapper
+const timeline = [
+  {
+    label: "Now",
+    detail:
+      "Architecture-led consultancy — full-stack builds, platform delivery, and identity/security integrations for product and infrastructure teams.",
+  },
+  {
+    label: "Recent",
+    detail:
+      "Delivered multi-service compliance platforms, design-led marketing sites, and cloud infrastructure automation across AWS and containerized environments.",
+  },
+  {
+    label: "Foundations",
+    detail:
+      "Grounded in practical systems thinking: networking, secure deployment, and application design at the boundary of product and infrastructure.",
+  },
+] as const;
 
-export default function About() {
+export default function AboutPage() {
   return (
-    <Layout>
-      {/* ===== ABOUT PAGE CONTENT ===== */}
-      {/* Main container with responsive padding and minimum height */}
-      <div className="relative px-2 sm:px-4 lg:px-8 py-16 min-h-[600px] bg-white dark:bg-gray-900">
-        {/* ===== CONTENT ===== */}
-        <div className="relative">
-          <div className="max-w-6xl mx-auto">
-            
-            {/* ===== PAGE HEADER ===== */}
-            <div className="text-center mb-16">
-              <h1 className="text-5xl md:text-6xl font-light text-slate-800 mb-6">About Me</h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Full-Stack Developer & Network Technician with a passion for building reliable applications and teaching others to code.
-              </p>
-            </div>
-            
-            {/* ===== PROFESSIONAL OVERVIEW SECTION ===== */}
-            {/* Responsive flex layout: Stacks on mobile, side-by-side on desktop */}
-            <div className="relative flex flex-col lg:flex-row items-stretch justify-between gap-6 sm:gap-12 lg:gap-32 mb-12 mx-auto max-w-full sm:max-w-2xl lg:max-w-6xl min-h-[320px] px-2">
-              {/* Row-specific Background Overlay for extra contrast */}
-              <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-                <div className="w-full h-full bg-white/10" />
+    <div>
+      {/* Hero */}
+      <Section className="pt-6 md:pt-10">
+        <div className="ds-gap max-w-3xl">
+          <h1 className="ds-h1">About</h1>
+          <p className="ds-muted md:text-base">
+            Independent consultancy focused on architecture-led delivery across
+            full-stack engineering, cloud platform, and operational reliability.
+          </p>
+        </div>
+      </Section>
+
+      {/* Authority block */}
+      <Section className="pt-0">
+        <div className="max-w-3xl space-y-5 border-t border-slate-200 pt-8">
+          <p className="ds-body">
+            Del IT+Web works at the boundary of product and infrastructure — designing
+            systems where application architecture, delivery process, and operational
+            controls are treated as a unified concern rather than separate workstreams.
+          </p>
+          <p className="ds-body">
+            Engagements are structured around outcomes: clear scope, defined
+            interfaces, staged delivery, and a codebase or platform that the team can
+            operate confidently after handover. The work is architecture-first and
+            implementation-complete.
+          </p>
+        </div>
+      </Section>
+
+      {/* Proof signals */}
+      <Section className="pt-0">
+        <div className="border-t border-slate-200 pt-8">
+          <div className="grid gap-8 md:grid-cols-3">
+            {proofSignals.map((group, i) => (
+              <div
+                key={group.heading}
+                className={[
+                  "space-y-3",
+                  i > 0 ? "md:border-l md:border-slate-200/60 md:pl-8" : "",
+                ].join(" ")}
+              >
+                <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
+                  {group.heading}
+                </h2>
+                <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-700">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </div>
-              {/* Foreground Content */}
-              <div className="relative z-10 flex flex-col lg:flex-row w-full gap-6 sm:gap-12 lg:gap-32 justify-between">
-                {/* Professional Summary Section */}
-                <div className="flex-1 min-w-[180px] max-w-full sm:max-w-md lg:max-w-[400px] bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-8 shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col justify-center mx-auto relative">
-                  <h3 className="text-lg sm:text-xl font-light text-blue-700 mb-2 text-center">Professional Summary</h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-2 text-center">
-                    I am a versatile technologist with hands-on experience in web development, IT support, and automation. My toolkit spans modern frameworks, databases, and integration methods, alongside infrastructure design, network administration, and server operations. Certified in CompTIA and Cisco, I build scalable, user-focused solutions—from custom applications to cloud optimization and complex network troubleshooting. I thrive in environments that value adaptability, clear communication, and ownership.
-                  </p>
-                  <div className="flex flex-col items-center mt-6 gap-2">
-                    <a href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-normal px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow transition-all duration-200">Contact Me</a>
-                  </div>
-                </div>
-                {/* Services Section */}
-                <div className="flex-[1.3] min-w-[180px] max-w-full sm:max-w-md lg:max-w-[480px] bg-white rounded-2xl p-4 sm:p-12 shadow-xl border border-orange-100 flex flex-col justify-center backdrop-blur-sm bg-opacity-80 mx-auto relative">
-                  <h3 className="text-lg sm:text-2xl font-light text-orange-600 mb-4 text-center">Services</h3>
-                  <div className="space-y-4 sm:space-y-6">
-                    <div>
-                      <h4 className="font-normal text-sm sm:text-base mb-1">IT Support</h4>
-                      <p className="text-gray-700 text-xs sm:text-sm">Networking, installation, troubleshooting, and repairs for networks and devices.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-normal text-sm sm:text-base mb-1">Web Development</h4>
-                      <p className="text-gray-700 text-xs sm:text-sm">Custom websites, web apps, and related digital solutions for businesses and individuals.</p>
-                    </div>
-                    <div>
-                      <h4 className="font-normal text-sm sm:text-base mb-1">Educational Technology</h4>
-                      <p className="text-gray-700 text-xs sm:text-sm">CMS design, online learning platforms, and technology for education and training.</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center mt-6 gap-2">
-                    <a href="https://wa.me/yourwhatsappphonenumber" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-500 hover:bg-green-600 text-white font-normal px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow transition-all duration-200">WhatsApp Me</a>
-                  </div>
-                  {/* Overlay moved to top right of services section */}
-                  <div className="absolute right-[-16px] sm:right-[-32px] top-[-16px] sm:top-[-32px] w-16 h-16 sm:w-24 sm:h-24 bg-white/80 rounded-full shadow-lg border-2 border-purple-200 z-30 flex items-center justify-center">
-                    <span className="text-purple-600 font-bold text-xs sm:text-lg">Edu-Tech</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Certifications */}
-            <div className="mb-20">
-              <h3 className="text-3xl font-light text-gray-800 text-center mb-12">Professional Certifications</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                
-                {/* CCNA */}
-                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="bg-blue-600 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <SiCisco className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-lg font-normal text-gray-800 mb-2">CCNA</h4>
-                  <p className="text-gray-600 text-sm">Cisco Certified Network Associate</p>
-                </div>
-
-                {/* KCNA */}
-                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="bg-blue-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <SiKubernetes className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-lg font-normal text-gray-800 mb-2">KCNA</h4>
-                  <p className="text-gray-600 text-sm">Kubernetes & Cloud Native Associate</p>
-                </div>
-
-                {/* Network+ */}
-                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="bg-red-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <SiComptia className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-lg font-normal text-gray-800 mb-2">Network+</h4>
-                  <p className="text-gray-600 text-sm">CompTIA Network+</p>
-                </div>
-
-                {/* Security+ */}
-                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="bg-red-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <SiComptia className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-lg font-normal text-gray-800 mb-2">Security+</h4>
-                  <p className="text-gray-600 text-sm">CompTIA Security+</p>
-                </div>
-
-                {/* A+ */}
-                <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="bg-red-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <SiComptia className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-lg font-normal text-gray-800 mb-2">A+</h4>
-                  <p className="text-gray-600 text-sm">CompTIA A+</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Experience & Background */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl">
-              <h3 className="text-3xl font-light text-gray-800 mb-8 text-center">Professional Journey</h3>
-              
-              <div className="space-y-8">
-                <div className="border-l-4 border-blue-600 pl-8">
-                  <h4 className="text-xl font-normal text-gray-800 mb-2">Full-Stack Developer</h4>
-                  <p className="text-blue-600 font-normal mb-3">Present</p>
-                  <p className="text-gray-600 leading-relaxed">
-                    Developing robust web applications with modern JavaScript frameworks, 
-                    focusing on user experience and performance optimization. Specializing in 
-                    React, Next.js, and Node.js applications with MongoDB integration.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-green-600 pl-8">
-                  <h4 className="text-xl font-normal text-gray-800 mb-2">Network Technician</h4>
-                  <p className="text-green-600 font-normal mb-3">2021 - Present</p>
-                  <p className="text-gray-600 leading-relaxed">
-                    Managing and maintaining enterprise network infrastructure, 
-                    implementing security protocols, and ensuring optimal network performance. 
-                    Certified in Cisco and CompTIA technologies.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-purple-600 pl-8">
-                  <h4 className="text-xl font-normal text-gray-800 mb-2">Tech Educator</h4>
-                  <p className="text-purple-600 font-normal mb-3">2020 - Present</p>
-                  <p className="text-gray-600 leading-relaxed">
-                    Creating educational content and tutorials to help others learn 
-                    programming and technology. Passionate about sharing knowledge 
-                    and building the next generation of developers.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
-    </Layout>
+      </Section>
+
+      {/* Micro timeline */}
+      <Section className="pt-0">
+        <div className="border-t border-slate-200 pt-8">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
+            Timeline
+          </h2>
+          <dl className="mt-5 space-y-4">
+            {timeline.map((entry) => (
+              <div key={entry.label} className="grid gap-1 sm:grid-cols-[6rem_1fr]">
+                <dt className="text-sm font-semibold text-slate-900">{entry.label}</dt>
+                <dd className="text-sm leading-6 text-slate-700">{entry.detail}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </Section>
+
+      {/* Final CTA band */}
+      <Section contained={false} className="bg-slate-900 py-16 md:py-20">
+        <Container>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
+              Ready to move from planning to delivery?
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-200">
+              Engagements start with a scoping conversation — no commitment required.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button
+                href="/contact"
+                variant="secondary"
+                className="border-white bg-white text-slate-900 transition-colors hover:bg-slate-100 hover:text-slate-900"
+              >
+                Start a conversation
+              </Button>
+              <Button
+                href="/work"
+                variant="secondary"
+                className="border-slate-300 bg-transparent text-slate-100 transition-colors hover:bg-slate-800/20 hover:text-white"
+              >
+                View selected work
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </div>
   );
 }
