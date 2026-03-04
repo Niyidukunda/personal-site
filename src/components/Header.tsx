@@ -58,8 +58,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Button
               href="/contact"
-              variant="secondary"
-              className="border-slate-900 bg-slate-900 text-slate-50 transition-colors hover:border-slate-300 hover:bg-white hover:text-slate-900"
+              variant="primary"
             >
               Discuss your architecture
             </Button>
@@ -103,8 +102,8 @@ export default function Header() {
             <div className="pt-2" onClick={() => setMenuOpen(false)}>
               <Button
                 href="/contact"
-                variant="secondary"
-                className="w-full border-slate-900 bg-slate-900 text-slate-50 transition-colors hover:border-slate-300 hover:bg-white hover:text-slate-900"
+                variant="primary"
+                className="w-full"
               >
                 Discuss your architecture
               </Button>
