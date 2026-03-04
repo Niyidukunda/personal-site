@@ -140,7 +140,7 @@ export default function AboutPage() {
                 variant="secondary"
                 className="border-white bg-white text-slate-900 transition-colors hover:bg-slate-100 hover:text-slate-900"
               >
-                Discuss your architecture
+                Start a conversation
               </Button>
               <Button
                 href="/work"

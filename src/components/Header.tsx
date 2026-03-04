@@ -60,7 +60,7 @@ export default function Header() {
               href="/contact"
               variant="primary"
             >
-              Discuss your architecture
+              Start a conversation
             </Button>
           </div>
 
@@ -105,7 +105,7 @@ export default function Header() {
                 variant="primary"
                 className="w-full"
               >
-                Discuss your architecture
+                Start a conversation
               </Button>
             </div>
           </div>
