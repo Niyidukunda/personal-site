@@ -87,6 +87,8 @@ export default function ContactPage() {
                 href="/work"
                 variant="secondary"
                 className="border-white bg-white text-slate-900 transition-colors hover:bg-slate-100 hover:text-slate-900"
+                analyticsEventName="cta_click"
+                analyticsParams={{ location: "cta_band", label: "primary" }}
               >
                 View selected work
               </Button>
@@ -94,6 +96,8 @@ export default function ContactPage() {
                 href="/services"
                 variant="secondary"
                 className="border-slate-300 bg-transparent text-slate-100 transition-colors hover:bg-slate-800/20 hover:text-white"
+                analyticsEventName="cta_click"
+                analyticsParams={{ location: "cta_band", label: "secondary" }}
               >
                 Explore services
               </Button>

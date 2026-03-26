@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type NavItem = {
   id: string;
@@ -61,6 +62,9 @@ export default function ServicesNav({ items }: ServicesNavProps) {
             key={item.id}
             href={`#${item.id}`}
             aria-current={isActive ? "true" : undefined}
+            onClick={() => {
+              trackEvent("services_anchor_click", { target: item.id });
+            }}
             className={[
               "group relative inline-flex rounded-sm text-sm font-medium tracking-[0.02em] transition-colors",
               "focus-visible:text-slate-900 focus-visible:outline-none",
