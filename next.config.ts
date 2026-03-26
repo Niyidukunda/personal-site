@@ -12,11 +12,11 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // Next.js requires these for development
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms", // Next.js requires these for development
               "style-src 'self' 'unsafe-inline'", // Required for Tailwind CSS
-              "img-src 'self' data: https:", // Allow images from self, data URLs, and HTTPS
+              "img-src 'self' data: https: https://www.google-analytics.com", // Allow images from self, data URLs, and HTTPS
               "font-src 'self' data:",
-              "connect-src 'self' https:", // Allow API calls to HTTPS endpoints
+              "connect-src 'self' https: https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms", // Allow API calls to HTTPS endpoints
               "frame-ancestors 'none'", // Prevent embedding in iframes
               "form-action 'self'", // Only allow forms to submit to same origin
               "base-uri 'self'", // Restrict base URI

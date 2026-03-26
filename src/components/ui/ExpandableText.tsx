@@ -2,6 +2,7 @@
 
 import { useId, useState } from "react";
 import type { ReactNode } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type ExpandableTextProps = {
   children: ReactNode;
@@ -47,7 +48,12 @@ export default function ExpandableText({
         type="button"
         aria-expanded={expanded}
         aria-controls={contentId}
-        onClick={() => setExpanded((v) => !v)}
+        onClick={() => {
+          if (!expanded) {
+            trackEvent("expand_text", { component: "ExpandableText" });
+          }
+          setExpanded((v) => !v);
+        }}
         className="mt-3 rounded-sm text-sm font-medium text-slate-500 transition-colors hover:text-slate-900 focus-visible:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2"
       >
         {expanded ? lessLabel : moreLabel}

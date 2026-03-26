@@ -28,7 +28,12 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button href="/contact" variant="primary">
+                <Button
+                  href="/contact"
+                  variant="primary"
+                  analyticsEventName="cta_click"
+                  analyticsParams={{ location: "hero", label: "primary" }}
+                >
                   Start a conversation
                 </Button>
                 <Button href="/work" variant="secondary">
@@ -211,6 +216,8 @@ export default function HomePage() {
                 href="/contact"
                 variant="secondary"
                 className="bg-white text-slate-900 border-white transition-colors hover:bg-slate-100 hover:text-slate-900"
+                analyticsEventName="cta_click"
+                analyticsParams={{ location: "cta_band", label: "primary" }}
               >
                 Start a conversation
               </Button>
@@ -218,6 +225,8 @@ export default function HomePage() {
                 href="/services"
                 variant="secondary"
                 className="!border-slate-300 !bg-transparent !text-slate-100 transition-colors hover:!bg-slate-800/20 hover:!text-white"
+                analyticsEventName="cta_click"
+                analyticsParams={{ location: "cta_band", label: "secondary" }}
               >
                 View services
               </Button>

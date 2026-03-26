@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type FormState = {
   name: string;
@@ -61,6 +62,7 @@ export default function ContactForm() {
         .join("\n"),
     );
 
+    trackEvent("contact_structured_open_email");
     window.location.href = `mailto:hello@delitweb.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };

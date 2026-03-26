@@ -59,6 +59,8 @@ export default function Header() {
             <Button
               href="/contact"
               variant="primary"
+              analyticsEventName="cta_click"
+              analyticsParams={{ location: "header", label: "primary" }}
             >
               Start a conversation
             </Button>
@@ -104,6 +106,8 @@ export default function Header() {
                 href="/contact"
                 variant="primary"
                 className="w-full"
+                analyticsEventName="cta_click"
+                analyticsParams={{ location: "header", label: "primary" }}
               >
                 Start a conversation
               </Button>
