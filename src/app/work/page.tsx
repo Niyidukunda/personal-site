@@ -223,7 +223,7 @@ export default function WorkPage() {
                 </div>
 
                 <div className="space-y-8 lg:border-l lg:border-slate-200/60 lg:pl-8">
-                  {study.proofImage ? (
+                  {"proofImage" in study && study.proofImage ? (
                     <div className="overflow-hidden rounded-2xl border border-neutral-200/70 bg-white p-2 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
                       <div className="overflow-hidden rounded-xl border border-neutral-200/70 bg-white">
                         <Image
