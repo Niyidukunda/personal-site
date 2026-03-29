@@ -34,9 +34,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (sanity check)
-        run: npm run build
-
       - name: Validate Vercel credentials
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -55,6 +52,9 @@ jobs:
             echo "Missing GitHub secret: VERCEL_PROJECT_ID"
             exit 1
           fi
+
+      - name: Build (sanity check)
+        run: npm run build
 
       - name: Deploy Preview to Vercel
         id: vercel-preview
@@ -101,9 +101,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (sanity check)
-        run: npm run build
-
       - name: Validate Vercel credentials
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -122,6 +119,9 @@ jobs:
             echo "Missing GitHub secret: VERCEL_PROJECT_ID"
             exit 1
           fi
+
+      - name: Build (sanity check)
+        run: npm run build
 
       - name: Deploy Production to Vercel
         env:
