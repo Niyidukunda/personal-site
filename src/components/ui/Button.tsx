@@ -41,7 +41,7 @@ export default function Button(props: ButtonProps) {
     analyticsEventName,
     analyticsParams,
   } = props;
-  const classes = `inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-all duration-150 ease-out hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 active:shadow-none motion-reduce:transition-none motion-reduce:transform-none ${variantClasses[variant]} ${className}`.trim();
+  const classes = `inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-all duration-150 ease-out hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 active:shadow-none motion-reduce:transition-none motion-reduce:transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 ${variantClasses[variant]} ${className}`.trim();
 
   const track = () => {
     if (!analyticsEventName) {

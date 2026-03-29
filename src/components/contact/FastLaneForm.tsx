@@ -78,6 +78,17 @@ export default function FastLaneForm() {
           </p>
         )}
       </div>
+
+      <p className="text-xs leading-5 text-slate-500">
+        Prefer email directly? Reach me at{" "}
+        <a
+          href="mailto:hello@delitweb.com"
+          className="font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
+        >
+          hello@delitweb.com
+        </a>
+        .
+      </p>
     </form>
   );
 }

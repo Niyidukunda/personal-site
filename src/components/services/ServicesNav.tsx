@@ -67,7 +67,7 @@ export default function ServicesNav({ items }: ServicesNavProps) {
             }}
             className={[
               "group relative inline-flex rounded-sm text-sm font-medium tracking-[0.02em] transition-colors",
-              "focus-visible:text-slate-900 focus-visible:outline-none",
+              "focus-visible:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2",
               "after:absolute after:bottom-0 after:left-0 after:h-px after:w-full",
               "after:origin-left after:bg-slate-900 after:transition-transform after:duration-200 after:content-['']",
               "hover:text-slate-900 hover:after:scale-x-100 focus-visible:after:scale-x-100",

@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/ui/BackToTop";
+import GaPageViewTracker from "@/components/analytics/GaPageViewTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,8 +18,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "delitweb.site",
-  description: "Del IT+Web",
+  metadataBase: new URL("https://delitweb.com"),
+  title: {
+    default: "Del IT+Web | Web platforms, architecture, and infrastructure delivery",
+    template: "%s | Del IT+Web",
+  },
+  description:
+    "Del IT+Web delivers web platforms, systems architecture, and infrastructure workflows with clear execution for growing teams.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://delitweb.com",
+    siteName: "Del IT+Web",
+    title: "Del IT+Web | Web platforms, architecture, and infrastructure delivery",
+    description:
+      "Web platforms, systems architecture, and infrastructure delivery built for reliable execution.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Del IT+Web | Web platforms, architecture, and infrastructure delivery",
+    description:
+      "Web platforms, systems architecture, and infrastructure delivery built for reliable execution.",
+  },
+  icons: {
+    icon: "/images/icononly.png",
+    shortcut: "/images/icononly.png",
+    apple: "/images/icononly.png",
+  },
 };
 
 export default function RootLayout({
@@ -56,9 +84,10 @@ export default function RootLayout({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${gaId}');
+                gtag('config', '${gaId}', { send_page_view: false });
               `}
             </Script>
+            <GaPageViewTracker gaId={gaId} />
           </>
         ) : null}
 

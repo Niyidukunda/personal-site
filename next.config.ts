@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms", // Next.js requires these for development
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms", // Next.js requires these for development
               "style-src 'self' 'unsafe-inline'", // Required for Tailwind CSS
               "img-src 'self' data: https: https://www.google-analytics.com", // Allow images from self, data URLs, and HTTPS
               "font-src 'self' data:",

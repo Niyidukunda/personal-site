@@ -33,7 +33,7 @@ export default function Card({
 
   if (href) {
     return (
-      <Link href={href} className="block hover:-translate-y-0.5 transition-transform">
+      <Link href={href} className="block rounded-xl transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
         {content}
       </Link>
     );

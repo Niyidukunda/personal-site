@@ -7,19 +7,58 @@ import Section from "@/components/ui/Section";
 export default function HomePage() {
   return (
     <div>
-      <Section contained={false} className="relative overflow-hidden border-b border-slate-200/70 bg-slate-50 py-20 md:py-24">
+      <Section contained={false} className="relative overflow-hidden border-b border-slate-200/70 bg-[linear-gradient(180deg,#f7fcf9_0%,#f3faf7_48%,#f8fbfa_100%)] py-20 md:py-24">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:48px_48px] opacity-20"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(58%_54%_at_10%_0%,rgba(34,197,94,0.17),transparent_72%)]"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_50%_at_80%_20%,rgba(148,163,184,0.18),transparent_65%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(36%_44%_at_88%_12%,rgba(20,184,166,0.15),transparent_74%)]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-16 top-10 h-44 w-44 rounded-full bg-emerald-300/20 blur-3xl md:h-56 md:w-56"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[-4rem] top-24 h-48 w-48 rounded-full bg-teal-300/20 blur-3xl md:h-72 md:w-72"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.028)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.028)_1px,transparent_1px)] bg-[size:52px_52px]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(16,185,129,0.06)_0%,transparent_42%,rgba(45,212,191,0.05)_100%)]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[11%] top-[14%] hidden md:block"
+        >
+          <svg width="126" height="170" viewBox="0 0 126 170" fill="none" className="opacity-35">
+            <path
+              d="M22 16L101 83L66 90L90 151L62 162L37 101L8 122L22 16Z"
+              fill="rgba(15,118,110,0.16)"
+              stroke="rgba(15,118,110,0.30)"
+              strokeWidth="1.25"
+            />
+          </svg>
+        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-[-3.5rem] left-[44%] h-24 w-52 -translate-x-1/2 rounded-[999px] bg-emerald-400/10 blur-2xl md:h-28 md:w-64"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.02)_72%,rgba(255,255,255,0.08)_88%,rgba(255,255,255,0.18)_100%)] md:h-20"
         />
         <Container className="relative z-10 max-w-[96rem]">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className="ds-gap max-w-3xl">
-              <p className="ds-muted uppercase tracking-[0.12em]">Del IT+Web</p>
+              <p className="inline-flex items-center rounded-full border border-emerald-200/75 bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.13em] text-emerald-800 shadow-sm">
+                Del IT+Web
+              </p>
               <div className="space-y-7">
                 <h1 className="ds-h1">Full-stack development and infrastructure that scale together.</h1>
                 <p className="ds-body">
@@ -41,13 +80,13 @@ export default function HomePage() {
                 </Button>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                <span className="rounded-md border border-slate-200/80 bg-white/80 px-2 py-0.5 text-[11px] font-medium text-slate-600">
+                <span className="rounded-md border border-emerald-100 bg-white/85 px-2 py-0.5 text-[11px] font-medium text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.05)]">
                   Secure Authentication & Identity
                 </span>
-                <span className="rounded-md border border-slate-200/80 bg-white/80 px-2 py-0.5 text-[11px] font-medium text-slate-600">
+                <span className="rounded-md border border-emerald-100 bg-white/85 px-2 py-0.5 text-[11px] font-medium text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.05)]">
                   API & Service Architecture
                 </span>
-                <span className="rounded-md border border-slate-200/80 bg-white/80 px-2 py-0.5 text-[11px] font-medium text-slate-600">
+                <span className="rounded-md border border-emerald-100 bg-white/85 px-2 py-0.5 text-[11px] font-medium text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.05)]">
                   Cloud Infrastructure & Deployment
                 </span>
               </div>
@@ -56,7 +95,7 @@ export default function HomePage() {
             <Card
               title="Core Competencies"
               description=""
-              className="border-slate-300 bg-white p-7 shadow-lg md:p-8"
+              className="border-emerald-100/90 bg-white/92 p-7 shadow-[0_18px_40px_-28px_rgba(4,120,87,0.45)] backdrop-blur-[1.5px] md:p-8"
             >
               <div className="mt-4 space-y-4">
                 <div>
@@ -82,7 +121,7 @@ export default function HomePage() {
       </Section>
 
       <Section
-        className="bg-white pt-16 md:pt-20"
+        className="border-t border-emerald-100/45 pt-16 md:pt-20"
         title="Services"
         description="Execution-focused services across product engineering, infrastructure, and delivery."
       >
@@ -132,12 +171,12 @@ export default function HomePage() {
       </Section>
 
       <Section
-        className="bg-slate-50/40"
+        className="border-t border-slate-200/60 bg-[linear-gradient(180deg,#fbfdfb_0%,#f7faf9_100%)]"
         title="Featured work"
         description="An anonymized architecture snapshot from a recent platform engagement."
       >
         <Card
-          title="Compliance & Scoring Platform (NDA)"
+          title="Compliance & Scoring Platform"
           description="Led architecture and implementation across application workflows, service boundaries, and secure delivery pipelines."
           href="/work"
           ctaLabel="Read case study"
@@ -152,7 +191,7 @@ export default function HomePage() {
       </Section>
 
       <Section
-        className="bg-white"
+        className="border-t border-slate-200/60 bg-white"
         title="More Work"
         description="Public proof from shipped and in-progress projects."
       >
@@ -166,9 +205,6 @@ export default function HomePage() {
               <Button href="/work" variant="secondary" className="px-3 py-1.5 text-xs">
                 View project
               </Button>
-              <Button variant="secondary" className="px-3 py-1.5 text-xs" disabled>
-                Repo
-              </Button>
             </div>
           </Card>
           <Card
@@ -179,9 +215,6 @@ export default function HomePage() {
             <div className="mt-4 flex flex-wrap gap-2">
               <Button href="/work" variant="secondary" className="px-3 py-1.5 text-xs">
                 View project
-              </Button>
-              <Button variant="secondary" className="px-3 py-1.5 text-xs" disabled>
-                Repo
               </Button>
             </div>
           </Card>
@@ -194,17 +227,26 @@ export default function HomePage() {
               <Button href="/work" variant="secondary" className="px-3 py-1.5 text-xs">
                 View project
               </Button>
-              <Button variant="secondary" className="px-3 py-1.5 text-xs" disabled>
-                Repo
-              </Button>
             </div>
           </Card>
         </div>
       </Section>
 
-      <Section contained={false} className="bg-slate-900 py-20">
+      <Section contained={false} className="relative overflow-hidden border-t border-emerald-200/35 bg-[linear-gradient(180deg,#0f172a_0%,#11201d_100%)] py-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(42%_56%_at_18%_12%,rgba(34,197,94,0.14),transparent_72%)]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(30%_44%_at_82%_8%,rgba(45,212,191,0.12),transparent_78%)]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:56px_56px] opacity-25"
+        />
         <Container>
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="relative z-10 mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
               Planning a platform or infrastructure upgrade?
             </h2>

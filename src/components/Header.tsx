@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -31,8 +32,15 @@ export default function Header() {
       <div className="h-0.5 bg-slate-900" aria-hidden="true" />
       <Container className="py-4">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="text-base font-semibold tracking-tight">
-            delitweb.site
+          <Link href="/" className="inline-flex items-center" aria-label="Del IT and Web home">
+            <Image
+              src="/images/icononly.png"
+              alt="Del IT and Web icon mark"
+              width={80}
+              height={64}
+              className="h-7 w-auto md:h-8"
+              priority
+            />
           </Link>
 
           <nav className="hidden flex-1 items-center justify-center gap-5 text-sm md:flex">
@@ -44,7 +52,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   className={[
-                    "transition-colors",
+                    "rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2",
                     active ? "font-semibold text-slate-900" : "text-slate-600 hover:text-slate-900",
                   ].join(" ")}
                   aria-current={active ? "page" : undefined}
@@ -88,7 +96,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   className={[
-                    "block rounded-md px-2 py-2 text-sm transition-colors",
+                    "block rounded-md px-2 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2",
                     active
                       ? "bg-slate-100 font-semibold text-slate-900"
                       : "text-slate-700 hover:bg-slate-50 hover:text-slate-900",
