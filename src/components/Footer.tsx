@@ -17,15 +17,15 @@ export default function Footer() {
                 className="h-10 w-auto sm:h-11"
               />
             </Link>
-            <p className="text-xs text-slate-500">Quietly technical growth systems for modern teams.</p>
+            <p className="text-xs text-slate-500">Clean digital systems for people ready to launch well.</p>
             <p className="text-sm text-slate-500">© {new Date().getFullYear()} Del IT+Web</p>
           </div>
           <div className="flex items-center gap-4 text-sm text-slate-500">
-            <Link href="/services" className="rounded-sm hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
-              Services
-            </Link>
             <Link href="/work" className="rounded-sm hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
               Work
+            </Link>
+            <Link href="/capabilities" className="rounded-sm hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
+              Capabilities
             </Link>
             <Link href="/contact" className="rounded-sm hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
               Contact

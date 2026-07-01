@@ -20,11 +20,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://delitweb.com"),
   title: {
-    default: "Del IT+Web | Web platforms, architecture, and infrastructure delivery",
+    default: "Del IT+Web | Clean websites, platforms, and digital systems",
     template: "%s | Del IT+Web",
   },
   description:
-    "Del IT+Web delivers web platforms, systems architecture, and infrastructure workflows with clear execution for growing teams.",
+    "Clean websites, online stores, learning systems, workflows, and launch-ready support for individuals, small businesses, and education-focused teams.",
   alternates: {
     canonical: "/",
   },
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://delitweb.com",
     siteName: "Del IT+Web",
-    title: "Del IT+Web | Web platforms, architecture, and infrastructure delivery",
+    title: "Del IT+Web | Clean websites, platforms, and digital systems",
     description:
-      "Web platforms, systems architecture, and infrastructure delivery built for reliable execution.",
+      "Clean websites, online stores, learning systems, workflows, and launch-ready support for individuals, small businesses, and education-focused teams.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Del IT+Web | Web platforms, architecture, and infrastructure delivery",
+    title: "Del IT+Web | Clean websites, platforms, and digital systems",
     description:
-      "Web platforms, systems architecture, and infrastructure delivery built for reliable execution.",
+      "Clean websites, online stores, learning systems, workflows, and launch-ready support for individuals, small businesses, and education-focused teams.",
   },
   icons: {
     icon: "/images/icononly.png",

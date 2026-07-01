@@ -36,7 +36,7 @@ export default function FastLaneForm() {
       <div>
         <label htmlFor="fl-email" className={labelClass}>
           Your email{" "}
-          <span className="font-normal text-slate-400">(optional — so I can reply directly)</span>
+          <span className="font-normal text-slate-400">(optional - so I can reply directly)</span>
         </label>
         <input
           id="fl-email"
@@ -69,7 +69,7 @@ export default function FastLaneForm() {
           type="submit"
           className="inline-flex items-center justify-center rounded-md border border-slate-900 bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-sm active:translate-y-0 active:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 motion-reduce:transform-none motion-reduce:transition-none"
         >
-          Open email draft
+          Send Project Note
         </button>
         {submitted && (
           <p role="status" aria-live="polite" className="text-sm text-slate-600">

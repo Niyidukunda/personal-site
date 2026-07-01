@@ -9,8 +9,8 @@ import Container from "@/components/ui/Container";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
+  { href: "/capabilities", label: "Capabilities" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -70,7 +70,7 @@ export default function Header() {
               analyticsEventName="cta_click"
               analyticsParams={{ location: "header", label: "primary" }}
             >
-              Start a conversation
+              Start a Project
             </Button>
           </div>
 
@@ -117,7 +117,7 @@ export default function Header() {
                 analyticsEventName="cta_click"
                 analyticsParams={{ location: "header", label: "primary" }}
               >
-                Start a conversation
+                Start a Project
               </Button>
             </div>
           </div>

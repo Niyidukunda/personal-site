@@ -1,8 +1,24 @@
+import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import FastLaneForm from "@/components/contact/FastLaneForm";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Send a project note to Del IT+Web by email draft for a website, online store, platform, workflow, or launch support.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Del IT+Web",
+    description:
+      "Send a quick project note by email draft about your next website, platform, workflow, or digital system.",
+    url: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (
@@ -12,7 +28,8 @@ export default function ContactPage() {
         <div className="ds-gap max-w-3xl">
           <h1 className="ds-h1">Contact</h1>
           <p className="ds-muted md:text-base">
-            Start with a quick message. Add detail if you want a faster response.
+            Start with a project note. The forms open a pre-filled email draft
+            so you can review and send it from your own mail app.
           </p>
         </div>
       </Section>
@@ -25,7 +42,7 @@ export default function ContactPage() {
               Fast lane
             </h2>
             <p className="mt-2 text-sm leading-6 text-slate-700">
-              Send a quick note. I&rsquo;ll reply within one business day.{" "}
+              Send a short note by email draft. I&rsquo;ll reply within one business day where possible.{" "}
               <a
                 href="mailto:hello@delitweb.com"
                 className="font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
@@ -38,7 +55,7 @@ export default function ContactPage() {
         </div>
       </Section>
 
-      {/* Structured enquiry — optional detail */}
+      {/* Structured enquiry - optional detail */}
       <Section className="pt-0">
         <div className="border-t border-slate-200 pt-8 max-w-2xl">
           <details className="group">
@@ -64,7 +81,7 @@ export default function ContactPage() {
             <div className="mt-6">
               <p className="text-sm leading-6 text-slate-500 mb-6">
                 Fields marked <span aria-hidden="true">*</span> are required. The form
-                opens a pre-filled email draft — review it and send.
+                opens a pre-filled email draft. Review it, then send it from your email app.
               </p>
               <ContactForm />
             </div>
@@ -80,7 +97,7 @@ export default function ContactPage() {
               Not ready to reach out yet?
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-200">
-              Review what I&rsquo;ve built or the depth of capability available before committing to a conversation.
+              Browse recent work or see how I can help before sending a note.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
@@ -90,16 +107,16 @@ export default function ContactPage() {
                 analyticsEventName="cta_click"
                 analyticsParams={{ location: "cta_band", label: "primary" }}
               >
-                View selected work
+                View Recent Work
               </Button>
               <Button
-                href="/services"
+                href="/capabilities"
                 variant="secondary"
                 className="border-slate-300 bg-transparent text-slate-100 transition-colors hover:bg-slate-800/20 hover:text-white"
                 analyticsEventName="cta_click"
                 analyticsParams={{ location: "cta_band", label: "secondary" }}
               >
-                Explore services
+                Explore capabilities
               </Button>
             </div>
           </div>

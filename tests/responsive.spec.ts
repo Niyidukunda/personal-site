@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test';
 const pages = [
   '/',
   '/about',
-  '/blog',
-  '/projects',
+  '/capabilities',
+  '/work',
   '/contact',
 ];
 

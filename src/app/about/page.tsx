@@ -1,31 +1,47 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Meet Fidel Niyidukunda, the founder-led builder behind Del IT+Web, bridging software, infrastructure, teaching, support, and practical delivery.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Del IT+Web",
+    description:
+      "Founder-led practical delivery across software, infrastructure, teaching, support, and client guidance.",
+    url: "/about",
+  },
+};
 
 const process = [
   {
     label: "Scope",
     detail:
-      "We define outcomes, constraints, and success criteria before implementation starts.",
+      "We clarify what needs to work, who it is for, and what should happen first.",
   },
   {
     label: "Build",
     detail:
-      "I deliver the architecture and the implementation, with clear interfaces and production-ready standards.",
+      "I build the pages, tools, flows, and setup needed to make the idea usable.",
   },
   {
     label: "Stabilize",
     detail:
-      "Release, monitoring, and handover are built in so teams can operate confidently after delivery.",
+      "Release checks, support notes, and after-launch guidance are built in so clients can move confidently.",
   },
 ] as const;
 
 const focusAreas = [
-  "Architecture and delivery plans that reduce rework",
-  "Secure, maintainable full-stack applications",
-  "Cloud and deployment workflows with rollback clarity",
-  "Identity, access, and operational reliability",
+  "Websites, stores, portals, and practical digital tools",
+  "Online learning systems and training workflows",
+  "Cleaner launches with setup notes and after-launch support",
+  "Access, accounts, admin areas, and easier day-to-day management",
 ] as const;
 
 export default function AboutPage() {
@@ -45,11 +61,12 @@ export default function AboutPage() {
           <div className="ds-gap max-w-3xl">
             <h1 className="ds-h1">About</h1>
             <p className="ds-body text-slate-800">
-              I help teams turn complex technical direction into clear delivery,
-              resilient systems, and calmer day-to-day operations.
+              I am Fidel Niyidukunda, a full-stack builder and technical delivery
+              partner behind Del IT+Web.
             </p>
             <p className="ds-muted md:text-base">
-              Independent consultancy at the boundary of product, infrastructure, and operations.
+              I help people turn ideas, manual processes, and technical problems
+              into working digital systems that are clear, useful, and easier to manage.
             </p>
           </div>
           <div className="w-full max-w-xs md:max-w-[18rem] md:justify-self-end">
@@ -60,7 +77,7 @@ export default function AboutPage() {
               />
               <div className="relative aspect-[6/7] overflow-hidden rounded-[0.72rem] border border-slate-200/70 bg-slate-100 md:aspect-[5/6]">
                 <Image
-                  src="/images/about/about-alt-1.png"
+                  src="/images/about/about-alt-1-compressed.jpg"
                   alt="Portrait of Del IT and Web consultant"
                   fill
                   priority
@@ -80,16 +97,16 @@ export default function AboutPage() {
             <div className="space-y-3">
               <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">Who I am</h2>
               <p className="ds-body">
-                I am a full-stack and infrastructure consultant focused on practical systems
-                design. My background spans application development, secure deployment,
-                networking, and cloud operations.
+                My work sits between software, teaching, support, and practical problem-solving.
+                That mix helps me turn messy real-world needs into systems people can actually use.
               </p>
             </div>
             <div className="space-y-3">
               <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">What I do</h2>
               <p className="ds-body">
-                I design and deliver web platforms, service integrations, and deployment
-                workflows so teams can ship reliably without carrying hidden technical debt.
+                I build and improve websites, stores, learning systems, client portals,
+                launch paths, operating guides, and setup notes for clients, collaborators,
+                and education-focused teams.
               </p>
             </div>
           </div>
@@ -136,10 +153,10 @@ export default function AboutPage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
-              Ready to move from planning to delivery?
+              Ready to make the next step clearer?
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-200">
-              Engagements start with a scoping conversation — no commitment required.
+              Send a short project note and we can shape a practical next step.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
@@ -149,16 +166,16 @@ export default function AboutPage() {
                 analyticsEventName="cta_click"
                 analyticsParams={{ location: "cta_band", label: "primary" }}
               >
-                Start a conversation
+                Start a Project
               </Button>
               <Button
-                href="/work"
+                href="/capabilities"
                 variant="secondary"
                 className="border-slate-300 bg-transparent text-slate-100 transition-colors hover:bg-slate-800/20 hover:text-white"
                 analyticsEventName="cta_click"
                 analyticsParams={{ location: "cta_band", label: "secondary" }}
               >
-                View selected work
+                Explore capabilities
               </Button>
             </div>
           </div>
