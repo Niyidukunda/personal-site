@@ -34,12 +34,14 @@ const workStories = [
     shows:
       "This shows how I can turn a complex private process into a practical digital system without exposing sensitive project details.",
     tools: ["Next.js", "NestJS", "FastAPI", "Keycloak", "Docker", "AWS", "GitHub Actions"],
-    image: {
-      src: "/images/work/wave-stats-obscured.png",
-      alt: "Obscured dashboard from a compliance and scoring platform",
-      caption:
-        "Sensitive names and data are hidden. The image is included to show the dashboard-style structure and reporting flow.",
-    },
+    images: [
+      {
+        src: "/images/proof/platform-dashboard-overview.jpg",
+        alt: "Dashboard interface with private operational details hidden",
+        caption:
+          "This shows a calmer admin dashboard for repeated review work. Counts and internal details are hidden so the structure can be shown without exposing private data.",
+      },
+    ],
     privacy:
       "Client and project details are anonymized, and private data has been removed or obscured.",
   },
@@ -57,12 +59,26 @@ const workStories = [
     shows:
       "This shows how I can build premium client-facing websites that balance visual polish with practical setup.",
     tools: ["Next.js", "React", "Tailwind CSS", "Vercel", "SEO structure"],
-    image: {
-      src: "/images/work/velvet-room-site-obscured.png",
-      alt: "Obscured screenshot of a design-led business website",
-      caption:
-        "Brand-sensitive details are softened. The image demonstrates layout, visual direction, and responsive page structure.",
-    },
+    images: [
+      {
+        src: "/images/proof/online-store-mobile-hero.jpg",
+        alt: "Mobile online store page with a clean hero section",
+        caption:
+          "This shows a mobile storefront built around clear browsing and a polished first impression. Phone interface chrome and brand writing are hidden.",
+      },
+      {
+        src: "/images/proof/online-store-collection-mobile.jpg",
+        alt: "Mobile online store collection page",
+        caption:
+          "This shows how product categories can be presented in a simple, client-friendly flow. The image is cropped to focus on the customer path.",
+      },
+      {
+        src: "/images/proof/online-store-product-card.jpg",
+        alt: "Mobile product card from an online store",
+        caption:
+          "This shows a product card and price area, useful for clients who need products to feel easy to browse on mobile. The visible brand mark on the product image is obscured.",
+      },
+    ],
     privacy:
       "The screenshot is intentionally obscured where needed and does not imply public client endorsement.",
   },
@@ -80,12 +96,14 @@ const workStories = [
     shows:
       "This shows how I can support education teams with digital learning systems that are useful beyond the first launch.",
     tools: ["WordPress", "Tutor LMS", "Role flows", "Content structure", "Admin support"],
-    image: {
-      src: "/images/about/tutor-lms-backend.png",
-      alt: "Backend view from an online learning platform",
-      caption:
-        "Private learner and client details should stay hidden. The image is useful only where admin structure remains visible.",
-    },
+    images: [
+      {
+        src: "/images/proof/assessment-workspace-overview.jpg",
+        alt: "Assessment workflow screen with private learner and programme details hidden",
+        caption:
+          "This shows a learning and review workflow with the useful structure still visible. Names, identifiers, and private programme details are hidden.",
+      },
+    ],
     privacy:
       "Public wording stays broad and avoids exposing private learner, curriculum, or client details.",
   },
@@ -103,12 +121,6 @@ const workStories = [
     shows:
       "This shows how I can help when a digital project needs both the build and the launch details handled carefully.",
     tools: ["Docker Compose", "EC2", "Nginx", "GitHub Actions", "Setup notes"],
-    image: {
-      src: "/images/about/key-cloak-admin.png",
-      alt: "Administrative setup screen with sensitive details hidden",
-      caption:
-        "Sensitive access details must stay hidden. Use only cropped or blurred views that show setup structure without exposing users or secrets.",
-    },
     privacy:
       "Infrastructure and access details are described at a safe level and screenshots avoid secret, user, or client exposure.",
   },
@@ -185,22 +197,29 @@ export default function WorkPage() {
                 </div>
 
                 <div className="space-y-7 lg:border-l lg:border-slate-200/60 lg:pl-8">
-                  {"image" in story && story.image ? (
-                    <figure className="overflow-hidden rounded-lg border border-neutral-200/70 bg-white p-2 shadow-[0_8px_24px_rgba(15,23,42,0.04)]">
-                      <div className="overflow-hidden rounded-md border border-neutral-200/70 bg-white">
-                        <Image
-                          src={story.image.src}
-                          alt={story.image.alt}
-                          width={1600}
-                          height={900}
-                          sizes="(min-width: 1024px) 42vw, 92vw"
-                          className="h-[240px] w-full object-cover object-top opacity-85 md:h-[280px] lg:h-[300px]"
-                        />
-                      </div>
-                      <figcaption className="px-1 pt-3 text-xs leading-5 text-slate-500">
-                        {story.image.caption}
-                      </figcaption>
-                    </figure>
+                  {"images" in story && story.images ? (
+                    <div className="grid gap-4">
+                      {story.images.map((image) => (
+                        <figure
+                          key={image.src}
+                          className="overflow-hidden rounded-lg border border-neutral-200/70 bg-white p-2 shadow-[0_8px_24px_rgba(15,23,42,0.04)]"
+                        >
+                          <div className="overflow-hidden rounded-md border border-neutral-200/70 bg-white">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={1600}
+                              height={1100}
+                              sizes="(min-width: 1024px) 42vw, 92vw"
+                              className="h-[240px] w-full object-cover object-top md:h-[280px] lg:h-[300px]"
+                            />
+                          </div>
+                          <figcaption className="px-1 pt-3 text-xs leading-5 text-slate-500">
+                            {image.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
                   ) : null}
 
                   <div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
@@ -48,6 +49,46 @@ const audienceFit = [
   "Small businesses that need a polished online presence or smoother workflow",
   "Education teams turning training programmes into structured online systems",
   "Collaborators and hirers looking for someone who can bridge product, code, and launch",
+] as const;
+
+const visualProof = [
+  {
+    title: "Online store experience",
+    src: "/images/proof/online-store-mobile-hero.jpg",
+    alt: "Mobile online store page with clean product-focused layout",
+    caption: "A mobile storefront shaped for clear browsing, with brand writing obscured.",
+  },
+  {
+    title: "Practical admin workflow",
+    src: "/images/proof/platform-dashboard-overview.jpg",
+    alt: "Dashboard interface with private operational details hidden",
+    caption: "A dashboard-style system where private counts and internal details are hidden.",
+  },
+  {
+    title: "Hands-on setup",
+    src: "/images/gallery/behind-the-work-laptop-setup.jpg",
+    alt: "Hands-on laptop setup work with private screen details hidden",
+    caption: "Real setup and testing work, with screen details and private context obscured.",
+  },
+] as const;
+
+const trustCards = [
+  {
+    title: "Clear communication",
+    detail: "You know what is being built, what decisions matter, and what comes next.",
+  },
+  {
+    title: "Practical setup notes",
+    detail: "The finished work is easier to understand, update, and support after launch.",
+  },
+  {
+    title: "Calm launch support",
+    detail: "Launch details are handled with checks, guidance, and room for useful fixes.",
+  },
+  {
+    title: "Client-friendly guidance",
+    detail: "Technical choices are explained in plain language so the project stays approachable.",
+  },
 ] as const;
 
 export default function HomePage() {
@@ -115,6 +156,35 @@ export default function HomePage() {
       </Section>
 
       <Section
+        className="border-t border-slate-200/60 bg-white"
+        title="Real work, shared carefully"
+        description="A quick look at the kind of websites, systems, and setup work Del IT+Web helps bring to life."
+      >
+        <div className="grid gap-4 md:grid-cols-3">
+          {visualProof.map((item) => (
+            <figure
+              key={item.title}
+              className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_10px_28px_rgba(15,23,42,0.05)]"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(min-width: 1024px) 28vw, (min-width: 768px) 31vw, 92vw"
+                  className="object-cover object-top"
+                />
+              </div>
+              <figcaption className="space-y-1 p-4">
+                <p className="text-sm font-semibold text-slate-900">{item.title}</p>
+                <p className="text-xs leading-5 text-slate-600">{item.caption}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </Section>
+
+      <Section
         className="border-t border-slate-200/60 bg-[linear-gradient(180deg,#fbfdfb_0%,#f7faf9_100%)]"
         title="Recent work"
         description="A few anonymized examples of problems solved and systems made easier to manage."
@@ -156,6 +226,21 @@ export default function HomePage() {
           {audienceFit.map((item) => (
             <div key={item} className="rounded-lg border border-slate-200 bg-white p-5">
               <p className="text-sm leading-6 text-slate-700">{item}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        className="border-t border-slate-200/60 bg-white"
+        title="What working together feels like"
+        description="No invented testimonials, just the standards clients should expect from the process."
+      >
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {trustCards.map((card) => (
+            <div key={card.title} className="rounded-lg border border-slate-200 bg-slate-50/60 p-5">
+              <h3 className="text-sm font-semibold text-slate-900">{card.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">{card.detail}</p>
             </div>
           ))}
         </div>

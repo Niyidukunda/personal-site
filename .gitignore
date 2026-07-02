@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.tmp_contact_sheets/
+
+.tmp_contact_sheets/
+
+public/images/delitweb Concept/

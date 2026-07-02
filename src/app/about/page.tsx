@@ -44,6 +44,30 @@ const focusAreas = [
   "Access, accounts, admin areas, and easier day-to-day management",
 ] as const;
 
+const behindTheWork = [
+  {
+    title: "Setup and testing",
+    src: "/images/gallery/behind-the-work-laptop-setup.jpg",
+    alt: "Laptop setup and testing work with private screen details hidden",
+    caption:
+      "Practical setup and testing work, with screen details and private context hidden.",
+  },
+  {
+    title: "Hands-on support",
+    src: "/images/gallery/practical-setup-window-detail.jpg",
+    alt: "Hands-on practical setup support",
+    caption:
+      "Some projects need calm, practical support around the real environment, not just code.",
+  },
+  {
+    title: "Launch-ready details",
+    src: "/images/gallery/practical-support-tooling.jpg",
+    alt: "Practical support tooling during setup work",
+    caption:
+      "The small setup details matter when a project needs to be easier to use and support.",
+  },
+] as const;
+
 export default function AboutPage() {
   return (
     <div>
@@ -131,6 +155,36 @@ export default function AboutPage() {
               </div>
             ))}
           </dl>
+        </div>
+      </Section>
+
+      {/* Behind the work */}
+      <Section
+        className="border-t border-slate-200/60 bg-slate-50/50"
+        title="Behind the work"
+        description="The work is practical and close to the real environment: setup, testing, support, and clear guidance around the build."
+      >
+        <div className="grid gap-4 md:grid-cols-3">
+          {behindTheWork.map((item) => (
+            <figure
+              key={item.title}
+              className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_10px_28px_rgba(15,23,42,0.05)]"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(min-width: 1024px) 28vw, (min-width: 768px) 31vw, 92vw"
+                  className="object-cover object-center"
+                />
+              </div>
+              <figcaption className="space-y-1 p-4">
+                <p className="text-sm font-semibold text-slate-900">{item.title}</p>
+                <p className="text-xs leading-5 text-slate-600">{item.caption}</p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </Section>
 
