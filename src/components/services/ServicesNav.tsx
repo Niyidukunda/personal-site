@@ -54,7 +54,7 @@ export default function ServicesNav({ items }: ServicesNavProps) {
   }, [items]);
 
   return (
-    <nav aria-label="Services capabilities" className="flex flex-wrap gap-x-6 gap-y-3">
+    <nav aria-label="Services navigation" className="flex flex-wrap gap-x-6 gap-y-3">
       {items.map((item) => {
         const isActive = item.id === activeId;
         return (

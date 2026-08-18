@@ -10,7 +10,6 @@ import Container from "@/components/ui/Container";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
-  { href: "/capabilities", label: "Capabilities" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -28,7 +27,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur">
       <div className="h-0.5 bg-slate-900" aria-hidden="true" />
       <Container className="py-4">
         <div className="flex items-center justify-between gap-4">

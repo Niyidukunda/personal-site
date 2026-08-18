@@ -44,27 +44,42 @@ const focusAreas = [
   "Access, accounts, admin areas, and easier day-to-day management",
 ] as const;
 
-const behindTheWork = [
+const trustSignals = [
   {
-    title: "Setup and testing",
-    src: "/images/gallery/behind-the-work-laptop-setup.jpg",
-    alt: "Laptop setup and testing work with private screen details hidden",
-    caption:
-      "Practical setup and testing work, with screen details and private context hidden.",
+    title: "Clear communication",
+    text: "Simple updates, practical decisions, and language that is easy to follow.",
   },
   {
-    title: "Hands-on support",
-    src: "/images/gallery/practical-setup-window-detail.jpg",
-    alt: "Hands-on practical setup support",
-    caption:
-      "Some projects need calm, practical support around the real environment, not just code.",
+    title: "Calm delivery",
+    text: "A steady process from first idea to launch, with the next step kept clear.",
   },
   {
-    title: "Launch-ready details",
-    src: "/images/gallery/practical-support-tooling.jpg",
-    alt: "Practical support tooling during setup work",
-    caption:
-      "The small setup details matter when a project needs to be easier to use and support.",
+    title: "Support after launch",
+    text: "Setup notes, fixes, and guidance when the project needs care after going live.",
+  },
+] as const;
+
+const testimonials = [
+  {
+    quote: "Thank you so much Mr Fidel for your patience and for helping me.",
+    attribution: "N. Mthembu",
+    context: "C&R Student",
+  },
+  {
+    quote: "Dude I'm so happy! Thank you for the thoroughness.",
+    attribution: "L. Mark",
+    context: "House of Basil Premium Online Store",
+  },
+  {
+    quote:
+      "At all times I have found Fidele to be a man of integrity, selflessness, and consistency.",
+    attribution: "Rev. A. Butorano",
+    context: "Kwa-Giba High School",
+  },
+  {
+    quote: "Thank you for a lovely website, and for your patience. Will be staying in touch.",
+    attribution: "E. Billy",
+    context: "Floral Kingdom Tours",
   },
 ] as const;
 
@@ -89,8 +104,10 @@ export default function AboutPage() {
               partner behind Del IT+Web.
             </p>
             <p className="ds-muted md:text-base">
-              I help people turn ideas, manual processes, and technical problems
-              into working digital systems that are clear, useful, and easier to manage.
+              My work sits between software, teaching, support, and practical problem-solving -
+              turning ideas and manual processes into digital systems people can actually use. I
+              keep learning, building, and sharing what I know along the way, with the goal of
+              making technology feel clearer, more useful, and easier to work with.
             </p>
           </div>
           <div className="w-full max-w-xs md:max-w-[18rem] md:justify-self-end">
@@ -101,12 +118,12 @@ export default function AboutPage() {
               />
               <div className="relative aspect-[6/7] overflow-hidden rounded-[0.72rem] border border-slate-200/70 bg-slate-100 md:aspect-[5/6]">
                 <Image
-                  src="/images/about/about-alt-1-compressed.jpg"
-                  alt="Portrait of Del IT and Web consultant"
+                  src="/images/gallery/about-practical-support-hero.jpg"
+                  alt="Fidel working on a practical technology setup"
                   fill
                   priority
                   sizes="(min-width: 768px) 28vw, 72vw"
-                  className="object-cover object-[center_27%] md:object-[center_26%]"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -114,23 +131,23 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Who I am / What I do */}
+      {/* Mission / What I do */}
       <Section className="pt-0">
         <div className="border-t border-slate-200 pt-8">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="space-y-3">
-              <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">Who I am</h2>
+              <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">Mission</h2>
               <p className="ds-body">
-                My work sits between software, teaching, support, and practical problem-solving.
-                That mix helps me turn messy real-world needs into systems people can actually use.
+                Harness useful technology, advance education, solve practical problems, and
+                connect people through clearer digital systems.
               </p>
             </div>
             <div className="space-y-3">
               <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">What I do</h2>
               <p className="ds-body">
-                I build and improve websites, stores, learning systems, client portals,
-                launch paths, operating guides, and setup notes for clients, collaborators,
-                and education-focused teams.
+                I work across website design, search engine visibility, analytics tools,
+                e-commerce, software, hardware, networks, information technology education,
+                and practical innovation.
               </p>
             </div>
           </div>
@@ -158,33 +175,75 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Behind the work */}
+      {/* Trust signals */}
       <Section
         className="border-t border-slate-200/60 bg-slate-50/50"
-        title="Behind the work"
-        description="The work is practical and close to the real environment: setup, testing, support, and clear guidance around the build."
+        title="What working together should feel like"
+        description="Clear communication, calm delivery, and practical support around the work."
       >
         <div className="grid gap-4 md:grid-cols-3">
-          {behindTheWork.map((item) => (
-            <figure
+          {trustSignals.map((item) => (
+            <article
               key={item.title}
-              className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_10px_28px_rgba(15,23,42,0.05)]"
+              className="border-t border-slate-200 bg-white pt-5 md:border-l md:border-t-0 md:pl-6"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(min-width: 1024px) 28vw, (min-width: 768px) 31vw, 92vw"
-                  className="object-cover object-center"
-                />
-              </div>
-              <figcaption className="space-y-1 p-4">
-                <p className="text-sm font-semibold text-slate-900">{item.title}</p>
-                <p className="text-xs leading-5 text-slate-600">{item.caption}</p>
-              </figcaption>
-            </figure>
+              <h3 className="text-base font-semibold tracking-tight text-slate-950">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+            </article>
           ))}
+        </div>
+      </Section>
+
+      {/* Testimonials */}
+      <Section
+        className="relative overflow-hidden border-y border-emerald-900/10 bg-[#f8fbf8]"
+        title="What people say"
+        description="Short notes from people who have worked with, learned from, or received support through the work."
+      >
+        <div className="grid gap-6 lg:grid-cols-[15rem_minmax(0,1fr)] lg:items-start">
+          <figure className="max-w-[15rem] overflow-hidden rounded-lg border border-emerald-900/10 bg-white p-2 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-slate-100 lg:aspect-[4/5]">
+              <Image
+                src="/images/gallery/iris-lab-3.jpeg"
+                alt="Fidel supporting a practical learning and technology session"
+                fill
+                sizes="(min-width: 1024px) 30vw, 92vw"
+                className="object-cover object-center"
+              />
+            </div>
+            <figcaption className="px-2 py-3 text-sm leading-6 text-slate-600">
+              Practical learning, guidance, and problem-solving in a real working setting.
+            </figcaption>
+          </figure>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {testimonials.map((item) => (
+              <figure
+                key={`${item.attribution}-${item.context}`}
+                className={[
+                  "rounded-lg border bg-white p-5",
+                  item.attribution === "Rev. A. Butorano"
+                    ? "border-emerald-900/20 shadow-[0_18px_50px_rgba(15,23,42,0.06)] md:row-span-2 md:p-6"
+                    : "border-slate-200",
+                ].join(" ")}
+              >
+                <blockquote
+                  className={[
+                    "leading-7 text-slate-800",
+                    item.attribution === "Rev. A. Butorano" ? "text-lg md:text-xl md:leading-8" : "text-base",
+                  ].join(" ")}
+                >
+                  &ldquo;{item.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 border-t border-slate-200 pt-4 text-sm">
+                  <span className="font-semibold text-slate-950">{item.attribution}</span>
+                  <span className="text-slate-500"> - {item.context}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </Section>
 
@@ -202,34 +261,35 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Final CTA band */}
-      <Section contained={false} className="bg-slate-900 py-16 md:py-20">
+      {/* Final CTA */}
+      <Section className="pt-0">
         <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
-              Ready to make the next step clearer?
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-200">
-              Send a short project note and we can shape a practical next step.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="rounded-lg border border-emerald-900/10 bg-[#f8fbf8] p-5 md:flex md:items-center md:justify-between md:gap-6">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
+                Have something to build or improve?
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-slate-600 md:text-base md:leading-7">
+                Send a short project note and the next step can be shaped clearly.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row md:mt-0">
               <Button
                 href="/contact"
-                variant="secondary"
-                className="border-white bg-white text-slate-900 transition-colors hover:bg-slate-100 hover:text-slate-900"
+                variant="primary"
+                className="border-emerald-900 bg-emerald-900 text-white hover:bg-emerald-800"
                 analyticsEventName="cta_click"
                 analyticsParams={{ location: "cta_band", label: "primary" }}
               >
                 Start a Project
               </Button>
               <Button
-                href="/capabilities"
+                href="/work"
                 variant="secondary"
-                className="border-slate-300 bg-transparent text-slate-100 transition-colors hover:bg-slate-800/20 hover:text-white"
                 analyticsEventName="cta_click"
                 analyticsParams={{ location: "cta_band", label: "secondary" }}
               >
-                Explore capabilities
+                View Work
               </Button>
             </div>
           </div>

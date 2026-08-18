@@ -7,7 +7,7 @@ type FormState = {
   name: string;
   email: string;
   company: string;
-  preferredContact: "email" | "call";
+  preferredContact: "email" | "call" | "whatsapp";
   goal: string;
   timeline: string;
   currentState: string;
@@ -123,7 +123,7 @@ export default function ContactForm() {
       <fieldset>
         <legend className={labelClass}>Preferred contact method</legend>
         <div className="mt-2 flex gap-5">
-          {(["email", "call"] as const).map((option) => (
+          {(["email", "call", "whatsapp"] as const).map((option) => (
             <label key={option} className="flex cursor-pointer items-center gap-2 text-sm text-slate-700">
               <input
                 type="radio"
@@ -133,7 +133,7 @@ export default function ContactForm() {
                 onChange={set("preferredContact")}
                 className="h-4 w-4 border-slate-300 text-slate-900 focus:ring-2 focus:ring-slate-900 focus:ring-offset-1"
               />
-              {option === "email" ? "Email" : "Call"}
+              {option === "email" ? "Email" : option === "call" ? "Call" : "WhatsApp"}
             </label>
           ))}
         </div>
@@ -210,12 +210,19 @@ export default function ContactForm() {
       </div>
 
       <p className="text-xs leading-5 text-slate-500">
-        Prefer email directly? Reach me at{" "}
+        Prefer direct contact? Email{" "}
         <a
           href="mailto:hello@delitweb.com"
           className="font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
         >
           hello@delitweb.com
+        </a>
+        {" "}or WhatsApp{" "}
+        <a
+          href="https://wa.me/27677188232"
+          className="font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
+        >
+          (+27) 067 7188 232
         </a>
         .
       </p>

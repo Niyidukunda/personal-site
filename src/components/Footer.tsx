@@ -24,9 +24,6 @@ export default function Footer() {
             <Link href="/work" className="rounded-sm hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
               Work
             </Link>
-            <Link href="/capabilities" className="rounded-sm hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
-              Capabilities
-            </Link>
             <Link href="/contact" className="rounded-sm hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2">
               Contact
             </Link>

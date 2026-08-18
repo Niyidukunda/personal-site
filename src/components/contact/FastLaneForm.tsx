@@ -80,12 +80,19 @@ export default function FastLaneForm() {
       </div>
 
       <p className="text-xs leading-5 text-slate-500">
-        Prefer email directly? Reach me at{" "}
+        Prefer direct contact? Email{" "}
         <a
           href="mailto:hello@delitweb.com"
           className="font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
         >
           hello@delitweb.com
+        </a>
+        {" "}or WhatsApp{" "}
+        <a
+          href="https://wa.me/27677188232"
+          className="font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
+        >
+          (+27) 067 7188 232
         </a>
         .
       </p>

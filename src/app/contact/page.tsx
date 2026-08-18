@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import FastLaneForm from "@/components/contact/FastLaneForm";
@@ -8,14 +9,14 @@ import Section from "@/components/ui/Section";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Send a project note to Del IT+Web by email draft for a website, online store, platform, workflow, or launch support.",
+    "Contact Del IT+Web by email or WhatsApp for a website, online store, digital system, workflow, or launch support.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: "Contact Del IT+Web",
     description:
-      "Send a quick project note by email draft about your next website, platform, workflow, or digital system.",
+      "Send a quick project note by email or WhatsApp about your next website, platform, workflow, or digital system.",
     url: "/contact",
   },
 };
@@ -25,12 +26,28 @@ export default function ContactPage() {
     <div>
       {/* Hero */}
       <Section className="pt-6 md:pt-10">
-        <div className="ds-gap max-w-3xl">
-          <h1 className="ds-h1">Contact</h1>
-          <p className="ds-muted md:text-base">
-            Start with a project note. The forms open a pre-filled email draft
-            so you can review and send it from your own mail app.
-          </p>
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1.6fr)_minmax(16rem,0.72fr)] md:items-center">
+          <div className="ds-gap max-w-3xl">
+            <h1 className="ds-h1">Contact</h1>
+            <p className="ds-muted md:text-base">
+              Have something to build, fix, learn, or collaborate on? Send a short note by
+              email or WhatsApp, and the next step can be shaped clearly.
+            </p>
+          </div>
+          <div className="w-full max-w-xs md:justify-self-end">
+            <div className="relative overflow-hidden rounded-xl border border-emerald-100/60 bg-white p-2 shadow-[0_10px_28px_rgba(15,23,42,0.05)]">
+              <div className="relative aspect-[5/6] overflow-hidden rounded-[0.72rem] bg-slate-100">
+                <Image
+                  src="/images/gallery/about-at-work-crop.jpg"
+                  alt="Fidel reviewing project details before a conversation"
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 24vw, 72vw"
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
@@ -42,12 +59,20 @@ export default function ContactPage() {
               Fast lane
             </h2>
             <p className="mt-2 text-sm leading-6 text-slate-700">
-              Send a short note by email draft. I&rsquo;ll reply within one business day where possible.{" "}
+              Use the quick form to open an email draft, or send a WhatsApp message if
+              that is easier. I&rsquo;ll reply within one business day where possible.{" "}
               <a
                 href="mailto:hello@delitweb.com"
                 className="font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
               >
                 hello@delitweb.com
+              </a>
+              {" "}or{" "}
+              <a
+                href="https://wa.me/27677188232"
+                className="font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
+              >
+                (+27) 067 7188 232
               </a>
             </p>
             <FastLaneForm />
@@ -97,9 +122,9 @@ export default function ContactPage() {
               Not ready to reach out yet?
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-200">
-              Browse recent work or see how I can help before sending a note.
+              Browse recent work before sending a note.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex justify-center">
               <Button
                 href="/work"
                 variant="secondary"
@@ -108,15 +133,6 @@ export default function ContactPage() {
                 analyticsParams={{ location: "cta_band", label: "primary" }}
               >
                 View Recent Work
-              </Button>
-              <Button
-                href="/capabilities"
-                variant="secondary"
-                className="border-slate-300 bg-transparent text-slate-100 transition-colors hover:bg-slate-800/20 hover:text-white"
-                analyticsEventName="cta_click"
-                analyticsParams={{ location: "cta_band", label: "secondary" }}
-              >
-                Explore capabilities
               </Button>
             </div>
           </div>
