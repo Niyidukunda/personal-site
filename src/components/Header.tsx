@@ -9,7 +9,7 @@ import Container from "@/components/ui/Container";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/work", label: "Work" },
+  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -37,7 +37,15 @@ export default function Header() {
               alt="Del IT and Web icon mark"
               width={80}
               height={64}
-              className="h-7 w-auto md:h-8"
+              className="h-7 w-auto md:hidden"
+              priority
+            />
+            <Image
+              src="/images/FullLogo_Transparent_NoBuffer.png"
+              alt="Del IT+Web"
+              width={1280}
+              height={404}
+              className="hidden h-9 w-auto md:block lg:h-10"
               priority
             />
           </Link>

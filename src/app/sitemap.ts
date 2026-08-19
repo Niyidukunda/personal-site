@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const baseUrl = "https://delitweb.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ["", "/work", "/about", "/contact"].map((path) => ({
+  return ["", "/services", "/work", "/about", "/contact"].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
     changeFrequency: path === "" ? "weekly" : "monthly",

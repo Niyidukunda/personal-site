@@ -138,16 +138,15 @@ export default function AboutPage() {
             <div className="space-y-3">
               <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">Mission</h2>
               <p className="ds-body">
-                Harness useful technology, advance learning, solve practical problems, and
-                connect people through clearer systems and shared understanding.
+                Use technology, teaching, and practical support to make useful tools easier
+                to understand, manage, and grow.
               </p>
             </div>
             <div className="space-y-3">
               <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">What I do</h2>
               <p className="ds-body">
-                I work across website design, search engine visibility, analytics tools,
-                e-commerce, software, hardware, networks, information technology education,
-                and practical innovation.
+                The work combines website design, online stores, practical software, learning
+                tools, support, and clear technical guidance.
               </p>
             </div>
           </div>

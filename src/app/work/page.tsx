@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const workStories = [
   {
     id: "assessment-platform",
-    title: "Assessment & Review Platform",
+    title: "AI-Assisted Assessment Platform",
     category: "Learning workflow",
     lead: "Automatic grading, quick results, and clearer feedback for learning activities.",
     need: "Learner activities needed faster marking, clearer results, and less manual work for teachers and assessors.",
@@ -36,6 +36,26 @@ const workStories = [
         alt: "Student workspace for assessments with learner details hidden",
         caption:
           "Student workspace with the learner name and student number hidden.",
+      },
+    ],
+  },
+  {
+    id: "learning-training",
+    title: "Online Learning & Training Workflow",
+    category: "Learning programme",
+    lead: "Learning content, activities, and admin follow-up kept easier to manage.",
+    need: "Learning work needed a clearer place for learners, activities, progress, and support follow-up.",
+    built:
+      "A practical workflow was shaped around learner access, activity tracking, submissions, and admin visibility.",
+    result:
+      "Learners had clearer next steps, while teachers and support staff had an easier way to follow the work.",
+    tools: ["Learner paths", "Activity tracking", "Admin workflow"],
+    images: [
+      {
+        src: "/images/proof/assessment-workspace-overview.jpg",
+        alt: "Learning and assessment workspace overview with private details hidden",
+        caption:
+          "Learning workspace overview with private details kept out of view.",
       },
     ],
   },
@@ -180,7 +200,7 @@ export default function WorkPage() {
               Recent work
             </p>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl md:leading-[1.04]">
-              Practical work for your needs.
+              Work that turns ideas into usable systems.
             </h1>
           </div>
           <div className="max-w-2xl md:ml-auto">

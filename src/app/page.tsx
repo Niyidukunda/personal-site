@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FiBookOpen, FiGrid, FiShoppingBag, FiUploadCloud } from "react-icons/fi";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -31,14 +32,17 @@ const selectedWork = [
   {
     title: "AI-Assisted Assessment Platform",
     description: "Submissions, review, scoring, and follow-up in one place.",
+    href: "/work#assessment-platform",
   },
   {
     title: "Premium E-commerce Storefront",
     description: "A clean mobile shopping experience.",
+    href: "/work#online-store",
   },
   {
     title: "SMME Support & Compliance Ecosystem",
     description: "Compliance, documents, and business support made easier.",
+    href: "/work#business-support",
   },
 ] as const;
 
@@ -106,20 +110,20 @@ export default function HomePage() {
                 <span>Del IT+Web</span>
               </div>
               <h1 className="mt-7 text-4xl font-semibold tracking-tight text-[#080d22] md:text-6xl md:leading-[1.02]">
-                Build websites, online stores, and digital systems.
+                Clean websites, online stores, and digital systems that work for you.
               </h1>
               <p className="mt-6 max-w-xl text-base leading-7 text-[#18324f] md:text-lg md:leading-8">
                 For professionals, businesses, and learning programmes.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button
-                  href="/work"
+                  href="/services"
                   variant="primary"
                   className="border-[#071028] bg-[#071028] px-6 py-3 text-white hover:bg-[#111b34]"
                   analyticsEventName="cta_click"
-                  analyticsParams={{ location: "hero", label: "work" }}
+                  analyticsParams={{ location: "hero", label: "services" }}
                 >
-                  View Work
+                  View Services
                 </Button>
                 <Button
                   href="/contact"
@@ -131,6 +135,18 @@ export default function HomePage() {
                   Start a Project
                 </Button>
               </div>
+              <div className="relative mt-8 w-full max-w-[12.5rem] lg:hidden">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-emerald-900/10 bg-[#f5fbf8] p-2 shadow-[0_16px_32px_rgba(15,23,42,0.07)]">
+                  <Image
+                    src="/images/about/about-alt-1-compressed.jpg"
+                    alt="Portrait of Fidel Niyidukunda"
+                    fill
+                    priority
+                    sizes="12.5rem"
+                    className="object-contain object-center"
+                  />
+                </div>
+              </div>
               <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-[#18324f]">
                 {["Personal guidance", "Clear communication", "Reliable support"].map((item) => (
                   <span key={item} className="inline-flex items-center gap-2">
@@ -141,19 +157,6 @@ export default function HomePage() {
                     {item}
                   </span>
                 ))}
-              </div>
-            </div>
-
-            <div className="relative mx-auto w-full max-w-sm lg:hidden">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
-                <Image
-                  src="/images/about/about-alt-1-compressed.jpg"
-                  alt="Portrait of Fidel Niyidukunda"
-                  fill
-                  priority
-                  sizes="88vw"
-                  className="object-cover object-[center_28%]"
-                />
               </div>
             </div>
           </div>
@@ -212,14 +215,23 @@ export default function HomePage() {
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {selectedWork.map((item) => (
-            <article key={item.title} className="rounded-lg border border-slate-200 bg-white p-5">
-              <h2 className="text-base font-semibold tracking-tight text-slate-950">{item.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-700">{item.description}</p>
-            </article>
+            <Link
+              key={item.title}
+              href={item.href}
+              className="block rounded-lg border border-slate-200 bg-white p-5 transition-transform hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2"
+            >
+              <article>
+                <h2 className="text-base font-semibold tracking-tight text-slate-950">{item.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-slate-700">{item.description}</p>
+                <span className="mt-4 inline-flex text-sm font-medium text-slate-900 underline underline-offset-4">
+                  View example
+                </span>
+              </article>
+            </Link>
           ))}
         </div>
         <Button href="/work" variant="secondary" className="mt-8">
-          View Work
+          View Examples
         </Button>
       </Section>
 
