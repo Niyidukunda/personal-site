@@ -7,14 +7,14 @@ import Section from "@/components/ui/Section";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Recent websites, stores, learning tools, and business systems by Del IT+Web.",
+    "Recent websites, stores, learning support, and business systems by Del IT+Web.",
   alternates: {
     canonical: "/work",
   },
   openGraph: {
     title: "Work | Del IT+Web",
     description:
-      "A calm look at recent digital work for individuals, small businesses, and education teams.",
+      "A calm look at recent projects for professionals, businesses, and learning programmes.",
     url: "/work",
   },
 };
@@ -62,7 +62,7 @@ const workStories = [
     title: "Business Support Portal",
     category: "Small business system",
     lead: "Documents, compliance steps, and support activity organized in one practical place.",
-    need: "Small business support work can become hard to manage when forms, documents, checks, and updates sit in separate tools.",
+    need: "Small business support work can become hard to manage when forms, documents, checks, and updates sit in separate places.",
     built:
       "A clearer portal structure was created for admin tasks, business records, compliance checks, and support follow-up.",
     result:
@@ -89,7 +89,7 @@ const workStyles = [
     text: "Practical dashboards, forms, accounts, and admin flows that keep daily work easier to manage in one place.",
   },
   {
-    title: "Teaching, learning, and assessment tools",
+    title: "Teaching, learning, and assessment support",
     text: "Course, quiz, review, and learner/admin workflows shaped for smoother teaching, learning, feedback, and support.",
   },
 ] as const;
@@ -173,20 +173,19 @@ function StoryImages({ story }: { story: (typeof workStories)[number] }) {
 export default function WorkPage() {
   return (
     <div className="bg-white">
-      <Section className="border-b border-slate-200 bg-[#fbfcfb]">
-        <div className="grid gap-8 lg:grid-cols-[0.82fr_0.92fr_15rem] lg:items-end">
+      <Section className="border-b border-slate-200 bg-[#fbfcfb] py-12 md:py-16">
+        <div className="grid gap-8 lg:grid-cols-[0.82fr_0.92fr_15rem] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-800">
               Recent work
             </p>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl md:leading-[1.04]">
-              Clean digital work for real needs.
+              Practical work for your needs.
             </h1>
           </div>
           <div className="max-w-2xl md:ml-auto">
             <p className="text-base leading-7 text-slate-700 md:text-lg md:leading-8">
-              Websites, stores, learning tools, and business systems shaped for people who need
-              something clear, reliable, and easy to manage.
+              A closer look at projects shaped to be clear, reliable, and easier to manage.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button

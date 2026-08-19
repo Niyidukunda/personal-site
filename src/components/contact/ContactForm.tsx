@@ -106,7 +106,7 @@ export default function ContactForm() {
       {/* Company */}
       <div>
         <label htmlFor="cf-company" className={labelClass}>
-          Company <span className="text-slate-400 font-normal">(optional)</span>
+          Company or project <span className="text-slate-400 font-normal">(optional)</span>
         </label>
         <input
           id="cf-company"
@@ -114,14 +114,14 @@ export default function ContactForm() {
           autoComplete="organization"
           value={form.company}
           onChange={set("company")}
-          placeholder="Organisation or project name"
+          placeholder="Organisation, business, or project"
           className={inputClass}
         />
       </div>
 
       {/* Preferred contact */}
       <fieldset>
-        <legend className={labelClass}>Preferred contact method</legend>
+        <legend className={labelClass}>Reply by</legend>
         <div className="mt-2 flex gap-5">
           {(["email", "call", "whatsapp"] as const).map((option) => (
             <label key={option} className="flex cursor-pointer items-center gap-2 text-sm text-slate-700">
@@ -142,7 +142,7 @@ export default function ContactForm() {
       {/* Goal */}
       <div>
         <label htmlFor="cf-goal" className={labelClass}>
-          What are you trying to achieve? <span aria-hidden="true" className="text-slate-400">*</span>
+          Project note <span aria-hidden="true" className="text-slate-400">*</span>
         </label>
         <textarea
           id="cf-goal"
@@ -150,7 +150,7 @@ export default function ContactForm() {
           rows={4}
           value={form.goal}
           onChange={set("goal")}
-          placeholder="Describe the problem, goal, or outcome you're working toward."
+          placeholder="What should be built, fixed, or discussed?"
           className={`${inputClass} resize-y`}
         />
       </div>
@@ -209,23 +209,6 @@ export default function ContactForm() {
         )}
       </div>
 
-      <p className="text-xs leading-5 text-slate-500">
-        Prefer direct contact? Email{" "}
-        <a
-          href="mailto:hello@delitweb.com"
-          className="font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
-        >
-          hello@delitweb.com
-        </a>
-        {" "}or WhatsApp{" "}
-        <a
-          href="https://wa.me/27677188232"
-          className="font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
-        >
-          (+27) 067 7188 232
-        </a>
-        .
-      </p>
     </form>
   );
 }

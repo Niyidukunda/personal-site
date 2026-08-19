@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Del IT+Web",
   },
   description:
-    "Clean websites, online stores, learning systems, workflows, and launch-ready support for individuals, small businesses, and education-focused teams.",
+    "Clean websites, online stores, client-facing systems, workflows, and launch support for professionals, businesses, and learning programmes.",
   alternates: {
     canonical: "/",
   },
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
     siteName: "Del IT+Web",
     title: "Del IT+Web | Clean websites, platforms, and digital systems",
     description:
-      "Clean websites, online stores, learning systems, workflows, and launch-ready support for individuals, small businesses, and education-focused teams.",
+      "Clean websites, online stores, client-facing systems, workflows, and launch support for professionals, businesses, and learning programmes.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Del IT+Web | Clean websites, platforms, and digital systems",
     description:
-      "Clean websites, online stores, learning systems, workflows, and launch-ready support for individuals, small businesses, and education-focused teams.",
+      "Clean websites, online stores, client-facing systems, workflows, and launch support for professionals, businesses, and learning programmes.",
   },
   icons: {
     icon: "/images/icononly.png",

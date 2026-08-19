@@ -49,50 +49,73 @@ export default function HomePage() {
     <div className="bg-white">
       <Section
         contained={false}
-        className="relative overflow-hidden border-b border-slate-200 bg-[#fbfcfb] py-0"
+        className="relative overflow-hidden border-b border-[#cfe8e2]/80 bg-[#f2fbf8] py-0 text-[#080d22]"
       >
-        <div className="absolute inset-y-0 right-0 hidden w-[62%] lg:block">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,97,87,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,97,87,0.055)_1px,transparent_1px)] bg-[size:40px_40px]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(167,239,219,0.42),transparent_32%),radial-gradient(circle_at_100%_0%,rgba(188,244,241,0.18),transparent_36%),linear-gradient(90deg,rgba(242,251,248,0.92)_0%,rgba(248,253,251,0.9)_48%,rgba(247,251,248,0.78)_100%)]"
+        />
+        <div className="absolute inset-y-0 right-0 hidden w-[66%] lg:block">
           <div
             aria-hidden="true"
-            className="absolute inset-y-14 right-0 w-[58%] bg-[radial-gradient(ellipse_at_72%_50%,rgba(16,185,129,0.08)_0%,rgba(241,245,249,0.62)_38%,rgba(251,252,251,0)_72%)]"
+            className="absolute inset-y-14 right-0 w-[62%] bg-[radial-gradient(ellipse_at_70%_50%,rgba(20,184,166,0.06)_0%,rgba(235,249,246,0.34)_40%,rgba(242,251,248,0)_74%)]"
           />
-          <div className="absolute inset-y-6 right-[3%] w-[34rem] max-w-[72%]">
+          <div className="absolute inset-y-6 right-0 w-[39rem] max-w-[84%]">
             <Image
               src="/images/about/about-alt-1-compressed.jpg"
               alt="Portrait of Fidel Niyidukunda"
               fill
               priority
               sizes="34rem"
-              className="scale-[1.08] object-contain object-center opacity-90 [mask-image:linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.08)_10%,rgba(0,0,0,0.42)_24%,rgba(0,0,0,0.82)_40%,black_58%,black_84%,rgba(0,0,0,0.46)_94%,transparent_100%)]"
+              className="scale-[1.08] object-contain object-right opacity-90 [mask-image:linear-gradient(90deg,transparent_0%,transparent_28%,rgba(0,0,0,0.04)_40%,rgba(0,0,0,0.18)_50%,rgba(0,0,0,0.58)_62%,rgba(0,0,0,0.9)_72%,black_82%,rgba(0,0,0,0.72)_90%,rgba(0,0,0,0.18)_97%,transparent_100%)]"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 left-0 w-[62%] bg-[linear-gradient(90deg,#f5fbf8_0%,rgba(245,251,248,0.98)_34%,rgba(245,251,248,0.74)_54%,rgba(245,251,248,0.28)_76%,rgba(245,251,248,0)_100%)]"
             />
           </div>
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(90deg,#fbfcfb_0%,rgba(251,252,251,0.99)_18%,rgba(251,252,251,0.9)_31%,rgba(251,252,251,0.58)_43%,rgba(251,252,251,0.2)_56%,rgba(251,252,251,0.04)_70%,transparent_88%)]"
+            className="absolute inset-0 bg-[linear-gradient(90deg,rgba(242,251,248,0)_0%,rgba(242,251,248,0)_20%,rgba(242,251,248,0.18)_36%,rgba(242,251,248,0.08)_52%,rgba(242,251,248,0)_70%)]"
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,252,251,0.32)_0%,rgba(251,252,251,0)_30%,rgba(251,252,251,0.14)_100%)]"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(242,251,248,0.24)_0%,rgba(242,251,248,0)_30%,rgba(242,251,248,0.14)_100%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-y-0 right-0 w-[18%] bg-[linear-gradient(90deg,rgba(247,251,248,0)_0%,rgba(247,251,248,0.28)_62%,rgba(248,251,248,0.72)_100%)]"
           />
         </div>
 
         <Container className="relative z-10 max-w-6xl">
-          <div className="grid min-h-[580px] items-center gap-10 py-16 md:py-20 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,0.28fr)]">
+          <div className="grid min-h-[485px] items-center gap-10 py-10 md:py-14 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,0.28fr)]">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-800">
-                Clean solutions. Real impact.
-              </p>
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl md:leading-[1.02]">
-                Build websites, stores, and digital systems.
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#bde7df] bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#005f50] shadow-[0_8px_20px_rgba(15,97,87,0.08)] backdrop-blur">
+                <Image
+                  src="/images/icononly.png"
+                  alt=""
+                  width={18}
+                  height={18}
+                  className="h-4 w-auto"
+                />
+                <span>Del IT+Web</span>
+              </div>
+              <h1 className="mt-7 text-4xl font-semibold tracking-tight text-[#080d22] md:text-6xl md:leading-[1.02]">
+                Build websites, online stores, and digital systems.
               </h1>
-              <p className="mt-6 max-w-xl text-base leading-7 text-slate-700 md:text-lg md:leading-8">
-                For individuals, small businesses, and education teams.
+              <p className="mt-6 max-w-xl text-base leading-7 text-[#18324f] md:text-lg md:leading-8">
+                For professionals, businesses, and learning programmes.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button
                   href="/work"
                   variant="primary"
-                  className="border-emerald-900 bg-emerald-900 px-6 py-3 text-white hover:bg-emerald-800"
+                  className="border-[#071028] bg-[#071028] px-6 py-3 text-white hover:bg-[#111b34]"
                   analyticsEventName="cta_click"
                   analyticsParams={{ location: "hero", label: "work" }}
                 >
@@ -108,12 +131,12 @@ export default function HomePage() {
                   Start a Project
                 </Button>
               </div>
-              <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-slate-700">
+              <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-[#18324f]">
                 {["Personal guidance", "Clear communication", "Reliable support"].map((item) => (
                   <span key={item} className="inline-flex items-center gap-2">
                     <span
                       aria-hidden="true"
-                      className="grid h-5 w-5 place-items-center rounded-full border border-emerald-700/40 before:h-1.5 before:w-1.5 before:rounded-full before:bg-emerald-800 before:content-['']"
+                      className="grid h-5 w-5 place-items-center rounded-full border border-[#00856f]/35 bg-white/55 before:h-1.5 before:w-1.5 before:rounded-full before:bg-[#006b5a] before:content-['']"
                     />
                     {item}
                   </span>
@@ -140,11 +163,11 @@ export default function HomePage() {
       <Section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-            What can be built
+            Online tools that fit your work
           </h2>
           <div className="mx-auto mt-4 h-0.5 w-10 bg-emerald-800" />
           <p className="mt-5 text-sm leading-6 text-slate-600 md:text-base md:leading-7">
-            Clean digital work for useful outcomes.
+            Clear, practical ways to bring your work online, support your clients, and manage the next step.
           </p>
         </div>
 

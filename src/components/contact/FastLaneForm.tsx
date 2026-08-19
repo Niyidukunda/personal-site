@@ -35,8 +35,7 @@ export default function FastLaneForm() {
     <form onSubmit={handleSubmit} noValidate className="mt-5 space-y-4">
       <div>
         <label htmlFor="fl-email" className={labelClass}>
-          Your email{" "}
-          <span className="font-normal text-slate-400">(optional - so I can reply directly)</span>
+          Email <span className="font-normal text-slate-400">(optional)</span>
         </label>
         <input
           id="fl-email"
@@ -51,7 +50,7 @@ export default function FastLaneForm() {
 
       <div>
         <label htmlFor="fl-message" className={labelClass}>
-          Message <span aria-hidden="true" className="text-slate-400">*</span>
+          Note <span aria-hidden="true" className="text-slate-400">*</span>
         </label>
         <textarea
           id="fl-message"
@@ -59,7 +58,7 @@ export default function FastLaneForm() {
           rows={3}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="What's on your mind?"
+          placeholder="What would you like to build, fix, or discuss?"
           className={`${inputClass} resize-y`}
         />
       </div>
@@ -79,23 +78,6 @@ export default function FastLaneForm() {
         )}
       </div>
 
-      <p className="text-xs leading-5 text-slate-500">
-        Prefer direct contact? Email{" "}
-        <a
-          href="mailto:hello@delitweb.com"
-          className="font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
-        >
-          hello@delitweb.com
-        </a>
-        {" "}or WhatsApp{" "}
-        <a
-          href="https://wa.me/27677188232"
-          className="font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
-        >
-          (+27) 067 7188 232
-        </a>
-        .
-      </p>
     </form>
   );
 }

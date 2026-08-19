@@ -17,7 +17,7 @@ export default function Footer() {
                 className="h-10 w-auto sm:h-11"
               />
             </Link>
-            <p className="text-xs text-slate-500">Clean digital systems for people ready to launch well.</p>
+            <p className="text-xs text-slate-500">Websites, stores, and systems for people ready to move forward.</p>
             <p className="text-sm text-slate-500">© {new Date().getFullYear()} Del IT+Web</p>
           </div>
           <div className="flex items-center gap-4 text-sm text-slate-500">

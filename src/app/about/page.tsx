@@ -28,7 +28,7 @@ const process = [
   {
     label: "Build",
     detail:
-      "I build the pages, tools, flows, and setup needed to make the idea usable.",
+      "I build the pages, flows, and setup needed to make the idea usable.",
   },
   {
     label: "Stabilize",
@@ -38,7 +38,7 @@ const process = [
 ] as const;
 
 const focusAreas = [
-  "Websites, stores, portals, and practical digital tools",
+  "Websites, stores, portals, and practical systems",
   "Online learning systems and training workflows",
   "Cleaner launches with setup notes and after-launch support",
   "Access, accounts, admin areas, and easier day-to-day management",
@@ -105,7 +105,7 @@ export default function AboutPage() {
             </p>
             <p className="ds-muted md:text-base">
               My work sits between software, teaching, support, and practical problem-solving -
-              turning ideas and manual processes into digital systems people can actually use. I
+              turning ideas and manual processes into practical, usable systems. I
               keep learning, building, and sharing what I know along the way, with the goal of
               making technology feel clearer, more useful, and easier to work with.
             </p>
@@ -138,8 +138,8 @@ export default function AboutPage() {
             <div className="space-y-3">
               <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">Mission</h2>
               <p className="ds-body">
-                Harness useful technology, advance education, solve practical problems, and
-                connect people through clearer digital systems.
+                Harness useful technology, advance learning, solve practical problems, and
+                connect people through clearer systems and shared understanding.
               </p>
             </div>
             <div className="space-y-3">

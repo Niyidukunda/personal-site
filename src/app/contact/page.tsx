@@ -2,8 +2,6 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import FastLaneForm from "@/components/contact/FastLaneForm";
-import Button from "@/components/ui/Button";
-import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 
 export const metadata: Metadata = {
@@ -25,18 +23,27 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero */}
-      <Section className="pt-6 md:pt-10">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1.6fr)_minmax(16rem,0.72fr)] md:items-center">
-          <div className="ds-gap max-w-3xl">
+      <Section className="!py-8 md:!py-10">
+        <div className="grid gap-6 md:grid-cols-[minmax(0,1.6fr)_minmax(14rem,0.6fr)] md:items-center">
+          <div className="max-w-3xl space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#bde7df] bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#005f50] shadow-[0_8px_20px_rgba(15,97,87,0.08)]">
+              <Image
+                src="/images/icononly.png"
+                alt=""
+                width={18}
+                height={18}
+                className="h-4 w-auto"
+              />
+              <span>Del IT+Web</span>
+            </div>
             <h1 className="ds-h1">Contact</h1>
             <p className="ds-muted md:text-base">
-              Have something to build, fix, learn, or collaborate on? Send a short note by
-              email or WhatsApp, and the next step can be shaped clearly.
+              Send a short note by email or WhatsApp. A simple outline is enough to start.
             </p>
           </div>
-          <div className="w-full max-w-xs md:justify-self-end">
+          <div className="w-full max-w-[14rem] md:justify-self-end">
             <div className="relative overflow-hidden rounded-xl border border-emerald-100/60 bg-white p-2 shadow-[0_10px_28px_rgba(15,23,42,0.05)]">
-              <div className="relative aspect-[5/6] overflow-hidden rounded-[0.72rem] bg-slate-100">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[0.72rem] bg-slate-100">
                 <Image
                   src="/images/gallery/about-at-work-crop.jpg"
                   alt="Fidel reviewing project details before a conversation"
@@ -51,23 +58,22 @@ export default function ContactPage() {
         </div>
       </Section>
 
-      {/* Fast lane */}
+      {/* Quick note */}
       <Section className="pt-0">
         <div className="border-t border-slate-200 pt-8">
           <div className="max-w-2xl rounded-lg border border-slate-200 bg-slate-50/60 px-6 py-6 md:px-8 md:py-7">
             <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-900">
-              Fast lane
+              Quick note
             </h2>
             <p className="mt-2 text-sm leading-6 text-slate-700">
-              Use the quick form to open an email draft, or send a WhatsApp message if
-              that is easier. I&rsquo;ll reply within one business day where possible.{" "}
+              Use the form, email{" "}
               <a
                 href="mailto:hello@delitweb.com"
                 className="font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
               >
                 hello@delitweb.com
               </a>
-              {" "}or{" "}
+              , or WhatsApp{" "}
               <a
                 href="https://wa.me/27677188232"
                 className="font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 rounded-sm"
@@ -90,7 +96,7 @@ export default function ContactPage() {
                   <span className="text-base font-normal text-slate-500">(optional)</span>
                 </h2>
                 <p className="mt-1 text-sm leading-6 text-slate-500">
-                  Sharing context about your project helps me prepare a more relevant, faster response.
+                  For a fuller brief.
                 </p>
               </div>
               <span
@@ -105,38 +111,12 @@ export default function ContactPage() {
 
             <div className="mt-6">
               <p className="text-sm leading-6 text-slate-500 mb-6">
-                Fields marked <span aria-hidden="true">*</span> are required. The form
-                opens a pre-filled email draft. Review it, then send it from your email app.
+                An email draft opens before sending.
               </p>
               <ContactForm />
             </div>
           </details>
         </div>
-      </Section>
-
-      {/* CTA band */}
-      <Section contained={false} className="bg-slate-900 py-16 md:py-20">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
-              Not ready to reach out yet?
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-200">
-              Browse recent work before sending a note.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <Button
-                href="/work"
-                variant="secondary"
-                className="border-white bg-white text-slate-900 transition-colors hover:bg-slate-100 hover:text-slate-900"
-                analyticsEventName="cta_click"
-                analyticsParams={{ location: "cta_band", label: "primary" }}
-              >
-                View Recent Work
-              </Button>
-            </div>
-          </div>
-        </Container>
       </Section>
     </div>
   );
