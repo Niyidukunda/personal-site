@@ -48,6 +48,17 @@ const selectedWork = [
 
 const workingStyle = ["Clear scope", "Simple updates", "Launch support"] as const;
 
+const homeTrustQuotes = [
+  {
+    quote: "Thank you for your patience and for helping me.",
+    label: "Student / Learning Support",
+  },
+  {
+    quote: "Thank you for a lovely website, and for your patience.",
+    label: "Online Store Client",
+  },
+] as const;
+
 export default function HomePage() {
   return (
     <div className="bg-white">
@@ -251,6 +262,34 @@ export default function HomePage() {
                 <p className="text-sm font-semibold text-slate-950">{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section className="border-b border-slate-200 bg-white">
+        <div className="relative overflow-hidden rounded-lg border border-emerald-900/10 bg-[linear-gradient(135deg,#f8fbf8_0%,#eefbf7_52%,#fbfdfc_100%)] p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] md:p-8">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,97,87,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,97,87,0.04)_1px,transparent_1px)] bg-[size:32px_32px]"
+          />
+          <div className="relative grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
+                Trusted for patience, clarity, and practical delivery.
+              </h2>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {homeTrustQuotes.map((item) => (
+                <figure key={item.label} className="border-t border-emerald-900/15 pt-4">
+                  <blockquote className="text-base leading-7 text-slate-800">
+                    &ldquo;{item.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-3 text-sm font-medium text-slate-500">
+                    {item.label}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </Section>

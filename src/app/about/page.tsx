@@ -63,23 +63,23 @@ const testimonials = [
   {
     quote: "Thank you so much Mr Fidel for your patience and for helping me.",
     attribution: "N. Mthembu",
-    context: "C&R Student",
+    context: "Student / Learning Support",
   },
   {
     quote: "Dude I'm so happy! Thank you for the thoroughness.",
     attribution: "L. Mark",
-    context: "House of Basil Premium Online Store",
+    context: "Online Store Client",
   },
   {
     quote:
       "At all times I have found Fidele to be a man of integrity, selflessness, and consistency.",
     attribution: "Rev. A. Butorano",
-    context: "Kwa-Giba High School",
+    context: "Education Reference",
   },
   {
     quote: "Thank you for a lovely website, and for your patience. Will be staying in touch.",
     attribution: "E. Billy",
-    context: "Floral Kingdom Tours",
+    context: "Website Client",
   },
 ] as const;
 
