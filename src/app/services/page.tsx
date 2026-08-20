@@ -7,37 +7,56 @@ import Section from "@/components/ui/Section";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Simple website, online store, portal, learning, launch, and support services from Del IT+Web.",
+    "Practical digital and IT support for web presence, business tools, learning support, setup, devices, networks, and ongoing help.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: "Services | Del IT+Web",
     description:
-      "Clean websites, online stores, practical systems, learning tools, and launch support for professionals, businesses, and learning programmes.",
+      "Web presence, business tools, learning support, and everyday IT help for people who need things clear, useful, and easier to manage.",
     url: "/services",
   },
 };
 
 const serviceGroups = [
   {
-    title: "Websites & Online Stores",
-    text: "Clean websites and online shops that are easy to browse, manage, and grow.",
+    title: "Websites, Stores & Online Presence",
+    text: "Clean websites, landing pages, and shop experiences that help people understand the offer, browse easily, and take the next step.",
     href: "/work#online-store",
   },
   {
-    title: "Digital Systems & Portals",
-    text: "Practical systems that organize forms, accounts, content, data, and everyday admin work.",
+    title: "Business Systems & Client Portals",
+    text: "Simple tools for forms, accounts, content, records, client access, and everyday admin work.",
     href: "/work#business-support",
   },
   {
-    title: "Learning & Training Tools",
-    text: "Online learning spaces, assessments, learner paths, and admin workflows made easier to manage.",
+    title: "Learning & Training Support",
+    text: "Course spaces, assessment support, learner paths, and admin workflows made easier to manage.",
     href: "/work#learning-training",
   },
   {
-    title: "Launch & Ongoing Support",
-    text: "Setup, guidance, support notes, fixes, and improvements after going live.",
+    title: "IT Setup, Networks & Ongoing Support",
+    text: "Help with devices, connectivity, basic networks, setup, troubleshooting, fixes, and support after launch.",
+    href: "/work#business-support",
+  },
+] as const;
+
+const startingPoints = [
+  {
+    label: "A new site, shop, or online presence",
+    href: "/work#online-store",
+  },
+  {
+    label: "A process that needs to be easier to manage",
+    href: "/work#business-support",
+  },
+  {
+    label: "A course, assessment, or training setup",
+    href: "/work#learning-training",
+  },
+  {
+    label: "Devices, connectivity, or support after launch",
     href: "/work#business-support",
   },
 ] as const;
@@ -64,7 +83,7 @@ const examples = [
     href: "/work#assessment-platform",
   },
   {
-    title: "Online store",
+    title: "Premium storefront",
     text: "A cleaner customer path from browsing to checkout.",
     href: "/work#online-store",
   },
@@ -90,11 +109,11 @@ export default function ServicesPage() {
               Services
             </p>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl md:leading-[1.04]">
-              Clean digital support for useful work.
+              Practical digital and IT support for your work.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-700 md:text-lg md:leading-8">
-              Websites, stores, portals, learning spaces, and launch support for professionals,
-              businesses, and learning programmes.
+              Web presence, business tools, learning support, and everyday IT help for people
+              who need things clear, useful, and easier to manage.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -119,26 +138,23 @@ export default function ServicesPage() {
 
           <aside className="rounded-lg border border-emerald-900/10 bg-white/85 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-800">
-              Help with
+              Best starting points
             </p>
             <div className="mt-5 space-y-4">
-              {serviceGroups.map((service) => (
+              {startingPoints.map((item) => (
                 <Link
-                  key={service.title}
-                  href={service.href}
+                  key={item.label}
+                  href={item.href}
                   className="block border-t border-slate-200 pt-4 first:border-t-0 first:pt-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2"
                 >
-                  <span className="block text-sm font-semibold text-slate-950">
-                    {service.title}
-                  </span>
-                  <span className="mt-1 block text-sm leading-5 text-slate-600">
-                    {service.text}
+                  <span className="block text-sm font-medium leading-6 text-slate-800">
+                    {item.label}
                   </span>
                 </Link>
               ))}
             </div>
             <div className="mt-5 rounded-md bg-[#f8fbf8] px-3 py-2 text-sm font-medium text-slate-900">
-              Simple scope. Clear build. Support after launch.
+              Simple scope. Clear setup. Support after launch.
             </div>
           </aside>
         </div>
